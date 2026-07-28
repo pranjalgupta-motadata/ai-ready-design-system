@@ -8,16 +8,19 @@ import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 
+/**
+ * Applies the design system's own theming to the preview canvas.
+ *
+ * Adding `.dark` to the root element flips every semantic token, and
+ * `globals.css` paints the body from `--mdt-background`. That means the canvas
+ * background follows the theme on its own — there is deliberately no separate
+ * `backgrounds` toolbar here. One switch, not two.
+ */
 const withTheme: Decorator = (Story, context) => {
   const theme = (context.globals.theme as string | undefined) ?? 'light';
 
-  // Apply dark class to html element
   if (typeof document !== 'undefined') {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', theme === 'dark');
   }
 
   return Story();
@@ -32,18 +35,14 @@ const preview: Preview = {
       },
       expanded: true,
     },
-    backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: '#ffffff' },
-        { name: 'dark', value: '#0B1628' }, // Using our neutral-160 color
-      ],
-    },
+    // No `backgrounds` parameter on purpose — the canvas is painted by the
+    // design system's own `--mdt-background` token via the theme toggle above.
+    // Re-adding it would hardcode colours that live in globals.css.
     layout: 'centered',
   },
   globalTypes: {
     theme: {
-      description: 'Global theme for components',
+      description: 'Switches components and canvas between light and dark',
       defaultValue: 'light',
       toolbar: {
         title: 'Theme',

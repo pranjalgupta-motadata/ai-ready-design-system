@@ -60,6 +60,9 @@
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:debug": "playwright test --debug",
     "test:e2e:update-snapshots": "playwright test --update-snapshots",
+    "check:tokens": "node scripts/check-tokens.mjs",
+    "check:tokens:strict": "node scripts/check-tokens.mjs --strict",
+    "check:tokens:report": "node scripts/check-tokens.mjs --markdown",
     "pre-pipeline-check": "bash scripts/pre-pipeline-check.sh",
     "validate": "npm run pre-pipeline-check"
   },
