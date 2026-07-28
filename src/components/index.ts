@@ -19,6 +19,40 @@ export type {
   AvatarShape,
 } from './Avatar';
 
+// CodeWell — read-only monospace surface. Both Org Mgmt and Agent Fleet asked
+// for exactly this in their audits.
+export { CodeWell, codeWellVariants } from './CodeWell';
+export type { CodeWellProps, CodeWellVariantsType, CodeWellSurface } from './CodeWell';
+
+// IconTile — tinted container for a single icon. Org Mgmt's most duplicated
+// inline pattern.
+export { IconTile, iconTileVariants } from './IconTile';
+export type {
+  IconTileProps,
+  IconTileVariantsType,
+  IconTileTone,
+  IconTileSize,
+  IconTileShape,
+} from './IconTile';
+
+// Label — the uppercase micro-heading, settling three competing letter-spacings
+export { Label, labelVariants } from './Label';
+export type { LabelProps, LabelVariantsType, LabelSize } from './Label';
+
+// Progress — value fill with optional baseline and floor markers
+export { Progress, progressVariants } from './Progress';
+export type {
+  ProgressProps,
+  ProgressOwnProps,
+  ProgressVariantsType,
+  ProgressTone,
+  ProgressSize,
+} from './Progress';
+
+// SecretDots — a masked secret, at a fixed length so it leaks nothing
+export { SecretDots, BULLET_COUNT } from './SecretDots';
+export type { SecretDotsProps, SecretDotsSize } from './SecretDots';
+
 // Badge — one atom covering status pills, chips, counts, protocol pills and
 // bare icon+text labels, which the source systems built as five components
 export { Badge, badgeVariants } from './Badge';

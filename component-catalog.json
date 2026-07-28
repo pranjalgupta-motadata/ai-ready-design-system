@@ -1,8 +1,8 @@
 {
   "generatedFrom": "src/components (CVA definitions)",
-  "componentCount": 28,
-  "variantGroupCount": 98,
-  "variantValueCount": 344,
+  "componentCount": 32,
+  "variantGroupCount": 105,
+  "variantValueCount": 365,
   "components": [
     {
       "component": "Avatar",
@@ -184,6 +184,29 @@
           },
           "defaults": {
             "variant": "default"
+          }
+        }
+      ]
+    },
+    {
+      "component": "CodeWell",
+      "file": "src/components/CodeWell/CodeWell.tsx",
+      "definitions": [
+        {
+          "name": "codeWellVariants",
+          "variants": {
+            "surface": [
+              "light",
+              "dark"
+            ],
+            "padded": [
+              "true",
+              "false"
+            ]
+          },
+          "defaults": {
+            "surface": "light",
+            "padded": "true"
           }
         }
       ]
@@ -477,6 +500,40 @@
       ]
     },
     {
+      "component": "IconTile",
+      "file": "src/components/IconTile/IconTile.tsx",
+      "definitions": [
+        {
+          "name": "iconTileVariants",
+          "variants": {
+            "tone": [
+              "slate",
+              "blue",
+              "green",
+              "amber",
+              "rose",
+              "purple"
+            ],
+            "size": [
+              "sm",
+              "md",
+              "lg",
+              "xl"
+            ],
+            "shape": [
+              "square",
+              "circle"
+            ]
+          },
+          "defaults": {
+            "tone": "slate",
+            "size": "md",
+            "shape": "square"
+          }
+        }
+      ]
+    },
+    {
       "component": "Input",
       "file": "src/components/Input/Input.tsx",
       "definitions": [
@@ -532,6 +589,24 @@
       ]
     },
     {
+      "component": "Label",
+      "file": "src/components/Label/Label.tsx",
+      "definitions": [
+        {
+          "name": "labelVariants",
+          "variants": {
+            "size": [
+              "sm",
+              "md"
+            ]
+          },
+          "defaults": {
+            "size": "sm"
+          }
+        }
+      ]
+    },
+    {
       "component": "Pagination",
       "file": "src/components/Pagination/Pagination.tsx",
       "definitions": [
@@ -551,6 +626,25 @@
           },
           "defaults": {
             "variant": "default",
+            "size": "md"
+          }
+        }
+      ]
+    },
+    {
+      "component": "Progress",
+      "file": "src/components/Progress/Progress.tsx",
+      "definitions": [
+        {
+          "name": "progressVariants",
+          "variants": {
+            "size": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "defaults": {
             "size": "md"
           }
         }
