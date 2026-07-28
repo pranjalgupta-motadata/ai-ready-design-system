@@ -1,6 +1,6 @@
 import type { Preview, Decorator } from '@storybook/react-vite';
 import { withDeprecationWarning } from './decorators/withDeprecationWarning';
-import { darkTheme, lightTheme, prefersDark } from './themes';
+import { getInitialTheme, themeFor } from './themes';
 import '../src/styles/globals.css';
 // Covers the Docs chrome that `docs.theme` cannot reach when the Theme toolbar
 // is switched manually, away from the operating system preference.
@@ -24,9 +24,9 @@ const withTheme: Decorator = (Story, context) => {
   return Story();
 };
 
-// Start from the viewer's operating system setting so the interface, the Docs
-// pages and the component canvas all agree by default.
-const startsDark = prefersDark();
+// Start from the remembered choice, falling back to the operating system
+// setting, so the interface, the Docs pages and the canvas all agree on load.
+const startingTheme = getInitialTheme();
 
 const preview: Preview = {
   parameters: {
@@ -41,7 +41,7 @@ const preview: Preview = {
     // the theme handed to it. Without this the page renders on a hardcoded white
     // panel while the text follows the dark theme, which is unreadable.
     docs: {
-      theme: startsDark ? darkTheme : lightTheme,
+      theme: themeFor(startingTheme),
     },
     // No `backgrounds` parameter on purpose — the canvas is painted by the
     // design system's own `--mdt-background` token via the theme toggle above.
@@ -49,18 +49,13 @@ const preview: Preview = {
     layout: 'centered',
   },
   globalTypes: {
+    // Deliberately no `toolbar` here. Storybook's built-in toolbar control can
+    // only reach the preview iframe, which is what left the interface light
+    // while the components went dark. The single toggle in manager.tsx drives
+    // this global instead — one control for the whole of Storybook.
     theme: {
-      description: 'Switches components and canvas between light and dark',
-      defaultValue: startsDark ? 'dark' : 'light',
-      toolbar: {
-        title: 'Theme',
-        icon: 'circlehollow',
-        items: [
-          { value: 'light', title: 'Light', icon: 'sun' },
-          { value: 'dark', title: 'Dark', icon: 'moon' },
-        ],
-        dynamicTitle: true,
-      },
+      description: 'Light or dark, across the whole of Storybook',
+      defaultValue: startingTheme,
     },
   },
   decorators: [withDeprecationWarning, withTheme],

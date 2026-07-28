@@ -100,6 +100,11 @@ export const darkTheme = create({
   booleanSelectedBg: NEUTRAL_150,
 });
 
+export type ThemeName = 'light' | 'dark';
+
+/** Where the chosen theme is remembered between visits. */
+export const THEME_STORAGE_KEY = 'mdt-storybook-theme';
+
 /**
  * Follow the viewer's operating system setting, so someone browsing in dark
  * mode gets a dark Storybook without touching anything.
@@ -108,3 +113,23 @@ export const prefersDark = (): boolean =>
   typeof window !== 'undefined' &&
   typeof window.matchMedia === 'function' &&
   window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+/**
+ * The theme to start on: whatever was chosen last, otherwise the operating
+ * system preference.
+ *
+ * The manager and the preview run in separate frames but share an origin, so
+ * both read the same stored value and start in agreement.
+ */
+export const getInitialTheme = (): ThemeName => {
+  if (typeof window === 'undefined') return 'light';
+  try {
+    const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (saved === 'light' || saved === 'dark') return saved;
+  } catch {
+    // Storage can be unavailable (private mode, blocked cookies) - fall through.
+  }
+  return prefersDark() ? 'dark' : 'light';
+};
+
+export const themeFor = (name: ThemeName) => (name === 'dark' ? darkTheme : lightTheme);
