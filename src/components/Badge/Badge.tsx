@@ -37,29 +37,43 @@ export const badgeVariants = cva(
        * missing token pair this component needs; see MISSING-TOKENS.md.
        */
       tone: {
-        neutral: 'mdt-bg-muted mdt-text-neutral-110 dark:mdt-text-neutral-30',
-        success: 'mdt-bg-green-10 mdt-text-green-80 dark:mdt-bg-green-90 dark:mdt-text-green-30',
+        neutral:
+          'mdt-bg-muted mdt-text-neutral-110 mdt-border-border dark:mdt-text-neutral-30',
+        success:
+          'mdt-bg-green-10 mdt-text-green-80 mdt-border-green-20 dark:mdt-bg-green-90 dark:mdt-text-green-30 dark:mdt-border-green-70',
         warning:
-          'mdt-bg-orange-20 mdt-text-orange-80 dark:mdt-bg-orange-90 dark:mdt-text-orange-30',
-        danger: 'mdt-bg-red-10 mdt-text-red-80 dark:mdt-bg-red-90 dark:mdt-text-red-30',
-        info: 'mdt-bg-blue-10 mdt-text-blue-80 dark:mdt-bg-blue-90 dark:mdt-text-blue-30',
+          'mdt-bg-orange-20 mdt-text-orange-80 mdt-border-orange-30 dark:mdt-bg-orange-90 dark:mdt-text-orange-30 dark:mdt-border-orange-70',
+        danger:
+          'mdt-bg-red-10 mdt-text-red-80 mdt-border-red-20 dark:mdt-bg-red-90 dark:mdt-text-red-30 dark:mdt-border-red-70',
+        info: 'mdt-bg-blue-10 mdt-text-blue-80 mdt-border-blue-20 dark:mdt-bg-blue-90 dark:mdt-text-blue-30 dark:mdt-border-blue-70',
         purple:
-          'mdt-bg-purple-10 mdt-text-purple-90 dark:mdt-bg-purple-100 dark:mdt-text-purple-30',
+          'mdt-bg-purple-10 mdt-text-purple-90 mdt-border-purple-20 dark:mdt-bg-purple-100 dark:mdt-text-purple-30 dark:mdt-border-purple-80',
       },
       shape: {
         pill: 'mdt-rounded-full',
-        tag: 'mdt-rounded-sm',
+        // A tag sits inline with running text and needs an edge to define it.
+        // A capsule already reads as an object, so it does not. Credential's
+        // badges follow this instinct but apply it inconsistently; here it is
+        // consistent.
+        tag: 'mdt-rounded-sm mdt-border',
         // `dark:mdt-bg-transparent` is not redundant. The tones set their dark
         // background with a `dark:` utility, and the class merger treats
         // `dark:bg-*` and `bg-*` as separate groups - so a plain
         // `mdt-bg-transparent` clears the light tint but leaves the dark one,
         // and a "bare" badge still renders a filled pill in dark mode.
-        bare: 'mdt-rounded-none mdt-bg-transparent dark:mdt-bg-transparent mdt-px-0',
+        // No chip at all: no background, no border, no minimum width, and no
+        // padding - so it sits flush in a dense table cell.
+        bare: 'mdt-rounded-none mdt-bg-transparent dark:mdt-bg-transparent mdt-px-0 mdt-min-w-0 mdt-border-0',
       },
+      /**
+       * `min-w` matching the height is what makes count badges work without a
+       * separate component: "Active" is wider than the minimum so nothing
+       * changes, while "3" or "+2" is narrower and rounds out into a circle.
+       */
       size: {
-        sm: 'mdt-h-5 mdt-px-2 mdt-text-xs mdt-gap-1',
-        md: 'mdt-h-6 mdt-px-2.5 mdt-text-xs mdt-gap-1.5',
-        lg: 'mdt-h-7 mdt-px-3 mdt-text-sm mdt-gap-1.5',
+        sm: 'mdt-h-5 mdt-min-w-5 mdt-px-2 mdt-text-xs mdt-gap-1',
+        md: 'mdt-h-6 mdt-min-w-6 mdt-px-2.5 mdt-text-xs mdt-gap-1.5',
+        lg: 'mdt-h-7 mdt-min-w-7 mdt-px-3 mdt-text-sm mdt-gap-1.5',
       },
     },
     compoundVariants: [

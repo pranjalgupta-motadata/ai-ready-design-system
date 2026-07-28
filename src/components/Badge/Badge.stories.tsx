@@ -170,6 +170,55 @@ export const WithDot: Story = {
   ),
 };
 
+/**
+ * A count badge is not a separate component. Each size sets a minimum width
+ * equal to its height, so a short number stays compact and round-ended rather
+ * than collapsing into a sliver, while a word-length label is unaffected.
+ */
+export const Counts: Story = {
+  parameters: { controls: { disable: true }, layout: 'padded' },
+  render: () => (
+    <Group>
+      <div>
+        <Label>Counts — a short number stays compact</Label>
+        <Row>
+          <Badge tone="info">3</Badge>
+          <Badge tone="info">12</Badge>
+          <Badge tone="info">148</Badge>
+          <Badge tone="danger">9</Badge>
+          <Badge tone="neutral">+2</Badge>
+        </Row>
+      </div>
+      <div>
+        <Label>At every size</Label>
+        <Row>
+          <Badge size="sm" tone="danger">
+            3
+          </Badge>
+          <Badge size="md" tone="danger">
+            3
+          </Badge>
+          <Badge size="lg" tone="danger">
+            3
+          </Badge>
+        </Row>
+      </div>
+      <div>
+        <Label>Overflow chip, next to what it counts</Label>
+        <Row>
+          <Badge shape="tag" tone="neutral">
+            production
+          </Badge>
+          <Badge shape="tag" tone="neutral">
+            eu-west
+          </Badge>
+          <Badge tone="neutral">+4</Badge>
+        </Row>
+      </div>
+    </Group>
+  ),
+};
+
 export const WithIcon: Story = {
   name: 'With an icon',
   parameters: { controls: { disable: true }, layout: 'padded' },

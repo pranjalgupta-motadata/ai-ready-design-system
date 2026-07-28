@@ -85,6 +85,22 @@ describe('Badge', () => {
       expect(getBadge()).toHaveClass('mdt-h-auto');
     });
 
+    it('gives the tag shape a border, since it sits inline with text', () => {
+      render(<Badge shape="tag">{TEXT}</Badge>);
+      expect(getBadge()).toHaveClass('mdt-border');
+    });
+
+    it('gives a pill no border, since its shape already defines it', () => {
+      render(<Badge shape="pill">{TEXT}</Badge>);
+      expect(getBadge().className).not.toMatch(/(^|\s)mdt-border(\s|$)/);
+    });
+
+    it('clears the border and minimum width when bare', () => {
+      render(<Badge shape="bare">{TEXT}</Badge>);
+      expect(getBadge()).toHaveClass('mdt-border-0');
+      expect(getBadge()).toHaveClass('mdt-min-w-0');
+    });
+
     it('clears the dark background too, not just the light one', () => {
       // The tones set their dark background with a `dark:` utility, which the
       // class merger will not let a plain `mdt-bg-transparent` override. Without
@@ -109,6 +125,18 @@ describe('Badge', () => {
       render(<Badge size={size}>{TEXT}</Badge>);
       expect(getBadge()).toHaveClass(expected);
     });
+
+    it.each([
+      ['sm', 'mdt-min-w-5'],
+      ['md', 'mdt-min-w-6'],
+      ['lg', 'mdt-min-w-7'],
+    ] as [BadgeSize, string][])(
+      'sets a minimum width at %s, so a count rounds into a circle',
+      (size, expected) => {
+        render(<Badge size={size}>3</Badge>);
+        expect(screen.getByText('3')).toHaveClass(expected);
+      }
+    );
 
     it('is medium by default', () => {
       render(<Badge>{TEXT}</Badge>);
