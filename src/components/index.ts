@@ -6,6 +6,18 @@ export type { ButtonProps, ButtonVariantsType } from './Button';
 export { ButtonGroup, buttonGroupVariants } from './ButtonGroup';
 export type { ButtonGroupProps, ButtonGroupVariants } from './ButtonGroup';
 
+// Badge — one atom covering status pills, chips, counts, protocol pills and
+// bare icon+text labels, which the source systems built as five components
+export { Badge, badgeVariants } from './Badge';
+export type {
+  BadgeProps,
+  BadgeOwnProps,
+  BadgeVariantsType,
+  BadgeTone,
+  BadgeShape,
+  BadgeSize,
+} from './Badge';
+
 // Button2 — reworked Button, in trial alongside Button
 export { Button2, Button2Variants } from './Button2';
 export type {
