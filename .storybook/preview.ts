@@ -1,12 +1,10 @@
 import type { Preview, Decorator } from '@storybook/react-vite';
 import { withDeprecationWarning } from './decorators/withDeprecationWarning';
+import { darkTheme, lightTheme, prefersDark } from './themes';
 import '../src/styles/globals.css';
-
-// Inter font for Storybook preview
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
-import '@fontsource/inter/600.css';
-import '@fontsource/inter/700.css';
+// Covers the Docs chrome that `docs.theme` cannot reach when the Theme toolbar
+// is switched manually, away from the operating system preference.
+import './docs-theme.css';
 
 /**
  * Applies the design system's own theming to the preview canvas.
@@ -26,6 +24,10 @@ const withTheme: Decorator = (Story, context) => {
   return Story();
 };
 
+// Start from the viewer's operating system setting so the interface, the Docs
+// pages and the component canvas all agree by default.
+const startsDark = prefersDark();
+
 const preview: Preview = {
   parameters: {
     controls: {
@@ -35,6 +37,12 @@ const preview: Preview = {
       },
       expanded: true,
     },
+    // Docs pages are chrome, not components — Storybook paints them, so it needs
+    // the theme handed to it. Without this the page renders on a hardcoded white
+    // panel while the text follows the dark theme, which is unreadable.
+    docs: {
+      theme: startsDark ? darkTheme : lightTheme,
+    },
     // No `backgrounds` parameter on purpose — the canvas is painted by the
     // design system's own `--mdt-background` token via the theme toggle above.
     // Re-adding it would hardcode colours that live in globals.css.
@@ -43,7 +51,7 @@ const preview: Preview = {
   globalTypes: {
     theme: {
       description: 'Switches components and canvas between light and dark',
-      defaultValue: 'light',
+      defaultValue: startsDark ? 'dark' : 'light',
       toolbar: {
         title: 'Theme',
         icon: 'circlehollow',
