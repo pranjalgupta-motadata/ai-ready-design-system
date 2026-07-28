@@ -1,0 +1,700 @@
+# CLAUDE.md - AI Assistant Instructions
+
+This file provides context and guidelines for AI assistants working on the Motadata React Library codebase.
+
+## Project Overview
+
+Production-ready React component library for building SaaS platforms. Provides accessible, customizable UI components built with modern React patterns.
+
+---
+
+## Tech Stack
+
+- **React 18+** with TypeScript strict mode
+- **Tailwind CSS** with `mdt-` prefix for all classes
+- **Radix UI** for accessible primitives
+- **CVA** (Class Variance Authority) for variant management
+- **Vite** for building
+- **Vitest + React Testing Library** for testing
+- **Storybook** for documentation
+- **SonarCloud** for quality gate (Azure DevOps CI/CD pipeline)
+- **ESLint** with `eslint-plugin-sonarjs` for local quality checks
+
+---
+
+## 🚨 MANDATORY: SonarQube Production Quality Gate
+
+Every push to `main` runs a SonarCloud quality gate via Azure DevOps. **You cannot modify the pipeline.** All code MUST pass the gate before committing.
+
+### Quality Gate — Build FAILS If Any Condition Is Violated
+
+```
+QUALITY GATE: Production Gate
+
+FAIL IF:
+├── Reliability
+│   ├── New Bugs > 0
+│   └── Reliability Rating < A
+├── Security
+│   ├── New Vulnerabilities > 0
+│   ├── Unreviewed Security Hotspots > 0
+│   └── Security Rating < A
+├── Maintainability
+│   ├── New Critical Code Smells > 0
+│   ├── New Major Code Smells > 0
+│   └── Maintainability Rating < B
+├── Coverage
+│   ├── Overall Code Coverage < 85%
+│   └── Coverage on New Code < 85%
+└── Duplication
+    └── Duplications on New Code > 3%
+```
+
+### What This Means for Every Code Change
+
+- **Every new/modified line** must be covered by tests (SonarCloud checks NEW code)
+- **Zero new bugs** — no unreachable code, dead branches, self-assignments, nil risks
+- **Zero new vulnerabilities** — no injection risks, no hardcoded credentials/IPs
+- **Zero critical/major code smells** — no `any`, no unused vars, no high complexity
+- **Duplication ≤ 3%** — no copy-pasted code blocks
+
+---
+
+## SonarQube Enforced Rules (React.js)
+
+### Reliability (Bugs) — Zero Tolerance
+
+- No unreachable or dead code
+- No identical logic in conditional branches
+- No duplicate conditions in `if / else if`
+- No self-assigned variables
+- No useless `if(true)` / `if(false)` blocks
+- No infinite loops
+
+### Security — Zero Tolerance
+
+- No hardcoded credentials or secrets
+- No hardcoded IP addresses
+- No SQL/command/path injection patterns
+- Weak cryptographic algorithms flagged
+- Insecure random number generation flagged
+
+### Maintainability & Complexity
+
+- Cognitive complexity per function: **≤ 15** (recommended)
+- No deeply nested `if`, `for`, `switch` statements
+- No overly complex expressions
+
+### Function Constraints
+
+| Constraint                 | Threshold   | Enforcement |
+| -------------------------- | ----------- | ----------- |
+| Empty functions            | Not allowed | Blocker     |
+| Identical implementations  | Not allowed | Blocker     |
+| Maximum parameters         | 5           | Blocker     |
+| Maximum lines per function | 80          | Blocker     |
+
+### File Constraints
+
+| Constraint             | Threshold | Enforcement |
+| ---------------------- | --------- | ----------- |
+| Maximum lines per file | 1000      | Blocker     |
+| Maximum line length    | 150 chars | Warning     |
+
+### Coding Standards
+
+- No `any` types — use proper types or generics
+- No unused variables or imports (prefix unused with `_`)
+- Use `type` imports for type-only imports
+- No redundant boolean checks (`if (flag === true)` → `if (flag)`)
+- No empty nested blocks
+- No magic numbers — use named constants
+- No `console.log` — only `console.warn` / `console.error` allowed
+- No duplicated string literals (< 3 occurrences)
+- No duplicated code blocks (< 10 lines)
+- `TODO` / `FIXME` must have linked issue reference
+- Exported functions should have JSDoc documentation
+
+### Prohibited Patterns
+
+```tsx
+// ❌ BLOCKED by SonarQube
+const handler = (value: any) => {}; // any type
+console.log('debug'); // console.log
+const x = 3.14159; // magic number
+if (flag === true) {
+} // redundant boolean
+const unused = 'hello'; // unused variable
+function empty() {} // empty function
+const API_KEY = 'sk-abc123'; // hardcoded secret
+
+// ✅ CORRECT
+const handler = (value: string | number) => {}; // proper type
+console.warn('Deprecation notice'); // warn/error OK
+const PI = 3.14159 as const; // named constant
+if (flag) {
+} // clean boolean
+const _unused = 'hello'; // prefixed unused
+const API_KEY = process.env.VITE_API_KEY; // env variable
+```
+
+---
+
+## Key Conventions
+
+### 1. CSS Classes
+
+All Tailwind classes use `mdt-` prefix:
+
+```tsx
+// ✅ Correct
+className = 'mdt-flex mdt-items-center mdt-bg-primary';
+
+// ❌ Wrong
+className = 'flex items-center bg-primary';
+```
+
+### 2. Semantic Colors
+
+Always use semantic color names, never hardcoded:
+
+```tsx
+// ✅ Correct
+'mdt-bg-primary mdt-text-primary-foreground';
+'mdt-bg-secondary mdt-text-secondary-foreground';
+
+// ❌ Wrong
+'mdt-bg-blue-500 mdt-text-white';
+```
+
+Available: `primary`, `secondary`, `accent`, `destructive`, `muted`, `background`, `foreground`, `border`, `input`, `ring`
+
+### 3. Component Naming
+
+Simple names without prefix:
+
+```typescript
+// Component: Button (not MotadataButton)
+// Variants: ButtonVariants
+// Props: ButtonProps
+// Types: ButtonVariantsType
+```
+
+---
+
+## Component Structure
+
+```
+src/components/Button/
+├── Button.tsx           # Main component
+├── Button.types.ts      # TypeScript types
+├── Button.test.tsx      # Unit tests (MANDATORY)
+├── Button.stories.tsx   # Storybook stories
+└── index.ts             # Exports
+```
+
+---
+
+## Component Template
+
+### Button.tsx
+
+````tsx
+import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
+import { cn } from '@/utils';
+import type { ButtonProps } from './Button.types';
+
+/**
+ * Button component for user interactions.
+ *
+ * @example
+ * ```tsx
+ * <Button variant="primary" size="md">Click me</Button>
+ * ```
+ */
+export const ButtonVariants = cva(
+  [
+    'mdt-inline-flex mdt-items-center mdt-justify-center',
+    'mdt-rounded-md mdt-font-medium mdt-transition-colors',
+    'focus-visible:mdt-outline-none focus-visible:mdt-ring-2',
+    'disabled:mdt-pointer-events-none disabled:mdt-opacity-50',
+  ],
+  {
+    variants: {
+      variant: {
+        primary: 'mdt-bg-primary mdt-text-primary-foreground hover:mdt-bg-primary/90',
+        secondary: 'mdt-bg-secondary mdt-text-secondary-foreground hover:mdt-bg-secondary/80',
+      },
+      size: {
+        sm: 'mdt-h-8 mdt-px-3 mdt-text-sm',
+        md: 'mdt-h-9 mdt-px-4 mdt-text-base',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
+    },
+  }
+);
+
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, children, ...props }, ref) => (
+    <button ref={ref} className={cn(ButtonVariants({ variant, size }), className)} {...props}>
+      {children}
+    </button>
+  )
+);
+
+Button.displayName = 'Button';
+
+export { Button };
+````
+
+### Button.types.ts
+
+```tsx
+import type { VariantProps } from 'class-variance-authority';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ButtonVariants } from './Button';
+
+export type ButtonVariantsType = VariantProps<typeof ButtonVariants>;
+
+export interface ButtonProps extends ComponentPropsWithoutRef<'button'>, ButtonVariantsType {
+  children: ReactNode;
+}
+```
+
+### index.ts
+
+```tsx
+export { Button, ButtonVariants } from './Button';
+export type { ButtonProps, ButtonVariantsType } from './Button.types';
+```
+
+---
+
+## 🧪 Testing Guidelines — SonarQube Enforced
+
+### Coverage Thresholds (MANDATORY)
+
+| Metric     | Minimum | Current Baseline |
+| ---------- | ------- | ---------------- |
+| Statements | ≥ 85%   | 97.69%           |
+| Branches   | ≥ 85%   | 95.43%           |
+| Functions  | ≥ 85%   | 97.15%           |
+| Lines      | ≥ 85%   | 98.20%           |
+
+**SonarCloud checks coverage on NEW code.** Every line you add or modify MUST be tested.
+**Overall coverage must NEVER decrease** below the current baseline.
+
+### Test Structure
+
+```tsx
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Button } from './Button';
+
+describe('Button', () => {
+  describe('rendering', () => {
+    it('renders with default props', () => {
+      render(<Button>Click me</Button>);
+      expect(screen.getByRole('button')).toBeInTheDocument();
+    });
+
+    it('renders with custom className', () => {
+      render(<Button className="custom">Click me</Button>);
+      expect(screen.getByRole('button')).toHaveClass('custom');
+    });
+  });
+
+  describe('variants', () => {
+    it('applies primary variant', () => {
+      render(<Button variant="primary">Test</Button>);
+      expect(screen.getByRole('button')).toHaveClass('mdt-bg-primary');
+    });
+
+    it('applies secondary variant', () => {
+      render(<Button variant="secondary">Test</Button>);
+      expect(screen.getByRole('button')).toHaveClass('mdt-bg-secondary');
+    });
+  });
+
+  describe('interactions', () => {
+    it('calls onClick when clicked', async () => {
+      const onClick = vi.fn();
+      render(<Button onClick={onClick}>Click me</Button>);
+      await userEvent.click(screen.getByRole('button'));
+      expect(onClick).toHaveBeenCalledTimes(1);
+    });
+
+    it('does not respond when disabled', () => {
+      render(<Button disabled>Click me</Button>);
+      expect(screen.getByRole('button')).toBeDisabled();
+    });
+  });
+
+  describe('accessibility', () => {
+    it('forwards ref correctly', () => {
+      const ref = { current: null as HTMLButtonElement | null };
+      render(<Button ref={ref}>Button</Button>);
+      expect(ref.current).toBeInstanceOf(HTMLButtonElement);
+    });
+
+    it('supports keyboard activation', async () => {
+      const onClick = vi.fn();
+      render(<Button onClick={onClick}>Test</Button>);
+      screen.getByRole('button').focus();
+      await userEvent.keyboard('{Enter}');
+      expect(onClick).toHaveBeenCalled();
+    });
+  });
+});
+```
+
+### What MUST Be Tested (Every Component)
+
+1. **Default rendering** — renders without crashing with required props only
+2. **All prop variants** — every value that changes UI or classes
+3. **All conditional branches** — every `if/else`, ternary, `&&`, `switch`
+4. **User interactions** — click, hover, focus, keyboard, typing
+5. **Callback props** — verify called with correct arguments
+6. **Edge cases** — empty arrays, null/undefined optionals, boundary values
+7. **Accessibility** — ARIA attributes, keyboard nav, focus management
+8. **Error/disabled/loading states** — each state path exercised
+
+### Important Testing Rules
+
+1. **Radix UI Components** (Tooltip, Popover, etc.):
+   - May render content multiple times (visible + screen reader)
+   - Use `queryAllByText()` and check `length > 0` instead of `getByText()`
+   - Use unique text strings per test to avoid conflicts
+
+2. **Portal Components** (Toast, Dialog):
+   - May render outside test container
+   - Use flexible selectors or check `container.firstChild`
+
+3. **SVG Attributes**: Use kebab-case: `stroke-width`, not `strokeWidth`
+
+4. **Compiled Classes**: Don't test specific Tailwind classes (they may be compiled). Test functionality and rendering instead.
+
+5. **Use `userEvent`** over `fireEvent` for realistic interactions
+
+---
+
+## 📋 Known Coverage Gaps — Fix When Touching These Files
+
+When modifying any of these components, cover the missing lines as part of your change:
+
+| Component      | Uncovered Lines                     | Issue                    | Priority |
+| -------------- | ----------------------------------- | ------------------------ | -------- |
+| Select.tsx     | 184-186, 458-459, 508, 800, 969-973 | 88.55% branch coverage   | HIGH     |
+| Icon.tsx       | 191, 196-197, 231, 468              | 92.53% branch coverage   | HIGH     |
+| HoverCard.tsx  | 94                                  | 50% function coverage    | HIGH     |
+| OTPInput.tsx   | 69-76, 103, 157, 187                | 93.15% branch coverage   | MEDIUM   |
+| Button.tsx     | 202, 342                            | 98.21% branch coverage   | LOW      |
+| Combobox.tsx   | 177, 334                            | 92.3% function coverage  | LOW      |
+| Command.tsx    | 65                                  | 88.88% function coverage | LOW      |
+| ScrollArea.tsx | 100                                 | 75% function coverage    | LOW      |
+| Separator.tsx  | 286                                 | 96.87% branch coverage   | LOW      |
+
+**Rule:** If you modify a HIGH priority component, fix the uncovered lines even if not explicitly asked.
+
+---
+
+## Accessibility Requirements
+
+All components must be accessible:
+
+```tsx
+// ✅ Interactive elements need labels
+<Button>Click me</Button>
+<Button aria-label="Close"><XIcon aria-hidden /></Button>
+
+// ✅ Form controls need labels
+<Input label="Email" type="email" />
+<Input type="search" aria-label="Search" />
+
+// ✅ Decorative icons hidden
+<svg aria-hidden="true">...</svg>
+
+// ❌ Never do this
+<Button><XIcon /></Button>  // No accessible name
+<Input placeholder="Email" />  // No label
+```
+
+---
+
+## Storybook Stories
+
+```tsx
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Button } from './Button';
+
+const meta: Meta<typeof Button> = {
+  title: 'Components/Button',
+  component: Button,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    children: 'Click me',
+  },
+};
+
+export const Variants: Story = {
+  render: () => (
+    <div className="mdt-flex mdt-gap-4">
+      <Button variant="primary">Primary</Button>
+      <Button variant="secondary">Secondary</Button>
+    </div>
+  ),
+};
+```
+
+---
+
+## 🔄 MANDATORY Validation — Run Before EVERY Task Completion
+
+After writing or modifying ANY code, run these checks in order. **Do NOT mark a task complete until all pass.**
+
+### Step 1: Component-Level Coverage
+
+```bash
+npx vitest run src/components/<ComponentName> --coverage
+```
+
+Verify changed files: ≥ 85% statements, ≥ 85% branches, ≥ 85% functions, ≥ 85% lines.
+If below, write additional tests before proceeding.
+
+### Step 2: ESLint with Zero Warnings
+
+```bash
+npx eslint src/components/<ComponentName> --ext .ts,.tsx --max-warnings 0
+```
+
+Fix ALL errors and warnings. Do not suppress rules without explicit justification.
+
+### Step 3: Full Test Suite
+
+```bash
+npm run test:coverage
+```
+
+ALL tests must pass. Overall coverage must NOT decrease below baseline.
+
+### Step 4: Self-Review Checklist
+
+- [ ] No `any` types in new/modified code
+- [ ] No unused imports or variables
+- [ ] No `console.log` statements
+- [ ] No magic numbers (use named constants)
+- [ ] No hardcoded credentials, secrets, or IP addresses
+- [ ] No empty functions or redundant boolean checks
+- [ ] No duplicated code blocks (> 10 lines)
+- [ ] All functions: cognitive complexity ≤ 15, ≤ 80 lines, ≤ 5 parameters
+- [ ] All files: ≤ 1000 lines
+- [ ] `type` imports for type-only imports
+- [ ] Test file covers ALL branches of changed code
+- [ ] Coverage on changed files ≥ 85%
+- [ ] ESLint passes with 0 warnings
+- [ ] Full test suite passes, no coverage regression
+- [ ] All CSS classes use `mdt-` prefix
+- [ ] Semantic colors only (no hardcoded)
+- [ ] JSDoc on exported functions
+- [ ] Accessibility: ARIA labels, keyboard nav, semantic HTML
+- [ ] Storybook stories created/updated (if UI changed)
+
+---
+
+## Common Pitfalls
+
+### 1. Type Circular References
+
+```tsx
+// ❌ Wrong
+import type { ButtonVariants } from './Button';
+export type ButtonVariants = VariantProps<typeof ButtonVariants>;
+
+// ✅ Correct
+import type { ButtonVariants as ButtonVariantsCVA } from './Button';
+export type ButtonVariantsType = VariantProps<typeof ButtonVariantsCVA>;
+```
+
+### 2. Missing forwardRef
+
+```tsx
+// ❌ Wrong
+const Button = ({ children }: Props) => <button>{children}</button>;
+
+// ✅ Correct
+const Button = forwardRef<HTMLButtonElement, Props>(({ children }, ref) => (
+  <button ref={ref}>{children}</button>
+));
+Button.displayName = 'Button';
+```
+
+### 3. Testing Portal Components
+
+```tsx
+// ❌ Wrong - Toast renders in portal
+expect(container.querySelector('.mdt-toaster')).toBeInTheDocument();
+
+// ✅ Correct
+const toaster = container.querySelector('ol') || document.querySelector('ol');
+expect(toaster || container.firstChild).toBeTruthy();
+```
+
+### 4. Testing Radix UI Multiple Renders
+
+```tsx
+// ❌ Wrong - Tooltip renders twice
+expect(screen.getByText('Tooltip content')).toBeInTheDocument();
+
+// ✅ Correct
+expect(screen.queryAllByText('Tooltip content').length).toBeGreaterThan(0);
+```
+
+### 5. Skipping Tests / Leaving `any` for Later
+
+```tsx
+// ❌ Wrong — SonarQube won't wait
+const handler = (e: any) => {}; // "I'll fix types later"
+it.skip('todo test', () => {}); // .skip in committed code
+
+// ✅ Correct — Fix now
+const handler = (e: React.ChangeEvent<HTMLInputElement>) => {};
+```
+
+### 6. High Complexity Functions
+
+```tsx
+// ❌ Wrong — Cognitive complexity > 15, deeply nested
+const getStyle = (variant, size, disabled, loading) => {
+  if (variant === 'primary') {
+    if (size === 'sm') {
+      if (disabled) {
+        if (loading) {
+          return '...';
+        }
+      }
+    }
+  }
+};
+
+// ✅ Correct — Flat lookup, low complexity
+const STYLE_MAP = {
+  'primary-sm': 'mdt-px-2 mdt-py-1 mdt-bg-primary',
+  'primary-md': 'mdt-px-4 mdt-py-2 mdt-bg-primary',
+} as const;
+
+const getStyle = (variant: Variant, size: Size) =>
+  STYLE_MAP[`${variant}-${size}`] ?? STYLE_MAP['primary-md'];
+```
+
+---
+
+## Common Commands
+
+```bash
+npm run dev              # Vite dev server
+npm run build            # Build library
+npm run test             # Run tests
+npm run test:coverage    # Run with coverage
+npm run lint             # Lint code
+npm run storybook        # Start Storybook
+
+# Quality validation (run before every commit)
+npx eslint src --ext .ts,.tsx --max-warnings 0
+npx vitest run src/components/<Name> --coverage
+```
+
+---
+
+## Workflow
+
+### New Component
+
+1. Create file structure (component, types, test, stories, index)
+2. Use `forwardRef` for ref forwarding
+3. Use CVA for variants with semantic colors
+4. Add comprehensive tests (85%+ coverage, all branches)
+5. Create Storybook stories
+6. Add accessibility (ARIA labels, semantic HTML, keyboard support)
+7. Export from `src/components/index.ts`
+8. Use `mdt-` prefix for all CSS classes
+9. **Run `npx eslint ... --max-warnings 0`** on new files
+10. **Run `npm run test:coverage`** — verify no regression
+
+### Modifying Existing Component
+
+1. Check coverage gaps table — fix uncovered lines if listed
+2. Maintain backward compatibility
+3. Update tests to cover ALL changed/added lines
+4. Update Storybook stories if UI changes
+5. **Run component-level coverage** — verify ≥ 85%
+6. **Run ESLint with `--max-warnings 0`**
+7. **Run full test suite** — verify no regression
+8. Create a changeset if publishable
+9. Let user handle git commits
+
+---
+
+## Git Workflow
+
+**Let user handle all git operations.**
+
+Don't run: `git add`, `git commit`, `git push`
+
+Your role: Implement solutions, run tests/builds/lint, create code changes.
+
+---
+
+## Quality Standards
+
+- ✅ **Accessibility:** WCAG 2.1 AA
+- ✅ **TypeScript:** Strict mode, zero `any`, zero unused
+- ✅ **Testing:** ≥ 85% coverage (verified by running tests)
+- ✅ **Linting:** ESLint + sonarjs passes with 0 warnings
+- ✅ **Styling:** `mdt-` prefix, semantic colors
+- ✅ **Documentation:** JSDoc + Storybook stories
+- ✅ **Functions:** ≤ 15 complexity, ≤ 80 lines, ≤ 5 params
+- ✅ **Files:** ≤ 1000 lines
+- ✅ **SonarQube:** Production quality gate passing
+
+---
+
+## Important Files
+
+| File                       | Purpose            |
+| -------------------------- | ------------------ |
+| `src/components/index.ts`  | Component exports  |
+| `src/utils/cn.ts`          | Class name utility |
+| `tailwind.config.ts`       | Tailwind config    |
+| `vitest.config.ts`         | Test config        |
+| `eslint.config.js`         | ESLint + sonarjs   |
+| `sonar-project.properties` | SonarQube config   |
+
+---
+
+## Remember
+
+**The goal is to require minimal user input while delivering maximum quality.**
+
+When a user says "Create a [Component]", you should deliver:
+
+- A fully functional, accessible component
+- Comprehensive Storybook documentation
+- Complete test coverage **(verified by running `npm run test:coverage`)**
+- Type-safe TypeScript **(zero `any`, zero lint warnings)**
+- SonarQube production quality gate compliance **(validated before task completion)**
+- Following all conventions automatically
+
+**Don't ask for details that should be standard!**

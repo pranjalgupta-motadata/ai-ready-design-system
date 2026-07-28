@@ -1,0 +1,19 @@
+export const TagsIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path
+      d="M6 9.01V9M15 5L21.3 11.3C21.5237 11.523 21.7013 11.7879 21.8224 12.0796C21.9435 12.3714 22.0059 12.6841 22.0059 13C22.0059 13.3159 21.9435 13.6286 21.8224 13.9204C21.7013 14.2121 21.5237 14.477 21.3 14.7L17 19M9 5H2V12L8.29 18.29C9.23 19.23 10.77 19.23 11.71 18.29L15.29 14.71C16.23 13.77 16.23 12.23 15.29 11.29L9 5Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
