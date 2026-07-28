@@ -6,6 +6,19 @@ export type { ButtonProps, ButtonVariantsType } from './Button';
 export { ButtonGroup, buttonGroupVariants } from './ButtonGroup';
 export type { ButtonGroupProps, ButtonGroupVariants } from './ButtonGroup';
 
+// Avatar — circle or rounded square, photo or initials. The colour is derived
+// from the name, so one person is always one colour.
+export { Avatar, AvatarStack, avatarVariants, toneForName, initialsForName } from './Avatar';
+export type {
+  AvatarProps,
+  AvatarOwnProps,
+  AvatarStackProps,
+  AvatarVariantsType,
+  AvatarTone,
+  AvatarSize,
+  AvatarShape,
+} from './Avatar';
+
 // Badge — one atom covering status pills, chips, counts, protocol pills and
 // bare icon+text labels, which the source systems built as five components
 export { Badge, badgeVariants } from './Badge';

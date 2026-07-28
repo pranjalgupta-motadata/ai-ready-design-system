@@ -1,9 +1,49 @@
 {
   "generatedFrom": "src/components (CVA definitions)",
-  "componentCount": 27,
-  "variantGroupCount": 94,
-  "variantValueCount": 329,
+  "componentCount": 28,
+  "variantGroupCount": 98,
+  "variantValueCount": 344,
   "components": [
+    {
+      "component": "Avatar",
+      "file": "src/components/Avatar/Avatar.tsx",
+      "definitions": [
+        {
+          "name": "avatarVariants",
+          "variants": {
+            "tone": [
+              "slate",
+              "blue",
+              "green",
+              "amber",
+              "rose",
+              "purple"
+            ],
+            "size": [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl"
+            ],
+            "shape": [
+              "circle",
+              "rounded"
+            ],
+            "ring": [
+              "true",
+              "false"
+            ]
+          },
+          "defaults": {
+            "tone": "slate",
+            "size": "md",
+            "shape": "circle",
+            "ring": "false"
+          }
+        }
+      ]
+    },
     {
       "component": "Badge",
       "file": "src/components/Badge/Badge.tsx",
