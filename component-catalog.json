@@ -1,9 +1,43 @@
 {
   "generatedFrom": "src/components (CVA definitions)",
   "componentCount": 27,
-  "variantGroupCount": 96,
-  "variantValueCount": 340,
+  "variantGroupCount": 94,
+  "variantValueCount": 329,
   "components": [
+    {
+      "component": "Badge",
+      "file": "src/components/Badge/Badge.tsx",
+      "definitions": [
+        {
+          "name": "badgeVariants",
+          "variants": {
+            "tone": [
+              "neutral",
+              "success",
+              "warning",
+              "danger",
+              "info",
+              "purple"
+            ],
+            "shape": [
+              "pill",
+              "tag",
+              "bare"
+            ],
+            "size": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "defaults": {
+            "tone": "neutral",
+            "shape": "pill",
+            "size": "md"
+          }
+        }
+      ]
+    },
     {
       "component": "Button",
       "file": "src/components/Button/Button.tsx",
@@ -55,57 +89,6 @@
             "shape": "rounded",
             "elevation": "0",
             "active": "false"
-          }
-        }
-      ]
-    },
-    {
-      "component": "Button2",
-      "file": "src/components/Button2/Button2.tsx",
-      "definitions": [
-        {
-          "name": "Button2Variants",
-          "variants": {
-            "variant": [
-              "primary",
-              "secondary",
-              "outline",
-              "ghost",
-              "link",
-              "destructive",
-              "success"
-            ],
-            "size": [
-              "xs",
-              "sm",
-              "md",
-              "lg",
-              "xl"
-            ],
-            "radius": [
-              "none",
-              "sm",
-              "md",
-              "lg",
-              "full"
-            ],
-            "elevation": [
-              "0",
-              "1",
-              "2",
-              "3"
-            ],
-            "iconOnly": [
-              "true",
-              "false"
-            ]
-          },
-          "defaults": {
-            "variant": "primary",
-            "size": "md",
-            "radius": "md",
-            "elevation": "0",
-            "iconOnly": "false"
           }
         }
       ]

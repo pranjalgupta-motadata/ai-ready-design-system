@@ -36,160 +36,24 @@ Scanned **132** shipped component files.
 
 | Category | Uses | Components | Distinct values in use |
 | --- | --- | --- | --- |
-| Spacing | 327 | 33 | `mdt-gap-0` `mdt-gap-0.5` `mdt-gap-1` `mdt-gap-1.5` `mdt-gap-12` `mdt-gap-16` `mdt-gap-2` `mdt-gap-2.5` `mdt-gap-3` `mdt-gap-4` `mdt-gap-6` `mdt-gap-8` `mdt-mb-1` `mdt-mb-2` `mdt-mb-4` `mdt-mb-6` `mdt-ml-0.5` `mdt-ml-1` `mdt-ml-2` `mdt-mr-0.5` `mdt-mr-2` `mdt-mt-0.5` `mdt-mt-1` `mdt-mt-2` `mdt-mt-4` `mdt-mx-2` `mdt-mx-4` `mdt-mx-6` `mdt-mx-8` `mdt-my-0.5` `mdt-my-1` `mdt-my-2` `mdt-my-4` `mdt-my-6` `mdt-my-8` `mdt-p-0` `mdt-p-0.5` `mdt-p-1` `mdt-p-2` `mdt-p-3` `mdt-p-4` `mdt-p-6` `mdt-pb-0` `mdt-pb-1` `mdt-pb-3` `mdt-pl-0` `mdt-pl-10` `mdt-pl-2` `mdt-pl-2.5` `mdt-pl-6` `mdt-pl-8` `mdt-pl-9` `mdt-pr-0` `mdt-pr-10` `mdt-pr-12` `mdt-pr-2` `mdt-pr-2.5` `mdt-pr-9` `mdt-pt-0` `mdt-pt-1` `mdt-px-0` `mdt-px-1` `mdt-px-1.5` `mdt-px-12` `mdt-px-2` `mdt-px-2.5` `mdt-px-3` `mdt-px-4` `mdt-px-6` `mdt-px-8` `mdt-py-0` `mdt-py-0.5` `mdt-py-1` `mdt-py-1.5` `mdt-py-12` `mdt-py-2` `mdt-py-3` `mdt-py-4` `mdt-py-6` `mdt-py-8` `mdt-space-x-2` `mdt-space-y-0.5` `mdt-space-y-1.5` `mdt-space-y-2` `mdt-space-y-4` |
-| Type scale (size) | 131 | 25 | `mdt-text-2xl` `mdt-text-base` `mdt-text-lg` `mdt-text-sm` `mdt-text-xl` `mdt-text-xs` |
-| Opacity | 53 | 24 | `mdt-opacity-0` `mdt-opacity-100` `mdt-opacity-15` `mdt-opacity-20` `mdt-opacity-50` `mdt-opacity-60` `mdt-opacity-70` |
+| Spacing | 323 | 33 | `mdt-gap-0` `mdt-gap-0.5` `mdt-gap-1` `mdt-gap-1.5` `mdt-gap-12` `mdt-gap-16` `mdt-gap-2` `mdt-gap-3` `mdt-gap-4` `mdt-gap-6` `mdt-gap-8` `mdt-mb-1` `mdt-mb-2` `mdt-mb-4` `mdt-mb-6` `mdt-ml-0.5` `mdt-ml-1` `mdt-ml-2` `mdt-mr-0.5` `mdt-mr-2` `mdt-mt-0.5` `mdt-mt-1` `mdt-mt-2` `mdt-mt-4` `mdt-mx-2` `mdt-mx-4` `mdt-mx-6` `mdt-mx-8` `mdt-my-0.5` `mdt-my-1` `mdt-my-2` `mdt-my-4` `mdt-my-6` `mdt-my-8` `mdt-p-0` `mdt-p-0.5` `mdt-p-1` `mdt-p-2` `mdt-p-3` `mdt-p-4` `mdt-p-6` `mdt-pb-0` `mdt-pb-1` `mdt-pb-3` `mdt-pl-0` `mdt-pl-10` `mdt-pl-2` `mdt-pl-2.5` `mdt-pl-6` `mdt-pl-8` `mdt-pl-9` `mdt-pr-0` `mdt-pr-10` `mdt-pr-12` `mdt-pr-2` `mdt-pr-2.5` `mdt-pr-9` `mdt-pt-0` `mdt-pt-1` `mdt-px-0` `mdt-px-1` `mdt-px-1.5` `mdt-px-12` `mdt-px-2` `mdt-px-2.5` `mdt-px-3` `mdt-px-4` `mdt-px-6` `mdt-px-8` `mdt-py-0` `mdt-py-0.5` `mdt-py-1` `mdt-py-1.5` `mdt-py-12` `mdt-py-2` `mdt-py-3` `mdt-py-4` `mdt-py-6` `mdt-py-8` `mdt-space-x-2` `mdt-space-y-0.5` `mdt-space-y-1.5` `mdt-space-y-2` `mdt-space-y-4` |
+| Type scale (size) | 129 | 25 | `mdt-text-2xl` `mdt-text-base` `mdt-text-lg` `mdt-text-sm` `mdt-text-xl` `mdt-text-xs` |
+| Opacity | 51 | 23 | `mdt-opacity-0` `mdt-opacity-100` `mdt-opacity-15` `mdt-opacity-20` `mdt-opacity-50` `mdt-opacity-60` `mdt-opacity-70` |
 | Font weight | 45 | 23 | `mdt-font-bold` `mdt-font-medium` `mdt-font-normal` `mdt-font-semibold` |
-| Elevation / shadow | 25 | 16 | `mdt-shadow` `mdt-shadow-lg` `mdt-shadow-md` `mdt-shadow-sm` |
+| Elevation / shadow | 22 | 15 | `mdt-shadow` `mdt-shadow-lg` `mdt-shadow-md` `mdt-shadow-sm` |
 | Border width | 16 | 11 | `mdt-border-0` `mdt-border-2` |
 | Layering / z-index | 16 | 11 | `mdt-z-10` `mdt-z-50` |
-| Motion (duration / easing) | 10 | 6 | `mdt-duration-200` `mdt-duration-300` `mdt-duration-500` `mdt-ease-in-out` |
+| Motion (duration / easing) | 9 | 5 | `mdt-duration-200` `mdt-duration-300` `mdt-duration-500` `mdt-ease-in-out` |
 | Line height | 6 | 3 | `mdt-leading-none` |
 | Letter spacing | 3 | 3 | `mdt-tracking-tight` `mdt-tracking-widest` |
-
-### Type scale (size)
-
-| File | Line | Value |
-| --- | --- | --- |
-| `src/components/Button/Button.tsx` | 24 | `mdt-text-sm` |
-| `src/components/Button/Button.tsx` | 53 | `mdt-text-xs` |
-| `src/components/Button/Button.tsx` | 54 | `mdt-text-xs` |
-| `src/components/Button/Button.tsx` | 55 | `mdt-text-sm` |
-| `src/components/Button/Button.tsx` | 56 | `mdt-text-base` |
-| `src/components/Button/Button.tsx` | 57 | `mdt-text-lg` |
-| `src/components/Button/Button.tsx` | 186 | `mdt-text-xs` |
-| `src/components/Button2/Button2.tsx` | 49 | `mdt-text-xs` |
-| `src/components/Button2/Button2.tsx` | 50 | `mdt-text-xs` |
-| `src/components/Button2/Button2.tsx` | 51 | `mdt-text-sm` |
-| `src/components/Button2/Button2.tsx` | 52 | `mdt-text-base` |
-| `src/components/Button2/Button2.tsx` | 53 | `mdt-text-lg` |
-| `src/components/Combobox/Combobox.tsx` | 31 | `mdt-text-xs` |
-| `src/components/Combobox/Combobox.tsx` | 32 | `mdt-text-sm` |
-| `src/components/Combobox/Combobox.tsx` | 33 | `mdt-text-base` |
-| `src/components/Combobox/Combobox.tsx` | 236 | `mdt-text-sm` |
-| `src/components/Combobox/Combobox.tsx` | 323 | `mdt-text-sm` |
-| `src/components/Combobox/Combobox.tsx` | 331 | `mdt-text-sm` |
-| `src/components/Combobox/Combobox.tsx` | 355 | `mdt-text-sm` |
-| `src/components/Combobox/Combobox.tsx` | 379 | `mdt-text-xs` |
-| `src/components/Combobox/Combobox.tsx` | 396 | `mdt-text-xs` |
-| `src/components/Combobox/Combobox.tsx` | 401 | `mdt-text-xs` |
-| `src/components/Command/Command.tsx` | 94 | `mdt-text-sm` |
-| `src/components/Command/Command.tsx` | 134 | `mdt-text-sm` |
-| `src/components/Command/Command.tsx` | 154 | `mdt-text-xs` |
-| `src/components/Command/Command.tsx` | 197 | `mdt-text-sm` |
-| `src/components/Command/Command.tsx` | 224 | `mdt-text-xs` |
-| `src/components/Dialog/Dialog.tsx` | 180 | `mdt-text-lg` |
-| `src/components/Dialog/Dialog.tsx` | 196 | `mdt-text-sm` |
-| `src/components/DropdownMenu/DropdownMenu.tsx` | 68 | `mdt-text-sm` |
-| `src/components/DropdownMenu/DropdownMenu.tsx` | 149 | `mdt-text-sm` |
-| `src/components/DropdownMenu/DropdownMenu.tsx` | 173 | `mdt-text-sm` |
-| `src/components/DropdownMenu/DropdownMenu.tsx` | 203 | `mdt-text-sm` |
-| `src/components/DropdownMenu/DropdownMenu.tsx` | 231 | `mdt-text-sm` |
-| `src/components/DropdownMenu/DropdownMenu.tsx` | 261 | `mdt-text-xs` |
-| `src/components/Form/FormDescription.tsx` | 9 | `mdt-text-sm` |
-| `src/components/Form/FormLabel.tsx` | 11 | `mdt-text-sm` |
-| `src/components/Form/FormMessage.tsx` | 9 | `mdt-text-xs` |
-| `src/components/Input/Input.tsx` | 16 | `mdt-text-sm` |
-| `src/components/Input/Input.tsx` | 27 | `mdt-text-xs` |
-| `src/components/Input/Input.tsx` | 28 | `mdt-text-sm` |
-| `src/components/Input/Input.tsx` | 29 | `mdt-text-base` |
-| `src/components/Input/Input.tsx` | 101 | `mdt-text-sm` |
-| `src/components/Input/Input.tsx` | 131 | `mdt-text-xs` |
-| `src/components/Input/Input.tsx` | 136 | `mdt-text-xs` |
-| `src/components/InputGroup/InputGroup.tsx` | 62 | `mdt-text-base` |
-| `src/components/InputGroup/InputGroup.tsx` | 64 | `mdt-text-sm` |
-| `src/components/InputGroup/InputGroup.tsx` | 68 | `mdt-text-sm` |
-| `src/components/InputGroup/InputGroup.tsx` | 100 | `mdt-text-sm` |
-| `src/components/InputGroup/InputGroup.tsx` | 140 | `mdt-text-sm` |
-| `src/components/InputGroup/InputGroup.tsx` | 171 | `mdt-text-sm` |
-| `src/components/InputGroup/InputGroup.tsx` | 202 | `mdt-text-base` |
-| `src/components/InputGroup/InputGroup.tsx` | 207 | `mdt-text-sm` |
-| `src/components/Item/Item.tsx` | 13 | `mdt-text-sm` |
-| `src/components/Item/Item.tsx` | 27 | `mdt-text-xs` |
-| `src/components/Item/Item.tsx` | 28 | `mdt-text-sm` |
-| `src/components/Item/Item.tsx` | 29 | `mdt-text-base` |
-| `src/components/Item/Item.tsx` | 100 | `mdt-text-xs` |
-| `src/components/Item/Item.tsx` | 131 | `mdt-text-xs` |
-| `src/components/OTPInput/OTPInput.tsx` | 210 | `mdt-text-sm` |
-| `src/components/OTPInput/OTPInput.tsx` | 211 | `mdt-text-lg` |
-| `src/components/OTPInput/OTPInput.tsx` | 212 | `mdt-text-xl` |
-| `src/components/Pagination/Pagination.tsx` | 19 | `mdt-text-sm` |
-| `src/components/Pagination/Pagination.tsx` | 34 | `mdt-text-xs` |
-| `src/components/Pagination/Pagination.tsx` | 35 | `mdt-text-sm` |
-| `src/components/Pagination/Pagination.tsx` | 36 | `mdt-text-base` |
-| `src/components/Select/Select.tsx` | 34 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 101 | `mdt-text-xs` |
-| `src/components/Select/Select.tsx` | 111 | `mdt-text-xs` |
-| `src/components/Select/Select.tsx` | 220 | `mdt-text-xs` |
-| `src/components/Select/Select.tsx` | 221 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 222 | `mdt-text-base` |
-| `src/components/Select/Select.tsx` | 329 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 425 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 435 | `mdt-text-xs` |
-| `src/components/Select/Select.tsx` | 440 | `mdt-text-xs` |
-| `src/components/Select/Select.tsx` | 532 | `mdt-text-xs` |
-| `src/components/Select/Select.tsx` | 600 | `mdt-text-xs` |
-| `src/components/Select/Select.tsx` | 610 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 614 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 788 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 814 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 837 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 858 | `mdt-text-xs` |
-| `src/components/Select/Select.tsx` | 866 | `mdt-text-xs` |
-| `src/components/Select/Select.tsx` | 888 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 1045 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 1053 | `mdt-text-sm` |
-| `src/components/Select/Select.tsx` | 1064 | `mdt-text-xs` |
-| `src/components/Separator/Separator.tsx` | 223 | `mdt-text-sm` |
-| `src/components/Separator/Separator.tsx` | 263 | `mdt-text-sm` |
-| `src/components/Sheet/Sheet.tsx` | 195 | `mdt-text-lg` |
-| `src/components/Sheet/Sheet.tsx` | 211 | `mdt-text-sm` |
-| `src/components/Sidebar/Sidebar.tsx` | 95 | `mdt-text-sm` |
-| `src/components/Sidebar/Sidebar.tsx` | 204 | `mdt-text-sm` |
-| `src/components/Sidebar/Sidebar.tsx` | 268 | `mdt-text-xs` |
-| `src/components/Sidebar/Sidebar.tsx` | 299 | `mdt-text-xs` |
-| `src/components/Sidebar/Sidebar.tsx` | 343 | `mdt-text-sm` |
-| `src/components/Sidebar/Sidebar.tsx` | 389 | `mdt-text-sm` |
-| `src/components/Sidebar/Sidebar.tsx` | 566 | `mdt-text-xs` |
-| `src/components/Table/Table.tsx` | 44 | `mdt-text-sm` |
-| `src/components/Table/Table.tsx` | 197 | `mdt-text-sm` |
-| `src/components/Tabs/Tabs.tsx` | 67 | `mdt-text-sm` |
-| `src/components/TagPill/TagPill.tsx` | 14 | `mdt-text-xs` |
-| `src/components/TagPill/TagPill.tsx` | 38 | `mdt-text-xs` |
-| `src/components/TagPill/TagPill.tsx` | 39 | `mdt-text-sm` |
-| `src/components/Textarea/Textarea.tsx` | 26 | `mdt-text-xs` |
-| `src/components/Textarea/Textarea.tsx` | 27 | `mdt-text-sm` |
-| `src/components/Textarea/Textarea.tsx` | 28 | `mdt-text-base` |
-| `src/components/Textarea/Textarea.tsx` | 118 | `mdt-text-sm` |
-| `src/components/Textarea/Textarea.tsx` | 131 | `mdt-text-xs` |
-| `src/components/Textarea/Textarea.tsx` | 136 | `mdt-text-xs` |
-| `src/components/Toast/Toast.tsx` | 80 | `mdt-text-sm` |
-| `src/components/Toast/Toast.tsx` | 87 | `mdt-text-sm` |
-| `src/components/Toast/Toast.tsx` | 95 | `mdt-text-sm` |
-| `src/components/Toast/Toast.tsx` | 102 | `mdt-text-sm` |
-| `src/components/Toggle/Toggle.tsx` | 36 | `mdt-text-xs` |
-| `src/components/Toggle/Toggle.tsx` | 37 | `mdt-text-sm` |
-| `src/components/Toggle/Toggle.tsx` | 38 | `mdt-text-base` |
-| `src/components/ToggleGroup/ToggleGroup.tsx` | 102 | `mdt-text-xs` |
-| `src/components/ToggleGroup/ToggleGroup.tsx` | 103 | `mdt-text-sm` |
-| `src/components/ToggleGroup/ToggleGroup.tsx` | 104 | `mdt-text-base` |
-| `src/components/Tooltip/Tooltip.tsx` | 77 | `mdt-text-xs` |
-| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 20 | `mdt-text-2xl` |
-| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 24 | `mdt-text-lg` |
-| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 27 | `mdt-text-sm` |
-| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 33 | `mdt-text-sm` |
-| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 36 | `mdt-text-sm` |
-| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 38 | `mdt-text-xs` |
-| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 46 | `mdt-text-sm` |
-| `src/components/_internal/StatusBadge/StatusBadge.tsx` | 50 | `mdt-text-xs` |
 
 ### Font weight
 
 | File | Line | Value |
 | --- | --- | --- |
+| `src/components/Badge/Badge.tsx` | 23 | `mdt-font-medium` |
 | `src/components/Button/Button.tsx` | 24 | `mdt-font-medium` |
 | `src/components/Button/Button.tsx` | 186 | `mdt-font-semibold` |
-| `src/components/Button2/Button2.tsx` | 25 | `mdt-font-medium` |
 | `src/components/Combobox/Combobox.tsx` | 236 | `mdt-font-medium` |
 | `src/components/Command/Command.tsx` | 69 | `mdt-font-medium` |
 | `src/components/Command/Command.tsx` | 154 | `mdt-font-medium` |
@@ -233,83 +97,17 @@ Scanned **132** shipped component files.
 | `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 49 | `mdt-font-medium` |
 | `src/components/_internal/StatusBadge/StatusBadge.tsx` | 50 | `mdt-font-semibold` |
 
-### Motion (duration / easing)
-
-| File | Line | Value |
-| --- | --- | --- |
-| `src/components/Button/Button.tsx` | 25 | `mdt-duration-200` |
-| `src/components/Button2/Button2.tsx` | 26 | `mdt-duration-200` |
-| `src/components/Command/Command.tsx` | 67 | `mdt-duration-200` |
-| `src/components/Dialog/Dialog.tsx` | 111 | `mdt-duration-200` |
-| `src/components/Dialog/Dialog.tsx` | 111 | `mdt-ease-in-out` |
-| `src/components/HoverCard/HoverCard.tsx` | 67 | `mdt-duration-200` |
-| `src/components/HoverCard/HoverCard.tsx` | 67 | `mdt-ease-in-out` |
-| `src/components/Sheet/Sheet.tsx` | 62 | `mdt-ease-in-out` |
-| `src/components/Sheet/Sheet.tsx` | 63 | `mdt-duration-300` |
-| `src/components/Sheet/Sheet.tsx` | 63 | `mdt-duration-500` |
-
-### Opacity
-
-| File | Line | Value |
-| --- | --- | --- |
-| `src/components/Button/Button.tsx` | 27 | `mdt-opacity-50` |
-| `src/components/Button2/Button2.tsx` | 8 | `mdt-opacity-50` |
-| `src/components/Button2/Button2.tsx` | 203 | `mdt-opacity-50` |
-| `src/components/Checkbox/Checkbox.tsx` | 13 | `mdt-opacity-50` |
-| `src/components/Combobox/Combobox.tsx` | 21 | `mdt-opacity-50` |
-| `src/components/Combobox/Combobox.tsx` | 280 | `mdt-opacity-50` |
-| `src/components/Combobox/Combobox.tsx` | 280 | `mdt-opacity-100` |
-| `src/components/Combobox/Combobox.tsx` | 280 | `mdt-opacity-100` |
-| `src/components/Combobox/Combobox.tsx` | 286 | `mdt-opacity-50` |
-| `src/components/Combobox/Combobox.tsx` | 325 | `mdt-opacity-50` |
-| `src/components/Combobox/Combobox.tsx` | 358 | `mdt-opacity-50` |
-| `src/components/Combobox/Combobox.tsx` | 372 | `mdt-opacity-100` |
-| `src/components/Combobox/Combobox.tsx` | 372 | `mdt-opacity-0` |
-| `src/components/Command/Command.tsx` | 90 | `mdt-opacity-50` |
-| `src/components/Command/Command.tsx` | 94 | `mdt-opacity-50` |
-| `src/components/Command/Command.tsx` | 200 | `mdt-opacity-50` |
-| `src/components/Dialog/Dialog.tsx` | 122 | `mdt-opacity-70` |
-| `src/components/Dialog/Dialog.tsx` | 124 | `mdt-opacity-100` |
-| `src/components/DropdownMenu/DropdownMenu.tsx` | 25 | `mdt-opacity-50` |
-| `src/components/DropdownMenu/DropdownMenu.tsx` | 261 | `mdt-opacity-60` |
-| `src/components/Form/FormLabel.tsx` | 12 | `mdt-opacity-70` |
-| `src/components/Input/Input.tsx` | 19 | `mdt-opacity-50` |
-| `src/components/InputGroup/InputGroup.tsx` | 19 | `mdt-opacity-50` |
-| `src/components/Item/Item.tsx` | 16 | `mdt-opacity-50` |
-| `src/components/OTPInput/OTPInput.tsx` | 208 | `mdt-opacity-50` |
-| `src/components/Pagination/Pagination.tsx` | 22 | `mdt-opacity-50` |
-| `src/components/Radio/Radio.tsx` | 12 | `mdt-opacity-50` |
-| `src/components/Select/Select.tsx` | 36 | `mdt-opacity-50` |
-| `src/components/Select/Select.tsx` | 38 | `mdt-opacity-50` |
-| `src/components/Select/Select.tsx` | 40 | `mdt-opacity-0` |
-| `src/components/Select/Select.tsx` | 40 | `mdt-opacity-50` |
-| `src/components/Select/Select.tsx` | 210 | `mdt-opacity-50` |
-| `src/components/Select/Select.tsx` | 478 | `mdt-opacity-0` |
-| `src/components/Select/Select.tsx` | 478 | `mdt-opacity-100` |
-| `src/components/Select/Select.tsx` | 478 | `mdt-opacity-100` |
-| `src/components/Select/Select.tsx` | 492 | `mdt-opacity-50` |
-| `src/components/Select/Select.tsx` | 492 | `mdt-opacity-0` |
-| `src/components/Select/Select.tsx` | 506 | `mdt-opacity-50` |
-| `src/components/Select/Select.tsx` | 755 | `mdt-opacity-50` |
-| `src/components/Select/Select.tsx` | 792 | `mdt-opacity-50` |
-| `src/components/Sheet/Sheet.tsx` | 140 | `mdt-opacity-70` |
-| `src/components/Sheet/Sheet.tsx` | 142 | `mdt-opacity-100` |
-| `src/components/Sidebar/Sidebar.tsx` | 366 | `mdt-opacity-0` |
-| `src/components/Sidebar/Sidebar.tsx` | 366 | `mdt-opacity-100` |
-| `src/components/Spinner/Spinner.tsx` | 78 | `mdt-opacity-20` |
-| `src/components/Spinner/Spinner.tsx` | 86 | `mdt-opacity-100` |
-| `src/components/Switch/Switch.tsx` | 28 | `mdt-opacity-50` |
-| `src/components/Tabs/Tabs.tsx` | 70 | `mdt-opacity-50` |
-| `src/components/TagPill/TagPill.tsx` | 93 | `mdt-opacity-15` |
-| `src/components/TagPill/TagPill.tsx` | 102 | `mdt-opacity-70` |
-| `src/components/Textarea/Textarea.tsx` | 18 | `mdt-opacity-50` |
-| `src/components/Toggle/Toggle.tsx` | 18 | `mdt-opacity-50` |
-| `src/components/ToggleGroup/ToggleGroup.tsx` | 78 | `mdt-opacity-50` |
-
 ### Spacing
 
 | File | Line | Value |
 | --- | --- | --- |
+| `src/components/Badge/Badge.tsx` | 57 | `mdt-px-0` |
+| `src/components/Badge/Badge.tsx` | 60 | `mdt-px-2` |
+| `src/components/Badge/Badge.tsx` | 60 | `mdt-gap-1` |
+| `src/components/Badge/Badge.tsx` | 61 | `mdt-px-2.5` |
+| `src/components/Badge/Badge.tsx` | 61 | `mdt-gap-1.5` |
+| `src/components/Badge/Badge.tsx` | 62 | `mdt-px-3` |
+| `src/components/Badge/Badge.tsx` | 62 | `mdt-gap-1.5` |
 | `src/components/Button/Button.tsx` | 53 | `mdt-px-2` |
 | `src/components/Button/Button.tsx` | 54 | `mdt-px-3` |
 | `src/components/Button/Button.tsx` | 55 | `mdt-px-4` |
@@ -319,17 +117,6 @@ Scanned **132** shipped component files.
 | `src/components/Button/Button.tsx` | 131 | `mdt-gap-2` |
 | `src/components/Button/Button.tsx` | 132 | `mdt-gap-3` |
 | `src/components/Button/Button.tsx` | 186 | `mdt-px-1` |
-| `src/components/Button2/Button2.tsx` | 49 | `mdt-px-2` |
-| `src/components/Button2/Button2.tsx` | 49 | `mdt-gap-1` |
-| `src/components/Button2/Button2.tsx` | 50 | `mdt-px-3` |
-| `src/components/Button2/Button2.tsx` | 50 | `mdt-gap-1.5` |
-| `src/components/Button2/Button2.tsx` | 51 | `mdt-px-4` |
-| `src/components/Button2/Button2.tsx` | 51 | `mdt-gap-2` |
-| `src/components/Button2/Button2.tsx` | 52 | `mdt-px-6` |
-| `src/components/Button2/Button2.tsx` | 52 | `mdt-gap-2` |
-| `src/components/Button2/Button2.tsx` | 53 | `mdt-px-8` |
-| `src/components/Button2/Button2.tsx` | 53 | `mdt-gap-2.5` |
-| `src/components/Button2/Button2.tsx` | 73 | `mdt-px-0` |
 | `src/components/ButtonGroup/ButtonGroup.tsx` | 35 | `mdt-gap-0` |
 | `src/components/ButtonGroup/ButtonGroup.tsx` | 36 | `mdt-gap-0` |
 | `src/components/ButtonGroup/ButtonGroup.tsx` | 37 | `mdt-gap-0` |
@@ -638,6 +425,210 @@ Scanned **132** shipped component files.
 | `src/components/_internal/StatusBadge/StatusBadge.tsx` | 50 | `mdt-px-2.5` |
 | `src/components/_internal/StatusBadge/StatusBadge.tsx` | 50 | `mdt-py-0.5` |
 
+### Type scale (size)
+
+| File | Line | Value |
+| --- | --- | --- |
+| `src/components/Badge/Badge.tsx` | 60 | `mdt-text-xs` |
+| `src/components/Badge/Badge.tsx` | 61 | `mdt-text-xs` |
+| `src/components/Badge/Badge.tsx` | 62 | `mdt-text-sm` |
+| `src/components/Button/Button.tsx` | 24 | `mdt-text-sm` |
+| `src/components/Button/Button.tsx` | 53 | `mdt-text-xs` |
+| `src/components/Button/Button.tsx` | 54 | `mdt-text-xs` |
+| `src/components/Button/Button.tsx` | 55 | `mdt-text-sm` |
+| `src/components/Button/Button.tsx` | 56 | `mdt-text-base` |
+| `src/components/Button/Button.tsx` | 57 | `mdt-text-lg` |
+| `src/components/Button/Button.tsx` | 186 | `mdt-text-xs` |
+| `src/components/Combobox/Combobox.tsx` | 31 | `mdt-text-xs` |
+| `src/components/Combobox/Combobox.tsx` | 32 | `mdt-text-sm` |
+| `src/components/Combobox/Combobox.tsx` | 33 | `mdt-text-base` |
+| `src/components/Combobox/Combobox.tsx` | 236 | `mdt-text-sm` |
+| `src/components/Combobox/Combobox.tsx` | 323 | `mdt-text-sm` |
+| `src/components/Combobox/Combobox.tsx` | 331 | `mdt-text-sm` |
+| `src/components/Combobox/Combobox.tsx` | 355 | `mdt-text-sm` |
+| `src/components/Combobox/Combobox.tsx` | 379 | `mdt-text-xs` |
+| `src/components/Combobox/Combobox.tsx` | 396 | `mdt-text-xs` |
+| `src/components/Combobox/Combobox.tsx` | 401 | `mdt-text-xs` |
+| `src/components/Command/Command.tsx` | 94 | `mdt-text-sm` |
+| `src/components/Command/Command.tsx` | 134 | `mdt-text-sm` |
+| `src/components/Command/Command.tsx` | 154 | `mdt-text-xs` |
+| `src/components/Command/Command.tsx` | 197 | `mdt-text-sm` |
+| `src/components/Command/Command.tsx` | 224 | `mdt-text-xs` |
+| `src/components/Dialog/Dialog.tsx` | 180 | `mdt-text-lg` |
+| `src/components/Dialog/Dialog.tsx` | 196 | `mdt-text-sm` |
+| `src/components/DropdownMenu/DropdownMenu.tsx` | 68 | `mdt-text-sm` |
+| `src/components/DropdownMenu/DropdownMenu.tsx` | 149 | `mdt-text-sm` |
+| `src/components/DropdownMenu/DropdownMenu.tsx` | 173 | `mdt-text-sm` |
+| `src/components/DropdownMenu/DropdownMenu.tsx` | 203 | `mdt-text-sm` |
+| `src/components/DropdownMenu/DropdownMenu.tsx` | 231 | `mdt-text-sm` |
+| `src/components/DropdownMenu/DropdownMenu.tsx` | 261 | `mdt-text-xs` |
+| `src/components/Form/FormDescription.tsx` | 9 | `mdt-text-sm` |
+| `src/components/Form/FormLabel.tsx` | 11 | `mdt-text-sm` |
+| `src/components/Form/FormMessage.tsx` | 9 | `mdt-text-xs` |
+| `src/components/Input/Input.tsx` | 16 | `mdt-text-sm` |
+| `src/components/Input/Input.tsx` | 27 | `mdt-text-xs` |
+| `src/components/Input/Input.tsx` | 28 | `mdt-text-sm` |
+| `src/components/Input/Input.tsx` | 29 | `mdt-text-base` |
+| `src/components/Input/Input.tsx` | 101 | `mdt-text-sm` |
+| `src/components/Input/Input.tsx` | 131 | `mdt-text-xs` |
+| `src/components/Input/Input.tsx` | 136 | `mdt-text-xs` |
+| `src/components/InputGroup/InputGroup.tsx` | 62 | `mdt-text-base` |
+| `src/components/InputGroup/InputGroup.tsx` | 64 | `mdt-text-sm` |
+| `src/components/InputGroup/InputGroup.tsx` | 68 | `mdt-text-sm` |
+| `src/components/InputGroup/InputGroup.tsx` | 100 | `mdt-text-sm` |
+| `src/components/InputGroup/InputGroup.tsx` | 140 | `mdt-text-sm` |
+| `src/components/InputGroup/InputGroup.tsx` | 171 | `mdt-text-sm` |
+| `src/components/InputGroup/InputGroup.tsx` | 202 | `mdt-text-base` |
+| `src/components/InputGroup/InputGroup.tsx` | 207 | `mdt-text-sm` |
+| `src/components/Item/Item.tsx` | 13 | `mdt-text-sm` |
+| `src/components/Item/Item.tsx` | 27 | `mdt-text-xs` |
+| `src/components/Item/Item.tsx` | 28 | `mdt-text-sm` |
+| `src/components/Item/Item.tsx` | 29 | `mdt-text-base` |
+| `src/components/Item/Item.tsx` | 100 | `mdt-text-xs` |
+| `src/components/Item/Item.tsx` | 131 | `mdt-text-xs` |
+| `src/components/OTPInput/OTPInput.tsx` | 210 | `mdt-text-sm` |
+| `src/components/OTPInput/OTPInput.tsx` | 211 | `mdt-text-lg` |
+| `src/components/OTPInput/OTPInput.tsx` | 212 | `mdt-text-xl` |
+| `src/components/Pagination/Pagination.tsx` | 19 | `mdt-text-sm` |
+| `src/components/Pagination/Pagination.tsx` | 34 | `mdt-text-xs` |
+| `src/components/Pagination/Pagination.tsx` | 35 | `mdt-text-sm` |
+| `src/components/Pagination/Pagination.tsx` | 36 | `mdt-text-base` |
+| `src/components/Select/Select.tsx` | 34 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 101 | `mdt-text-xs` |
+| `src/components/Select/Select.tsx` | 111 | `mdt-text-xs` |
+| `src/components/Select/Select.tsx` | 220 | `mdt-text-xs` |
+| `src/components/Select/Select.tsx` | 221 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 222 | `mdt-text-base` |
+| `src/components/Select/Select.tsx` | 329 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 425 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 435 | `mdt-text-xs` |
+| `src/components/Select/Select.tsx` | 440 | `mdt-text-xs` |
+| `src/components/Select/Select.tsx` | 532 | `mdt-text-xs` |
+| `src/components/Select/Select.tsx` | 600 | `mdt-text-xs` |
+| `src/components/Select/Select.tsx` | 610 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 614 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 788 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 814 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 837 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 858 | `mdt-text-xs` |
+| `src/components/Select/Select.tsx` | 866 | `mdt-text-xs` |
+| `src/components/Select/Select.tsx` | 888 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 1045 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 1053 | `mdt-text-sm` |
+| `src/components/Select/Select.tsx` | 1064 | `mdt-text-xs` |
+| `src/components/Separator/Separator.tsx` | 223 | `mdt-text-sm` |
+| `src/components/Separator/Separator.tsx` | 263 | `mdt-text-sm` |
+| `src/components/Sheet/Sheet.tsx` | 195 | `mdt-text-lg` |
+| `src/components/Sheet/Sheet.tsx` | 211 | `mdt-text-sm` |
+| `src/components/Sidebar/Sidebar.tsx` | 95 | `mdt-text-sm` |
+| `src/components/Sidebar/Sidebar.tsx` | 204 | `mdt-text-sm` |
+| `src/components/Sidebar/Sidebar.tsx` | 268 | `mdt-text-xs` |
+| `src/components/Sidebar/Sidebar.tsx` | 299 | `mdt-text-xs` |
+| `src/components/Sidebar/Sidebar.tsx` | 343 | `mdt-text-sm` |
+| `src/components/Sidebar/Sidebar.tsx` | 389 | `mdt-text-sm` |
+| `src/components/Sidebar/Sidebar.tsx` | 566 | `mdt-text-xs` |
+| `src/components/Table/Table.tsx` | 44 | `mdt-text-sm` |
+| `src/components/Table/Table.tsx` | 197 | `mdt-text-sm` |
+| `src/components/Tabs/Tabs.tsx` | 67 | `mdt-text-sm` |
+| `src/components/TagPill/TagPill.tsx` | 14 | `mdt-text-xs` |
+| `src/components/TagPill/TagPill.tsx` | 38 | `mdt-text-xs` |
+| `src/components/TagPill/TagPill.tsx` | 39 | `mdt-text-sm` |
+| `src/components/Textarea/Textarea.tsx` | 26 | `mdt-text-xs` |
+| `src/components/Textarea/Textarea.tsx` | 27 | `mdt-text-sm` |
+| `src/components/Textarea/Textarea.tsx` | 28 | `mdt-text-base` |
+| `src/components/Textarea/Textarea.tsx` | 118 | `mdt-text-sm` |
+| `src/components/Textarea/Textarea.tsx` | 131 | `mdt-text-xs` |
+| `src/components/Textarea/Textarea.tsx` | 136 | `mdt-text-xs` |
+| `src/components/Toast/Toast.tsx` | 80 | `mdt-text-sm` |
+| `src/components/Toast/Toast.tsx` | 87 | `mdt-text-sm` |
+| `src/components/Toast/Toast.tsx` | 95 | `mdt-text-sm` |
+| `src/components/Toast/Toast.tsx` | 102 | `mdt-text-sm` |
+| `src/components/Toggle/Toggle.tsx` | 36 | `mdt-text-xs` |
+| `src/components/Toggle/Toggle.tsx` | 37 | `mdt-text-sm` |
+| `src/components/Toggle/Toggle.tsx` | 38 | `mdt-text-base` |
+| `src/components/ToggleGroup/ToggleGroup.tsx` | 102 | `mdt-text-xs` |
+| `src/components/ToggleGroup/ToggleGroup.tsx` | 103 | `mdt-text-sm` |
+| `src/components/ToggleGroup/ToggleGroup.tsx` | 104 | `mdt-text-base` |
+| `src/components/Tooltip/Tooltip.tsx` | 77 | `mdt-text-xs` |
+| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 20 | `mdt-text-2xl` |
+| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 24 | `mdt-text-lg` |
+| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 27 | `mdt-text-sm` |
+| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 33 | `mdt-text-sm` |
+| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 36 | `mdt-text-sm` |
+| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 38 | `mdt-text-xs` |
+| `src/components/_internal/DeprecationBanner/DeprecationBanner.tsx` | 46 | `mdt-text-sm` |
+| `src/components/_internal/StatusBadge/StatusBadge.tsx` | 50 | `mdt-text-xs` |
+
+### Motion (duration / easing)
+
+| File | Line | Value |
+| --- | --- | --- |
+| `src/components/Button/Button.tsx` | 25 | `mdt-duration-200` |
+| `src/components/Command/Command.tsx` | 67 | `mdt-duration-200` |
+| `src/components/Dialog/Dialog.tsx` | 111 | `mdt-duration-200` |
+| `src/components/Dialog/Dialog.tsx` | 111 | `mdt-ease-in-out` |
+| `src/components/HoverCard/HoverCard.tsx` | 67 | `mdt-duration-200` |
+| `src/components/HoverCard/HoverCard.tsx` | 67 | `mdt-ease-in-out` |
+| `src/components/Sheet/Sheet.tsx` | 62 | `mdt-ease-in-out` |
+| `src/components/Sheet/Sheet.tsx` | 63 | `mdt-duration-300` |
+| `src/components/Sheet/Sheet.tsx` | 63 | `mdt-duration-500` |
+
+### Opacity
+
+| File | Line | Value |
+| --- | --- | --- |
+| `src/components/Button/Button.tsx` | 27 | `mdt-opacity-50` |
+| `src/components/Checkbox/Checkbox.tsx` | 13 | `mdt-opacity-50` |
+| `src/components/Combobox/Combobox.tsx` | 21 | `mdt-opacity-50` |
+| `src/components/Combobox/Combobox.tsx` | 280 | `mdt-opacity-50` |
+| `src/components/Combobox/Combobox.tsx` | 280 | `mdt-opacity-100` |
+| `src/components/Combobox/Combobox.tsx` | 280 | `mdt-opacity-100` |
+| `src/components/Combobox/Combobox.tsx` | 286 | `mdt-opacity-50` |
+| `src/components/Combobox/Combobox.tsx` | 325 | `mdt-opacity-50` |
+| `src/components/Combobox/Combobox.tsx` | 358 | `mdt-opacity-50` |
+| `src/components/Combobox/Combobox.tsx` | 372 | `mdt-opacity-100` |
+| `src/components/Combobox/Combobox.tsx` | 372 | `mdt-opacity-0` |
+| `src/components/Command/Command.tsx` | 90 | `mdt-opacity-50` |
+| `src/components/Command/Command.tsx` | 94 | `mdt-opacity-50` |
+| `src/components/Command/Command.tsx` | 200 | `mdt-opacity-50` |
+| `src/components/Dialog/Dialog.tsx` | 122 | `mdt-opacity-70` |
+| `src/components/Dialog/Dialog.tsx` | 124 | `mdt-opacity-100` |
+| `src/components/DropdownMenu/DropdownMenu.tsx` | 25 | `mdt-opacity-50` |
+| `src/components/DropdownMenu/DropdownMenu.tsx` | 261 | `mdt-opacity-60` |
+| `src/components/Form/FormLabel.tsx` | 12 | `mdt-opacity-70` |
+| `src/components/Input/Input.tsx` | 19 | `mdt-opacity-50` |
+| `src/components/InputGroup/InputGroup.tsx` | 19 | `mdt-opacity-50` |
+| `src/components/Item/Item.tsx` | 16 | `mdt-opacity-50` |
+| `src/components/OTPInput/OTPInput.tsx` | 208 | `mdt-opacity-50` |
+| `src/components/Pagination/Pagination.tsx` | 22 | `mdt-opacity-50` |
+| `src/components/Radio/Radio.tsx` | 12 | `mdt-opacity-50` |
+| `src/components/Select/Select.tsx` | 36 | `mdt-opacity-50` |
+| `src/components/Select/Select.tsx` | 38 | `mdt-opacity-50` |
+| `src/components/Select/Select.tsx` | 40 | `mdt-opacity-0` |
+| `src/components/Select/Select.tsx` | 40 | `mdt-opacity-50` |
+| `src/components/Select/Select.tsx` | 210 | `mdt-opacity-50` |
+| `src/components/Select/Select.tsx` | 478 | `mdt-opacity-0` |
+| `src/components/Select/Select.tsx` | 478 | `mdt-opacity-100` |
+| `src/components/Select/Select.tsx` | 478 | `mdt-opacity-100` |
+| `src/components/Select/Select.tsx` | 492 | `mdt-opacity-50` |
+| `src/components/Select/Select.tsx` | 492 | `mdt-opacity-0` |
+| `src/components/Select/Select.tsx` | 506 | `mdt-opacity-50` |
+| `src/components/Select/Select.tsx` | 755 | `mdt-opacity-50` |
+| `src/components/Select/Select.tsx` | 792 | `mdt-opacity-50` |
+| `src/components/Sheet/Sheet.tsx` | 140 | `mdt-opacity-70` |
+| `src/components/Sheet/Sheet.tsx` | 142 | `mdt-opacity-100` |
+| `src/components/Sidebar/Sidebar.tsx` | 366 | `mdt-opacity-0` |
+| `src/components/Sidebar/Sidebar.tsx` | 366 | `mdt-opacity-100` |
+| `src/components/Spinner/Spinner.tsx` | 78 | `mdt-opacity-20` |
+| `src/components/Spinner/Spinner.tsx` | 86 | `mdt-opacity-100` |
+| `src/components/Switch/Switch.tsx` | 28 | `mdt-opacity-50` |
+| `src/components/Tabs/Tabs.tsx` | 70 | `mdt-opacity-50` |
+| `src/components/TagPill/TagPill.tsx` | 93 | `mdt-opacity-15` |
+| `src/components/TagPill/TagPill.tsx` | 102 | `mdt-opacity-70` |
+| `src/components/Textarea/Textarea.tsx` | 18 | `mdt-opacity-50` |
+| `src/components/Toggle/Toggle.tsx` | 18 | `mdt-opacity-50` |
+| `src/components/ToggleGroup/ToggleGroup.tsx` | 78 | `mdt-opacity-50` |
+
 ### Elevation / shadow
 
 | File | Line | Value |
@@ -645,9 +636,6 @@ Scanned **132** shipped component files.
 | `src/components/Button/Button.tsx` | 81 | `mdt-shadow-sm` |
 | `src/components/Button/Button.tsx` | 82 | `mdt-shadow-md` |
 | `src/components/Button/Button.tsx` | 83 | `mdt-shadow-lg` |
-| `src/components/Button2/Button2.tsx` | 64 | `mdt-shadow-sm` |
-| `src/components/Button2/Button2.tsx` | 65 | `mdt-shadow-md` |
-| `src/components/Button2/Button2.tsx` | 66 | `mdt-shadow-lg` |
 | `src/components/Combobox/Combobox.tsx` | 304 | `mdt-shadow-md` |
 | `src/components/Command/Command.tsx` | 67 | `mdt-shadow-lg` |
 | `src/components/Dialog/Dialog.tsx` | 110 | `mdt-shadow-lg` |
