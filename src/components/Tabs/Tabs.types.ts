@@ -3,11 +3,8 @@ import type * as TabsPrimitive from '@radix-ui/react-tabs';
 
 /**
  * Variant type for tabs styling
- *
- * `underline` is the default. What was previously called `default` - the grey
- * container with a raised active tab - is now `secondary`.
  */
-export type TabsVariant = 'underline' | 'secondary' | 'card' | 'pills';
+export type TabsVariant = 'default' | 'underline' | 'card' | 'pills';
 
 /**
  * Props for the Tabs root component
@@ -55,7 +52,7 @@ export interface TabsProps extends ComponentPropsWithoutRef<typeof TabsPrimitive
 export interface TabsListProps extends ComponentPropsWithoutRef<typeof TabsPrimitive.List> {
   /**
    * Visual style variant
-   * @default 'underline'
+   * @default 'default'
    */
   variant?: TabsVariant;
 
@@ -77,7 +74,7 @@ export interface TabsTriggerProps extends ComponentPropsWithoutRef<typeof TabsPr
 
   /**
    * Visual style variant (should match TabsList variant)
-   * @default 'underline'
+   * @default 'default'
    */
   variant?: TabsVariant;
 

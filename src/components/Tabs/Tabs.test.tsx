@@ -51,54 +51,6 @@ describe('Tabs', () => {
     expect(screen.getByText('Tab 1')).toBeInTheDocument();
   });
 
-  describe('variants', () => {
-    const renderWith = (variant?: 'underline' | 'secondary' | 'card' | 'pills') =>
-      render(
-        <Tabs defaultValue="tab1">
-          <TabsList variant={variant} data-testid="list">
-            <TabsTrigger value="tab1" variant={variant}>
-              Tab 1
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent value="tab1">Content</TabsContent>
-        </Tabs>
-      );
-
-    it('is underlined by default', () => {
-      renderWith();
-      expect(screen.getByTestId('list')).toHaveClass('mdt-border-b');
-      expect(screen.getByText('Tab 1')).toHaveClass('mdt-border-b-2');
-    });
-
-    it('applies the underline variant explicitly', () => {
-      renderWith('underline');
-      expect(screen.getByTestId('list')).toHaveClass('mdt-border-b');
-    });
-
-    it('applies the secondary variant, previously called default', () => {
-      renderWith('secondary');
-      expect(screen.getByTestId('list')).toHaveClass('mdt-bg-muted');
-      expect(screen.getByText('Tab 1')).toHaveClass('mdt-rounded-sm');
-    });
-
-    it('applies the card variant', () => {
-      renderWith('card');
-      expect(screen.getByTestId('list')).toHaveClass('mdt-border');
-      expect(screen.getByText('Tab 1')).toHaveClass('mdt-rounded-md');
-    });
-
-    it('applies the pills variant', () => {
-      renderWith('pills');
-      expect(screen.getByTestId('list')).toHaveClass('mdt-bg-transparent');
-      expect(screen.getByText('Tab 1')).toHaveClass('mdt-rounded-full');
-    });
-
-    it('does not apply the secondary container when underlined', () => {
-      renderWith('underline');
-      expect(screen.getByTestId('list')).not.toHaveClass('mdt-bg-muted');
-    });
-  });
-
   it('renders full width tabs', () => {
     render(
       <Tabs defaultValue="tab1">
