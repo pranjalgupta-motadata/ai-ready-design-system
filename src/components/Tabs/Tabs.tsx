@@ -31,13 +31,13 @@ Tabs.displayName = 'Tabs';
  * TabsList - container for tab triggers.
  */
 const TabsList = forwardRef<React.ElementRef<typeof TabsPrimitive.List>, TabsListProps>(
-  ({ className, variant = 'default', fullWidth = false, ...props }, ref) => (
+  ({ className, variant = 'underline', fullWidth = false, ...props }, ref) => (
     <TabsPrimitive.List
       ref={ref}
       className={cn(
         'mdt-inline-flex mdt-items-center mdt-gap-1',
         // Variant styles
-        variant === 'default' &&
+        variant === 'secondary' &&
           'mdt-h-10 mdt-rounded-md mdt-bg-muted mdt-p-1 mdt-text-muted-foreground',
         variant === 'underline' &&
           'mdt-h-10 mdt-gap-6 mdt-border-b mdt-border-border mdt-bg-transparent',
@@ -58,7 +58,7 @@ TabsList.displayName = 'TabsList';
  * TabsTrigger - individual tab button.
  */
 const TabsTrigger = forwardRef<React.ElementRef<typeof TabsPrimitive.Trigger>, TabsTriggerProps>(
-  ({ className, variant = 'default', fullWidth = false, ...props }, ref) => (
+  ({ className, variant = 'underline', fullWidth = false, ...props }, ref) => (
     <TabsPrimitive.Trigger
       ref={ref}
       className={cn(
@@ -69,7 +69,7 @@ const TabsTrigger = forwardRef<React.ElementRef<typeof TabsPrimitive.Trigger>, T
         'focus-visible:mdt-outline-none focus-visible:mdt-ring-2 focus-visible:mdt-ring-ring focus-visible:mdt-ring-offset-2',
         'disabled:mdt-pointer-events-none disabled:mdt-opacity-50',
         // Variant-specific styles
-        variant === 'default' &&
+        variant === 'secondary' &&
           cn(
             'mdt-rounded-sm',
             'data-[state=active]:mdt-bg-background data-[state=active]:mdt-text-foreground data-[state=active]:mdt-shadow-sm'
