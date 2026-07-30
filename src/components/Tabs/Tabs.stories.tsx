@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './Tabs';
+import { Tabs, TabsAdd, TabsContent, TabsList, TabsTrigger } from './Tabs';
+import { useEditableTabs } from './useEditableTabs';
+import type { TabsVariant } from './Tabs.types';
+import { Badge } from '../Badge';
+import { Icon } from '../Icon';
 
 /**
  * The Tabs component allows users to navigate between different views or sections of content.
@@ -857,4 +861,247 @@ export const MultiStepForm: Story = {
       </Tabs>
     );
   },
+};
+
+// ============================================================================
+// Icon + label + badge — the shape most navigation actually needs
+// ============================================================================
+
+/** The same three tabs, so the four looks can be compared without noise. */
+const NAV = [
+  { value: 'inbox', icon: 'inbox', label: 'Inbox', count: 12, tone: 'info' },
+  { value: 'flagged', icon: 'flag', label: 'Flagged', count: 3, tone: 'danger' },
+  { value: 'archive', icon: 'archive', label: 'Archive', count: 128, tone: 'neutral' },
+] as const;
+
+const NavTabs = ({ variant }: Readonly<{ variant: TabsVariant }>) => (
+  <Tabs defaultValue="inbox" className="mdt-w-[520px] mdt-max-w-full">
+    <TabsList variant={variant}>
+      {NAV.map((tab) => (
+        <TabsTrigger
+          key={tab.value}
+          value={tab.value}
+          variant={variant}
+          icon={<Icon name={tab.icon} />}
+          badge={
+            <Badge tone={tab.tone} size="sm">
+              {tab.count}
+            </Badge>
+          }
+        >
+          {tab.label}
+        </TabsTrigger>
+      ))}
+    </TabsList>
+    {NAV.map((tab) => (
+      <TabsContent key={tab.value} value={tab.value}>
+        <div className="mdt-rounded-lg mdt-border mdt-border-border mdt-p-4">
+          <h3 className="mdt-text-lg mdt-font-semibold">{tab.label}</h3>
+          <p className="mdt-text-sm mdt-text-muted-foreground">
+            {tab.count} items in {tab.label.toLowerCase()}.
+          </p>
+        </div>
+      </TabsContent>
+    ))}
+  </Tabs>
+);
+
+/**
+ * **A glyph, a label and a count on the same tab.**
+ *
+ * `icon` and `badge` are props on `TabsTrigger`, so either, both or neither is
+ * fine and the spacing is the same everywhere. Before this, a tab bar with both
+ * meant assembling the pieces by hand in `children` and picking your own
+ * margins — which is why the icon story and the badge story never quite lined
+ * up with each other.
+ *
+ * The count is a real `Badge`, so it inherits the tones the rest of the system
+ * uses rather than a one-off span.
+ */
+export const IconLabelAndBadge: Story = {
+  name: 'Icon, label and badge',
+  parameters: { controls: { disable: true } },
+  render: () => <NavTabs variant="default" />,
+};
+
+/**
+ * The same tab bar in all four looks, so you can see the combination holds up
+ * everywhere rather than only in the one it was designed against.
+ */
+export const IconLabelAndBadgeVariants: Story = {
+  name: 'Icon, label and badge — every look',
+  parameters: { controls: { disable: true } },
+  render: () => (
+    <div className="mdt-flex mdt-flex-col mdt-gap-8">
+      {(['default', 'underline', 'card', 'pills'] as const).map((variant) => (
+        <div key={variant} className="mdt-flex mdt-flex-col mdt-gap-2">
+          <span className="mdt-text-xs mdt-font-medium mdt-uppercase mdt-tracking-wider mdt-text-muted-foreground">
+            {variant}
+          </span>
+          <NavTabs variant={variant} />
+        </div>
+      ))}
+    </div>
+  ),
+};
+
+/**
+ * The three ways a tab can be built, side by side — label only, label with a
+ * glyph, label with a count, and all three together.
+ */
+export const TabAnatomy: Story = {
+  name: 'What a tab can carry',
+  parameters: { controls: { disable: true } },
+  render: () => (
+    <Tabs defaultValue="all" className="mdt-w-[620px] mdt-max-w-full">
+      <TabsList>
+        <TabsTrigger value="all">Label only</TabsTrigger>
+        <TabsTrigger value="icon" icon={<Icon name="inbox" />}>
+          Icon and label
+        </TabsTrigger>
+        <TabsTrigger
+          value="badge"
+          badge={
+            <Badge tone="info" size="sm">
+              9
+            </Badge>
+          }
+        >
+          Label and badge
+        </TabsTrigger>
+        <TabsTrigger
+          value="both"
+          icon={<Icon name="flag" />}
+          badge={
+            <Badge tone="danger" size="sm">
+              3
+            </Badge>
+          }
+        >
+          All three
+        </TabsTrigger>
+      </TabsList>
+      <TabsContent value="all">
+        <div className="mdt-rounded-lg mdt-border mdt-border-border mdt-p-4 mdt-text-sm mdt-text-muted-foreground">
+          Just a label.
+        </div>
+      </TabsContent>
+      <TabsContent value="icon">
+        <div className="mdt-rounded-lg mdt-border mdt-border-border mdt-p-4 mdt-text-sm mdt-text-muted-foreground">
+          A glyph helps you find the tab you want without reading.
+        </div>
+      </TabsContent>
+      <TabsContent value="badge">
+        <div className="mdt-rounded-lg mdt-border mdt-border-border mdt-p-4 mdt-text-sm mdt-text-muted-foreground">
+          A count tells you there is something waiting.
+        </div>
+      </TabsContent>
+      <TabsContent value="both">
+        <div className="mdt-rounded-lg mdt-border mdt-border-border mdt-p-4 mdt-text-sm mdt-text-muted-foreground">
+          Both at once — what most real navigation needs.
+        </div>
+      </TabsContent>
+    </Tabs>
+  ),
+};
+
+// ============================================================================
+// Editable tabs — add and close, the way Notion and ClickUp work
+// ============================================================================
+
+const EditableTabsDemo = ({ variant }: Readonly<{ variant: TabsVariant }>) => {
+  const { tabs, active, setActive, add, close, canClose } = useEditableTabs({
+    initialTabs: [
+      { id: 'a', label: 'Overview' },
+      { id: 'b', label: 'Agents' },
+      { id: 'c', label: 'Credentials' },
+    ],
+    newTabLabel: (n) => `View ${n.toString()}`,
+  });
+
+  return (
+    <Tabs value={active} onValueChange={setActive} className="mdt-w-[620px] mdt-max-w-full">
+      <TabsList variant={variant}>
+        {tabs.map((tab) => (
+          <TabsTrigger
+            key={tab.id}
+            value={tab.id}
+            variant={variant}
+            closable={canClose(tab.id)}
+            onClose={() => {
+              close(tab.id);
+            }}
+          >
+            {tab.label}
+          </TabsTrigger>
+        ))}
+        <TabsAdd
+          onClick={() => {
+            add();
+          }}
+        />
+      </TabsList>
+
+      {tabs.map((tab) => (
+        <TabsContent key={tab.id} value={tab.id}>
+          <div className="mdt-rounded-lg mdt-border mdt-border-border mdt-p-4">
+            <h3 className="mdt-text-lg mdt-font-semibold">{tab.label}</h3>
+            <p className="mdt-text-sm mdt-text-muted-foreground">
+              Close this tab and the one to its right takes its place. Close the last one and the
+              one to its left does.
+            </p>
+          </div>
+        </TabsContent>
+      ))}
+    </Tabs>
+  );
+};
+
+/**
+ * **Tabs the person builds themselves** — add with the plus, close with the
+ * cross.
+ *
+ * The concept is Notion's and ClickUp's, not their look: a tab bar that is a set
+ * of things you opened rather than fixed navigation.
+ *
+ * Adding and closing sounds like two lines of code until you close the tab you
+ * are looking at, and then something has to decide where you land. `useEditableTabs`
+ * holds those answers so every tab bar in the product behaves the same way:
+ *
+ * - **Closing a tab you are not on changes nothing else** — you keep looking at
+ *   what you were looking at.
+ * - **Closing the tab you are on selects its right-hand neighbour**, or the left
+ *   one if it was last.
+ * - **The last tab has no cross.** An empty tab bar has nothing to select and no
+ *   way back.
+ * - **A new tab is selected straight away**, because you made it to use it.
+ *
+ * The cross is a real button sitting beside the tab rather than inside it — a
+ * button nested in a button is invalid, and it leaves the cross unreachable by
+ * keyboard.
+ */
+export const EditableTabs: Story = {
+  name: 'Add and close tabs',
+  parameters: { controls: { disable: true } },
+  render: () => <EditableTabsDemo variant="default" />,
+};
+
+/**
+ * The same behaviour in all four looks.
+ */
+export const EditableTabsVariants: Story = {
+  name: 'Add and close — every look',
+  parameters: { controls: { disable: true } },
+  render: () => (
+    <div className="mdt-flex mdt-flex-col mdt-gap-8">
+      {(['default', 'underline', 'card', 'pills'] as const).map((variant) => (
+        <div key={variant} className="mdt-flex mdt-flex-col mdt-gap-2">
+          <span className="mdt-text-xs mdt-font-medium mdt-uppercase mdt-tracking-wider mdt-text-muted-foreground">
+            {variant}
+          </span>
+          <EditableTabsDemo variant={variant} />
+        </div>
+      ))}
+    </div>
+  ),
 };
