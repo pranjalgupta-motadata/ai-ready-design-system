@@ -1,6 +1,7 @@
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import { cn } from '@/utils';
+import { Icon } from '../Icon';
 import type {
   PaginationProps,
   PaginationContentProps,
@@ -131,20 +132,7 @@ const PaginationPrevious = forwardRef<HTMLAnchorElement, PaginationLinkProps & {
       className={cn('mdt-gap-1 mdt-pl-2.5', className)}
       {...props}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="m15 18-6-6 6-6" />
-      </svg>
+      <Icon name="chevron-left" size="sm" aria-hidden />
       <span>{label}</span>
     </PaginationLink>
   )
@@ -163,20 +151,7 @@ const PaginationNext = forwardRef<HTMLAnchorElement, PaginationLinkProps & { lab
       {...props}
     >
       <span>{label}</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="m9 18 6-6-6-6" />
-      </svg>
+      <Icon name="chevron-right" size="sm" aria-hidden />
     </PaginationLink>
   )
 );
@@ -193,21 +168,7 @@ const PaginationEllipsis = forwardRef<HTMLSpanElement, PaginationEllipsisProps>(
       className={cn('mdt-flex mdt-h-9 mdt-w-9 mdt-items-center mdt-justify-center', className)}
       {...props}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="1" />
-        <circle cx="19" cy="12" r="1" />
-        <circle cx="5" cy="12" r="1" />
-      </svg>
+      <Icon name="more-horizontal" size="sm" aria-hidden />
       <span className="mdt-sr-only">More pages</span>
     </span>
   )

@@ -2,6 +2,7 @@ import { cva } from 'class-variance-authority';
 import { forwardRef, useState, useCallback } from 'react';
 import { cn } from '@/utils';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '../DropdownMenu';
+import { Icon } from '../Icon';
 import type {
   SidebarProps,
   SidebarHeaderProps,
@@ -121,18 +122,7 @@ const SidebarHeader = forwardRef<HTMLDivElement, SidebarHeaderProps>(
                 className="mdt-flex mdt-h-6 mdt-w-6 mdt-items-center mdt-justify-center mdt-rounded mdt-text-muted-foreground mdt-transition-colors hover:mdt-bg-muted hover:mdt-text-foreground"
                 aria-label="Switch project"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="mdt-h-4 mdt-w-4"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <Icon name="chevron-down" size="sm" aria-hidden />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="mdt-w-56">
@@ -181,19 +171,12 @@ const SidebarSearch = forwardRef<HTMLInputElement, SidebarSearchProps>(
     return (
       <div className={cn('mdt-px-3 mdt-py-2', className)}>
         <div className="mdt-relative">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="mdt-absolute mdt-left-3 mdt-top-1/2 mdt-h-4 mdt-w-4 mdt--translate-y-1/2 mdt-text-muted-foreground"
-            aria-hidden="true"
-          >
-            <path
-              fillRule="evenodd"
-              d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <Icon
+            name="search"
+            size="sm"
+            className="mdt-absolute mdt-left-3 mdt-top-1/2 mdt--translate-y-1/2 mdt-text-muted-foreground"
+            aria-hidden
+          />
           <input
             ref={ref}
             type="text"
@@ -302,21 +285,12 @@ const SidebarCollapse = forwardRef<HTMLDivElement, SidebarCollapseProps>(
           )}
         >
           <span>{title}</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className={cn(
-              'mdt-h-3 mdt-w-3 mdt-transition-transform',
-              isOpen ? 'mdt-rotate-90' : ''
-            )}
-          >
-            <path
-              fillRule="evenodd"
-              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <Icon
+            name="chevron-right"
+            size="xs"
+            className={cn('mdt-transition-transform', isOpen ? 'mdt-rotate-90' : '')}
+            aria-hidden
+          />
         </button>
         {isOpen && <div className="mdt-mt-1 mdt-space-y-0.5">{children}</div>}
       </div>
@@ -486,22 +460,7 @@ const DataDrivenSidebar = forwardRef<HTMLDivElement, DataDrivenSidebarProps>(
             {hasMore && !isExpanded && (
               <SidebarItem
                 variant="more"
-                icon={
-                  section.moreButton?.icon ?? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="mdt-h-4 mdt-w-4"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  )
-                }
+                icon={section.moreButton?.icon ?? <Icon name="arrow-right" size="sm" aria-hidden />}
                 onClick={() => {
                   toggleSection(section.id, hasMore);
                   section.moreButton?.onClick?.();

@@ -1,6 +1,7 @@
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import { cn } from '@/utils';
+import { Icon } from '../Icon';
 import type { TagPillProps } from './TagPill.types';
 
 /**
@@ -105,17 +106,10 @@ const TagPill = forwardRef<HTMLSpanElement, TagPillProps>(
               )}
               aria-label="Remove tag"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 10 10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                className="mdt-h-2.5 mdt-w-2.5"
-              >
-                <path d="M8 2L2 8M2 2l6 6" />
-              </svg>
+              {/* xs is the smallest step on the scale. Lucide's cross fills half
+                  its box against the six-tenths the hand-drawn one used, so at 12px
+                  the visible mark stays the 6px it always was. */}
+              <Icon name="x" size="xs" aria-hidden />
             </button>
           </>
         )}
