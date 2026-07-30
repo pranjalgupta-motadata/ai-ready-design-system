@@ -3,7 +3,15 @@ import { forwardRef } from 'react';
 import { cn } from '@/utils';
 import type { BadgeProps, BadgeSize, BadgeTone } from './Badge.types';
 
-const AUTO_HEIGHT = 'mdt-h-auto';
+/**
+ * What `bare` has to undo from whichever size is in play.
+ *
+ * These belong here rather than on the `shape` variant because CVA applies
+ * variants in declaration order and `size` is declared after `shape` - so a
+ * size's `px-2.5` and `min-w-6` win over anything the shape set. Compound
+ * variants are applied last, which is the only place a reset can actually hold.
+ */
+const BARE_RESET = 'mdt-h-auto mdt-px-0 mdt-min-w-0';
 
 /**
  * Badge styles.
@@ -19,10 +27,10 @@ const AUTO_HEIGHT = 'mdt-h-auto';
  */
 export const badgeVariants = cva(
   [
-    'mdt-inline-flex mdt-items-center mdt-shrink-0',
-    'mdt-font-medium mdt-whitespace-nowrap',
+    'mdt-inline-flex mdt-shrink-0 mdt-items-center',
+    'mdt-whitespace-nowrap mdt-font-medium',
     'mdt-transition-colors',
-    '[&_svg]:mdt-shrink-0 [&_svg]:mdt-pointer-events-none',
+    '[&_svg]:mdt-pointer-events-none [&_svg]:mdt-shrink-0',
   ],
   {
     variants: {
@@ -37,17 +45,16 @@ export const badgeVariants = cva(
        * missing token pair this component needs; see MISSING-TOKENS.md.
        */
       tone: {
-        neutral:
-          'mdt-bg-muted mdt-text-neutral-110 mdt-border-border dark:mdt-text-neutral-30',
+        neutral: 'mdt-border-border mdt-bg-muted mdt-text-neutral-110 dark:mdt-text-neutral-30',
         success:
-          'mdt-bg-green-10 mdt-text-green-80 mdt-border-green-20 dark:mdt-bg-green-90 dark:mdt-text-green-30 dark:mdt-border-green-70',
+          'mdt-border-green-20 mdt-bg-green-10 mdt-text-green-80 dark:mdt-border-green-70 dark:mdt-bg-green-90 dark:mdt-text-green-30',
         warning:
-          'mdt-bg-orange-20 mdt-text-orange-80 mdt-border-orange-30 dark:mdt-bg-orange-90 dark:mdt-text-orange-30 dark:mdt-border-orange-70',
+          'mdt-border-orange-30 mdt-bg-orange-20 mdt-text-orange-80 dark:mdt-border-orange-70 dark:mdt-bg-orange-90 dark:mdt-text-orange-30',
         danger:
-          'mdt-bg-red-10 mdt-text-red-80 mdt-border-red-20 dark:mdt-bg-red-90 dark:mdt-text-red-30 dark:mdt-border-red-70',
-        info: 'mdt-bg-blue-10 mdt-text-blue-80 mdt-border-blue-20 dark:mdt-bg-blue-90 dark:mdt-text-blue-30 dark:mdt-border-blue-70',
+          'mdt-border-red-20 mdt-bg-red-10 mdt-text-red-80 dark:mdt-border-red-70 dark:mdt-bg-red-90 dark:mdt-text-red-30',
+        info: 'mdt-border-blue-20 mdt-bg-blue-10 mdt-text-blue-80 dark:mdt-border-blue-70 dark:mdt-bg-blue-90 dark:mdt-text-blue-30',
         purple:
-          'mdt-bg-purple-10 mdt-text-purple-90 mdt-border-purple-20 dark:mdt-bg-purple-100 dark:mdt-text-purple-30 dark:mdt-border-purple-80',
+          'mdt-border-purple-20 mdt-bg-purple-10 mdt-text-purple-90 dark:mdt-border-purple-80 dark:mdt-bg-purple-100 dark:mdt-text-purple-30',
       },
       shape: {
         pill: 'mdt-rounded-full',
@@ -63,7 +70,7 @@ export const badgeVariants = cva(
         // and a "bare" badge still renders a filled pill in dark mode.
         // No chip at all: no background, no border, no minimum width, and no
         // padding - so it sits flush in a dense table cell.
-        bare: 'mdt-rounded-none mdt-bg-transparent dark:mdt-bg-transparent mdt-px-0 mdt-min-w-0 mdt-border-0',
+        bare: 'mdt-rounded-none mdt-border-0 mdt-bg-transparent dark:mdt-bg-transparent',
       },
       /**
        * `min-w` matching the height is what makes count badges work without a
@@ -71,9 +78,9 @@ export const badgeVariants = cva(
        * changes, while "3" or "+2" is narrower and rounds out into a circle.
        */
       size: {
-        sm: 'mdt-h-5 mdt-min-w-5 mdt-px-2 mdt-text-xs mdt-gap-1',
-        md: 'mdt-h-6 mdt-min-w-6 mdt-px-2.5 mdt-text-xs mdt-gap-1.5',
-        lg: 'mdt-h-7 mdt-min-w-7 mdt-px-3 mdt-text-sm mdt-gap-1.5',
+        sm: 'mdt-h-5 mdt-min-w-5 mdt-gap-1 mdt-px-2 mdt-text-xs',
+        md: 'mdt-h-6 mdt-min-w-6 mdt-gap-1.5 mdt-px-2.5 mdt-text-xs',
+        lg: 'mdt-h-7 mdt-min-w-7 mdt-gap-1.5 mdt-px-3 mdt-text-sm',
       },
     },
     compoundVariants: [
@@ -82,9 +89,9 @@ export const badgeVariants = cva(
       { shape: 'bare', tone: 'neutral', class: 'mdt-text-muted-foreground' },
       // A bare badge has no chip to size, so it takes its height from the line
       // it sits on rather than the fixed height each size sets.
-      { shape: 'bare', size: 'sm', class: AUTO_HEIGHT },
-      { shape: 'bare', size: 'md', class: AUTO_HEIGHT },
-      { shape: 'bare', size: 'lg', class: AUTO_HEIGHT },
+      { shape: 'bare', size: 'sm', class: BARE_RESET },
+      { shape: 'bare', size: 'md', class: BARE_RESET },
+      { shape: 'bare', size: 'lg', class: BARE_RESET },
     ],
     defaultVariants: {
       tone: 'neutral',
@@ -122,12 +129,11 @@ const DOT_SIZE: Record<BadgeSize, string> = {
  * ```
  */
 const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ tone = 'neutral', shape, size = 'md', dot = false, icon, className, children, ...rest }, ref) => (
-    <span
-      ref={ref}
-      className={cn(badgeVariants({ tone, shape, size }), className)}
-      {...rest}
-    >
+  (
+    { tone = 'neutral', shape, size = 'md', dot = false, icon, className, children, ...rest },
+    ref
+  ) => (
+    <span ref={ref} className={cn(badgeVariants({ tone, shape, size }), className)} {...rest}>
       {dot ? (
         <span
           className={cn('mdt-rounded-full', DOT_TONE[tone], DOT_SIZE[size])}
