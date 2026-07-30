@@ -8,12 +8,11 @@ export const GroupIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 7V5C3 3.9 3.9 3 5 3H7M17 3H19C20.1 3 21 3.9 21 5V7M21 17V19C21 20.1 20.1 21 19 21H17M7 21H5C3.9 21 3 20.1 3 19V17M8 7H13C13.5523 7 14 7.44772 14 8V11C14 11.5523 13.5523 12 13 12H8C7.44772 12 7 11.5523 7 11V8C7 7.44772 7.44772 7 8 7ZM11 12H16C16.5523 12 17 12.4477 17 13V16C17 16.5523 16.5523 17 16 17H11C10.4477 17 10 16.5523 10 16V13C10 12.4477 10.4477 12 11 12Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M3 7V5c0-1.1.9-2 2-2h2" />
+    <path d="M17 3h2c1.1 0 2 .9 2 2v2" />
+    <path d="M21 17v2c0 1.1-.9 2-2 2h-2" />
+    <path d="M7 21H5c-1.1 0-2-.9-2-2v-2" />
+    <rect width="7" height="5" x="7" y="7" rx="1" />
+    <rect width="7" height="5" x="10" y="12" rx="1" />
   </svg>
 );

@@ -8,12 +8,8 @@ export const SproutIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M7 20H17M10 20C15.5 17.5 10.8 13.6 13 10M13 10C12.9541 8.58615 13.3376 7.19156 14.1 6C15 5 16.3 4.1 19 4C18.9 6.3 18.3 7.6 17.3 8.6C16.3 9.4 14.9 9.9 13 10ZM9.5 9.39997C10.6 10.2 11.3 11.6 11.8 13.1C9.8 13.5 8.3 13.5 7 12.8C5.8 12.2 4.7 10.9 4 8.59997C6.8 8.09997 8.4 8.59997 9.5 9.39997Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3" />
+    <path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4" />
+    <path d="M5 21h14" />
   </svg>
 );

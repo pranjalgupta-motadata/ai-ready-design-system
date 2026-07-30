@@ -8,12 +8,10 @@ export const ListStartIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M16 12H3M16 18H3M10 6H3M21 18V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H14M14 6L16 8M14 6L16 4"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M3 5h6" />
+    <path d="M3 12h13" />
+    <path d="M3 19h13" />
+    <path d="m16 8-3-3 3-3" />
+    <path d="M21 19V7a2 2 0 0 0-2-2h-6" />
   </svg>
 );

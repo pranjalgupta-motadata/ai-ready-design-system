@@ -8,12 +8,10 @@ export const Plug2Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M9 2V8M15 2V8M12 17V22M12 17C13.5913 17 15.1174 16.3679 16.2426 15.2426C17.3679 14.1174 18 12.5913 18 11V8H6V11C6 12.5913 6.63214 14.1174 7.75736 15.2426C8.88258 16.3679 10.4087 17 12 17ZM5 8H19"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M9 2v6" />
+    <path d="M15 2v6" />
+    <path d="M12 17v5" />
+    <path d="M5 8h14" />
+    <path d="M6 11V8h12v3a6 6 0 1 1-12 0Z" />
   </svg>
 );

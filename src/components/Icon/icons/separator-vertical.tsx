@@ -8,12 +8,8 @@ export const SeparatorVerticalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M12 3V21M8 8L4 12L8 16M16 16L20 12L16 8"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 3v18" />
+    <path d="m16 16 4-4-4-4" />
+    <path d="m8 8-4 4 4 4" />
   </svg>
 );

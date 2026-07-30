@@ -8,12 +8,12 @@ export const Dice6Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M16 8H16.01M16 12H16.01M16 16H16.01M8 8H8.01M8 12H8.01M8 16H8.01M5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+    <path d="M16 8h.01" />
+    <path d="M16 12h.01" />
+    <path d="M16 16h.01" />
+    <path d="M8 8h.01" />
+    <path d="M8 12h.01" />
+    <path d="M8 16h.01" />
   </svg>
 );

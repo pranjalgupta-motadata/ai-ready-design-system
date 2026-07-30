@@ -8,12 +8,12 @@ export const ShoppingBasketIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M5 11L9 4M19 11L15 4M2 11H22M3.5 11L5.1 18.4C5.1935 18.8586 5.44485 19.2698 5.81028 19.5621C6.17572 19.8545 6.63211 20.0094 7.1 20H16.9C17.8 20 18.7 19.3 18.9 18.4L20.6 11M9 11L10 20M4.5 15.5H19.5M15 11L14 20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m15 11-1 9" />
+    <path d="m19 11-4-7" />
+    <path d="M2 11h20" />
+    <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4" />
+    <path d="M4.5 15.5h15" />
+    <path d="m5 11 4-7" />
+    <path d="m9 11 1 9" />
   </svg>
 );

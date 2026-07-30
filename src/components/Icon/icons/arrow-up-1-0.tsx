@@ -8,12 +8,10 @@ export const ArrowUp10Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 8L7 4M7 4L11 8M7 4V20M17 10V4H15M15 10H19M17 14C18.1046 14 19 14.8954 19 16V18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18V16C15 14.8954 15.8954 14 17 14Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m3 8 4-4 4 4" />
+    <path d="M7 4v16" />
+    <path d="M17 10V4h-2" />
+    <path d="M15 10h4" />
+    <rect x="15" y="14" width="4" height="6" ry="2" />
   </svg>
 );

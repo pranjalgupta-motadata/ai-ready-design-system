@@ -8,12 +8,8 @@ export const SplitSquareHorizontalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M8 19H5C4 19 3 18 3 17V7C3 6 4 5 5 5H8M16 5H19C20 5 21 6 21 7V17C21 18 20 19 19 19H16M12 4V20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M8 19H5c-1 0-2-1-2-2V7c0-1 1-2 2-2h3" />
+    <path d="M16 5h3c1 0 2 1 2 2v10c0 1-1 2-2 2h-3" />
+    <line x1="12" x2="12" y1="4" y2="20" />
   </svg>
 );

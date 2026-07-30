@@ -8,12 +8,9 @@ export const Scale3dIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M17 19C17 20.1046 17.8954 21 19 21C20.1046 21 21 20.1046 21 19C21 17.8954 20.1046 17 19 17C17.8954 17 17 17.8954 17 19ZM17 19H5M5 7C6.10457 7 7 6.10457 7 5C7 3.89543 6.10457 3 5 3C3.89543 3 3 3.89543 3 5C3 6.10457 3.89543 7 5 7ZM5 7V19M5 19L11 13"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M5 7v11a1 1 0 0 0 1 1h11" />
+    <path d="M5.293 18.707 11 13" />
+    <circle cx="19" cy="19" r="2" />
+    <circle cx="5" cy="5" r="2" />
   </svg>
 );

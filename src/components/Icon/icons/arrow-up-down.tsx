@@ -8,12 +8,9 @@ export const ArrowUpDownIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M21 16L17 20M17 20L13 16M17 20V4M3 8L7 4M7 4L11 8M7 4V20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m21 16-4 4-4-4" />
+    <path d="M17 20V4" />
+    <path d="m3 8 4-4 4 4" />
+    <path d="M7 4v16" />
   </svg>
 );

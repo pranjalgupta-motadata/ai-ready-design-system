@@ -8,12 +8,8 @@ export const AlignVerticalJustifyEndIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 22H22M7 12H17C18.1046 12 19 12.8954 19 14V16C19 17.1046 18.1046 18 17 18H7C5.89543 18 5 17.1046 5 16V14C5 12.8954 5.89543 12 7 12ZM9 2H15C16.1046 2 17 2.89543 17 4V6C17 7.10457 16.1046 8 15 8H9C7.89543 8 7 7.10457 7 6V4C7 2.89543 7.89543 2 9 2Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="14" height="6" x="5" y="12" rx="2" />
+    <rect width="10" height="6" x="7" y="2" rx="2" />
+    <path d="M2 22h20" />
   </svg>
 );

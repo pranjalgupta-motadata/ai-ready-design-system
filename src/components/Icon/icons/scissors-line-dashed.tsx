@@ -8,12 +8,12 @@ export const ScissorsLineDashedIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M5.42004 9.42004L8.00004 12M14 6L5.42004 14.58M10.8 14.8L14 18M16 12H14M22 12H20M6 8C6 9.10457 5.10457 10 4 10C2.89543 10 2 9.10457 2 8C2 6.89543 2.89543 6 4 6C5.10457 6 6 6.89543 6 8ZM6 16C6 17.1046 5.10457 18 4 18C2.89543 18 2 17.1046 2 16C2 14.8954 2.89543 14 4 14C5.10457 14 6 14.8954 6 16Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M5.42 9.42 8 12" />
+    <circle cx="4" cy="8" r="2" />
+    <path d="m14 6-8.58 8.58" />
+    <circle cx="4" cy="16" r="2" />
+    <path d="M10.8 14.8 14 18" />
+    <path d="M16 12h-2" />
+    <path d="M22 12h-2" />
   </svg>
 );

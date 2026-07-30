@@ -8,12 +8,8 @@ export const TextIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M17 6.09961H3M21 12.0996H3M15.1 17.9996H3"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M21 5H3" />
+    <path d="M15 12H3" />
+    <path d="M17 19H3" />
   </svg>
 );

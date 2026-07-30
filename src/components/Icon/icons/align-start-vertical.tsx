@@ -8,12 +8,8 @@ export const AlignStartVerticalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 2V22M8 14H13C14.1046 14 15 14.8954 15 16V18C15 19.1046 14.1046 20 13 20H8C6.89543 20 6 19.1046 6 18V16C6 14.8954 6.89543 14 8 14ZM8 4H20C21.1046 4 22 4.89543 22 6V8C22 9.10457 21.1046 10 20 10H8C6.89543 10 6 9.10457 6 8V6C6 4.89543 6.89543 4 8 4Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="9" height="6" x="6" y="14" rx="2" />
+    <rect width="16" height="6" x="6" y="4" rx="2" />
+    <path d="M2 2v20" />
   </svg>
 );

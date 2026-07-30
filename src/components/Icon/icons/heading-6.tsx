@@ -8,12 +8,10 @@ export const Heading6Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 12H12M4 18V6M12 18V6M17 16C17 17.1046 17.8954 18 19 18C20.1046 18 21 17.1046 21 16C21 14.8954 20.1046 14 19 14C17.8954 14 17 14.8954 17 16ZM17 16C17 13.5 18 12 20 10"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M4 12h8" />
+    <path d="M4 18V6" />
+    <path d="M12 18V6" />
+    <circle cx="19" cy="16" r="2" />
+    <path d="M20 10c-2 2-3 3.5-3 6" />
   </svg>
 );

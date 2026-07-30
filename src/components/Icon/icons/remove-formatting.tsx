@@ -8,12 +8,10 @@ export const RemoveFormattingIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 7V4H20V7M5 20H11M13 4L8 20M15 15L20 20M20 15L15 20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M4 7V4h16v3" />
+    <path d="M5 20h6" />
+    <path d="M13 4 8 20" />
+    <path d="m15 15 5 5" />
+    <path d="m20 15-5 5" />
   </svg>
 );

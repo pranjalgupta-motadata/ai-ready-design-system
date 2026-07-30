@@ -8,12 +8,6 @@ export const BluetoothIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M7 7L17 17L12 22V2L17 7L7 17"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m7 7 10 10-5 5V2l5 5L7 17" />
   </svg>
 );

@@ -8,12 +8,9 @@ export const RockingChairIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3.5 2L6.5 12.5H18M9.5 12.5L5.5 20M15 12.5L18.5 20M2.75 18C3.95921 19.2245 5.39952 20.1968 6.98738 20.8603C8.57525 21.5239 10.2791 21.8656 12 21.8656C13.7209 21.8656 15.4248 21.5239 17.0126 20.8603C18.6005 20.1968 20.0408 19.2245 21.25 18"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m15 13 3.708 7.416" />
+    <path d="M3 19a15 15 0 0 0 18 0" />
+    <path d="m3 2 3.21 9.633A2 2 0 0 0 8.109 13H18" />
+    <path d="m9 13-3.708 7.416" />
   </svg>
 );

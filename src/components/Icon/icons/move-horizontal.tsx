@@ -8,12 +8,8 @@ export const MoveHorizontalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M18 8L22 12M22 12L18 16M22 12H2M6 8L2 12M2 12L6 16"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m18 8 4 4-4 4" />
+    <path d="M2 12h20" />
+    <path d="m6 8-4 4 4 4" />
   </svg>
 );

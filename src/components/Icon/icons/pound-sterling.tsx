@@ -8,12 +8,9 @@ export const PoundSterlingIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M18 6.99975C18 1.66675 10 1.66675 10 6.99975V20.9998M6 20.9998H18M6 12.9998H16"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M18 7c0-5.333-8-5.333-8 0" />
+    <path d="M10 7v14" />
+    <path d="M6 21h12" />
+    <path d="M6 13h10" />
   </svg>
 );

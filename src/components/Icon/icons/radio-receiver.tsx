@@ -8,12 +8,9 @@ export const RadioReceiverIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M5 16V18M19 16V18M4 8H20C21.1046 8 22 8.89543 22 10V14C22 15.1046 21.1046 16 20 16H4C2.89543 16 2 15.1046 2 14V10C2 8.89543 2.89543 8 4 8Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M5 16v2" />
+    <path d="M19 16v2" />
+    <rect width="20" height="8" x="2" y="8" rx="2" />
+    <path d="M18 12h.01" />
   </svg>
 );

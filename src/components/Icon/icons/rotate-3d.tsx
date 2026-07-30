@@ -8,12 +8,8 @@ export const Rotate3dIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M16.466 7.5C15.643 4.237 13.952 2 12 2C9.239 2 7 6.477 7 12C7 17.523 9.239 22 12 22C12.342 22 12.677 21.931 13 21.8M15.1941 13.707L19.0081 15.567L17.1481 19.381M19 15.57C17.196 16.455 14.726 17 12 17C6.477 17 2 14.761 2 12C2 9.239 6.477 7 12 7C16.838 7 20.873 8.718 21.8 11"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m15.194 13.707 3.814 1.86-1.86 3.814" />
+    <path d="M16.47214 7.52786 A 5 10 0 1 0 13 21.79796" />
+    <path d="M21.79796 11 A 10 5 0 1 0 19 15.57071" />
   </svg>
 );

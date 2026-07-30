@@ -8,12 +8,8 @@ export const LampWallDownIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M14 13V8C14 7.46957 13.7893 6.96086 13.4142 6.58579C13.0391 6.21071 12.5304 6 12 6H8M11 13H17L20 20H8L11 13ZM4 9H6C6.53043 9 7.03914 8.78929 7.41421 8.41421C7.78929 8.03914 8 7.53043 8 7V5C8 4.46957 7.78929 3.96086 7.41421 3.58579C7.03914 3.21071 6.53043 3 6 3H4V9Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M19.929 18.629A1 1 0 0 1 19 20H9a1 1 0 0 1-.928-1.371l2-5A1 1 0 0 1 11 13h6a1 1 0 0 1 .928.629z" />
+    <path d="M6 3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+    <path d="M8 6h4a2 2 0 0 1 2 2v5" />
   </svg>
 );

@@ -8,12 +8,7 @@ export const HighlighterIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M9 11L3 17V20H12L15 17M22.0001 12L17.4001 16.6C17.0262 16.9665 16.5236 17.1717 16.0001 17.1717C15.4766 17.1717 14.9739 16.9665 14.6001 16.6L9.40008 11.4C9.03363 11.0261 8.82837 10.5235 8.82837 10C8.82837 9.47649 9.03363 8.97386 9.40008 8.6L14.0001 4"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m9 11-6 6v3h9l3-3" />
+    <path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4" />
   </svg>
 );

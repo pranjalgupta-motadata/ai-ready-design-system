@@ -8,12 +8,9 @@ export const Minimize2Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 14H10M10 14V20M10 14L3 21M20 10H14M14 10V4M14 10L21 3"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m14 10 7-7" />
+    <path d="M20 10h-6V4" />
+    <path d="m3 21 7-7" />
+    <path d="M4 14h6v6" />
   </svg>
 );

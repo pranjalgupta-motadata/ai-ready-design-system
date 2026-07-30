@@ -8,12 +8,10 @@ export const ArrowDownNarrowWideIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 16L7 20M7 20L11 16M7 20V4M11 4H15M11 8H18M11 12H21"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m3 16 4 4 4-4" />
+    <path d="M7 20V4" />
+    <path d="M11 4h4" />
+    <path d="M11 8h7" />
+    <path d="M11 12h10" />
   </svg>
 );

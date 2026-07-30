@@ -8,12 +8,8 @@ export const VibrateIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 8L4 10L2 12L4 14L2 16M22 8L20 10L22 12L20 14L22 16M9 5H15C15.5523 5 16 5.44772 16 6V18C16 18.5523 15.5523 19 15 19H9C8.44772 19 8 18.5523 8 18V6C8 5.44772 8.44772 5 9 5Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m2 8 2 2-2 2 2 2-2 2" />
+    <path d="m22 8-2 2 2 2-2 2 2 2" />
+    <rect width="8" height="14" x="8" y="5" rx="1" />
   </svg>
 );

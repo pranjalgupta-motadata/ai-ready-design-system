@@ -8,12 +8,10 @@ export const MousePointerClickIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M16.0713 16.0703L20.3143 20.3133M7.18828 2.23828L7.96528 5.13528M5.13628 7.96428L2.23828 7.18728M13.9503 4.04928L11.8283 6.17128M6.17128 11.8273L4.05128 13.9493M9.00024 8.99927L14.0002 20.9993L15.7742 15.7733L21.0002 13.9993L9.00024 8.99927Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M14 4.1 12 6" />
+    <path d="m5.1 8-2.9-.8" />
+    <path d="m6 12-1.9 2" />
+    <path d="M7.2 2.2 8 5.1" />
+    <path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z" />
   </svg>
 );

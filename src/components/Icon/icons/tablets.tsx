@@ -8,12 +8,9 @@ export const TabletsIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M22 17C22 19.7614 19.7614 22 17 22C14.2386 22 12 19.7614 12 17M22 17C22 14.2386 19.7614 12 17 12C14.2386 12 12 14.2386 12 17M22 17H12M3.45996 10.54L10.54 3.45996M12 7C12 9.76142 9.76142 12 7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <circle cx="7" cy="7" r="5" />
+    <circle cx="17" cy="17" r="5" />
+    <path d="M12 17h10" />
+    <path d="m3.46 10.54 7.08-7.08" />
   </svg>
 );

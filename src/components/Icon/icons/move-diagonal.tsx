@@ -8,12 +8,8 @@ export const MoveDiagonalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M13 5H19M19 5V11M19 5L5 19M11 19H5M5 19V13"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M11 19H5v-6" />
+    <path d="M13 5h6v6" />
+    <path d="M19 5 5 19" />
   </svg>
 );

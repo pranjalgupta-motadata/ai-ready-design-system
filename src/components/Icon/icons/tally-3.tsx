@@ -8,12 +8,8 @@ export const Tally3Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 4V20M9 4V20M14 4V20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M4 4v16" />
+    <path d="M9 4v16" />
+    <path d="M14 4v16" />
   </svg>
 );

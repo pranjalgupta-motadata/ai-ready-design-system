@@ -8,12 +8,12 @@ export const ApertureIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M14.3101 8L20.0501 17.94M9.68994 8H21.1699M7.38 12L13.12 2.06M9.68995 16L3.94995 6.06M14.31 16H2.82996M16.62 12L10.88 21.94M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <circle cx="12" cy="12" r="10" />
+    <path d="m14.31 8 5.74 9.94" />
+    <path d="M9.69 8h11.48" />
+    <path d="m7.38 12 5.74-9.94" />
+    <path d="M9.69 16 3.95 6.06" />
+    <path d="M14.31 16H2.83" />
+    <path d="m16.62 12-5.74 9.94" />
   </svg>
 );

@@ -8,12 +8,10 @@ export const ArrowUpAZIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 8L7 4M7 4L11 8M7 4V20M20 8H15M15 10V6.5C15 5.83696 15.2634 5.20107 15.7322 4.73223C16.2011 4.26339 16.837 4 17.5 4C18.163 4 18.7989 4.26339 19.2678 4.73223C19.7366 5.20107 20 5.83696 20 6.5V10M15 14H20L15 20H20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m3 8 4-4 4 4" />
+    <path d="M7 4v16" />
+    <path d="M20 8h-5" />
+    <path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10" />
+    <path d="M15 14h5l-5 6h5" />
   </svg>
 );

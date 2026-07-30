@@ -8,12 +8,8 @@ export const SpellCheck2Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M6 16L12 4L18 16M8 12H16M4 21C5.1 21 5.1 20 6.3 20C7.5 20 7.4 21 8.6 21C9.7 21 9.7 20 10.9 20C12 20 12 21 13.2 21C14.3 21 14.3 20 15.5 20C16.6 20 16.6 21 17.8 21C18.9 21 18.9 20 20.1 20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m6 16 6-12 6 12" />
+    <path d="M8 12h8" />
+    <path d="M4 21c1.1 0 1.1-1 2.3-1s1.1 1 2.3 1c1.1 0 1.1-1 2.3-1 1.1 0 1.1 1 2.3 1 1.1 0 1.1-1 2.3-1 1.1 0 1.1 1 2.3 1 1.1 0 1.1-1 2.3-1" />
   </svg>
 );

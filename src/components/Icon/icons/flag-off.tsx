@@ -8,12 +8,9 @@ export const FlagOffIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M8 2C11 2 13 4 16 4C19 4 20 3 20 3V14M4 22V4M4 15C4 15 5 14 8 14C11 14 13 16 16 16M2 2L22 22"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
+    <path d="m2 2 20 20" />
+    <path d="M4 22V4" />
+    <path d="M7.656 2H8c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10.347" />
   </svg>
 );

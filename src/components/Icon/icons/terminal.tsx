@@ -8,12 +8,7 @@ export const TerminalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 17L10 11L4 5M12 19H20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 19h8" />
+    <path d="m4 17 6-6-6-6" />
   </svg>
 );

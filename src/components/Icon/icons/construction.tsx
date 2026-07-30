@@ -8,12 +8,13 @@ export const ConstructionIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M17 14V21M7 14V21M17 3V6M7 3V6M10 14L2.30005 6.29999M14 6L21.7 13.7M8 6L16 14M3 6H21C21.5523 6 22 6.44772 22 7V13C22 13.5523 21.5523 14 21 14H3C2.44772 14 2 13.5523 2 13V7C2 6.44772 2.44772 6 3 6Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect x="2" y="6" width="20" height="8" rx="1" />
+    <path d="M17 14v7" />
+    <path d="M7 14v7" />
+    <path d="M17 3v3" />
+    <path d="M7 3v3" />
+    <path d="M10 14 2.3 6.3" />
+    <path d="m14 6 7.7 7.7" />
+    <path d="m8 6 8 8" />
   </svg>
 );

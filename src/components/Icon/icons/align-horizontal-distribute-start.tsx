@@ -8,12 +8,9 @@ export const AlignHorizontalDistributeStartIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 2V22M14 2V22M6 5H8C9.10457 5 10 5.89543 10 7V17C10 18.1046 9.10457 19 8 19H6C4.89543 19 4 18.1046 4 17V7C4 5.89543 4.89543 5 6 5ZM16 7H18C19.1046 7 20 7.89543 20 9V15C20 16.1046 19.1046 17 18 17H16C14.8954 17 14 16.1046 14 15V9C14 7.89543 14.8954 7 16 7Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="6" height="14" x="4" y="5" rx="2" />
+    <rect width="6" height="10" x="14" y="7" rx="2" />
+    <path d="M4 2v20" />
+    <path d="M14 2v20" />
   </svg>
 );

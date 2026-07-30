@@ -8,12 +8,11 @@ export const ScissorsSquareIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M9.41394 9.41394L11.9999 11.9999M14.8 14.8L18 18M17.9999 6L9.41394 14.586M4 2H20C21.1046 2 22 2.89543 22 4V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20V4C2 2.89543 2.89543 2 4 2ZM10 8C10 9.10457 9.10457 10 8 10C6.89543 10 6 9.10457 6 8C6 6.89543 6.89543 6 8 6C9.10457 6 10 6.89543 10 8ZM10 16C10 17.1046 9.10457 18 8 18C6.89543 18 6 17.1046 6 16C6 14.8954 6.89543 14 8 14C9.10457 14 10 14.8954 10 16Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m17 17-2.18-2.18" />
+    <path d="M9.56 14.44 17 7" />
+    <path d="M9.56 9.56 12 12" />
+    <circle cx="8.5" cy="15.5" r="1.5" />
+    <circle cx="8.5" cy="8.5" r="1.5" />
+    <rect x="3" y="3" width="18" height="18" rx="2" />
   </svg>
 );

@@ -8,12 +8,16 @@ export const DnaIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 15C8.667 9 15.333 15 22 9M9 22C10.798 20.002 11.518 18.005 11.807 16.007M15.0001 2C13.2021 3.998 12.4821 5.995 12.1931 7.993M17 6L14.5 3.5M14 8L13 7M7 18L9.5 20.5M3.5 14.5L4 15M20 9L20.5 9.5M6.5 12.5L7.5 13.5M16.5 10.5L17.5 11.5M10 16L11.5 17.5"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m10 16 1.5 1.5" />
+    <path d="m14 8-1.5-1.5" />
+    <path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993" />
+    <path d="m16.5 10.5 1 1" />
+    <path d="m17 6-2.891-2.891" />
+    <path d="M2 15c6.667-6 13.333 0 20-6" />
+    <path d="m20 9 .891.891" />
+    <path d="M3.109 14.109 4 15" />
+    <path d="m6.5 12.5 1 1" />
+    <path d="m7 18 2.891 2.891" />
+    <path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993" />
   </svg>
 );

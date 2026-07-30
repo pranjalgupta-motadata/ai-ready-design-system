@@ -8,12 +8,12 @@ export const BlindsIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 3H21M20 7H8M20 11H8M10 19H20M8 15H20M4 3V17M4 17C2.89543 17 2 17.8954 2 19C2 20.1046 2.89543 21 4 21C5.10457 21 6 20.1046 6 19C6 17.8954 5.10457 17 4 17Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M3 3h18" />
+    <path d="M20 7H8" />
+    <path d="M20 11H8" />
+    <path d="M10 19h10" />
+    <path d="M8 15h12" />
+    <path d="M4 3v14" />
+    <circle cx="4" cy="19" r="2" />
   </svg>
 );

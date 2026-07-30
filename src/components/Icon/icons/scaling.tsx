@@ -8,12 +8,9 @@ export const ScalingIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M21 3L9 15M21 3H16M21 3V8M9 15H14M9 15V10M12 3H3V21H21V12"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+    <path d="M14 15H9v-5" />
+    <path d="M16 3h5v5" />
+    <path d="M21 3 9 15" />
   </svg>
 );

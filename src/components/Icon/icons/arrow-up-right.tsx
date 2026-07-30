@@ -8,12 +8,7 @@ export const ArrowUpRightIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M7 7H17M17 7V17M17 7L7 17"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M7 7h10v10" />
+    <path d="M7 17 17 7" />
   </svg>
 );

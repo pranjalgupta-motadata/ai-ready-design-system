@@ -8,12 +8,9 @@ export const PersonStandingIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M9 20L12 14M12 14L15 20M12 14V10M6 8L12 10M12 10L18 8M13 5C13 5.55228 12.5523 6 12 6C11.4477 6 11 5.55228 11 5C11 4.44772 11.4477 4 12 4C12.5523 4 13 4.44772 13 5Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <circle cx="12" cy="5" r="1" />
+    <path d="m9 20 3-6 3 6" />
+    <path d="m6 8 6 2 6-2" />
+    <path d="M12 10v4" />
   </svg>
 );

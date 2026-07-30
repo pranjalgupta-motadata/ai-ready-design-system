@@ -8,12 +8,10 @@ export const CurrencyIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 3L6 6M21 3L18 6M3 21L6 18M21 21L18 18M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <circle cx="12" cy="12" r="8" />
+    <line x1="3" x2="6" y1="3" y2="6" />
+    <line x1="21" x2="18" y1="3" y2="6" />
+    <line x1="3" x2="6" y1="21" y2="18" />
+    <line x1="21" x2="18" y1="21" y2="18" />
   </svg>
 );

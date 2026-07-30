@@ -8,12 +8,7 @@ export const TrendingDownIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M22 17L13.5 8.5L8.5 13.5L2 7M22 17H16M22 17V11"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M16 17h6v-6" />
+    <path d="m22 17-8.5-8.5-5 5L2 7" />
   </svg>
 );

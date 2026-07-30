@@ -8,12 +8,9 @@ export const SearchCodeIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M9 9L7 11L9 13M13 13L15 11L13 9M21 21L16.7 16.7M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m13 13.5 2-2.5-2-2.5" />
+    <path d="m21 21-4.3-4.3" />
+    <path d="M9 8.5 7 11l2 2.5" />
+    <circle cx="11" cy="11" r="8" />
   </svg>
 );

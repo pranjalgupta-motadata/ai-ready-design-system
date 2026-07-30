@@ -8,12 +8,10 @@ export const LocateIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 12H5M5 12C5 15.866 8.13401 19 12 19M5 12C5 8.13401 8.13401 5 12 5M19 12H22M19 12C19 15.866 15.866 19 12 19M19 12C19 8.13401 15.866 5 12 5M12 2V5M12 19V22"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <line x1="2" x2="5" y1="12" y2="12" />
+    <line x1="19" x2="22" y1="12" y2="12" />
+    <line x1="12" x2="12" y1="2" y2="5" />
+    <line x1="12" x2="12" y1="19" y2="22" />
+    <circle cx="12" cy="12" r="7" />
   </svg>
 );

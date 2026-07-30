@@ -8,12 +8,8 @@ export const SubscriptIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 5L12 13M12 5L4 13M20 19H16C16 17.5 16.44 17 17.5 16.5C18.56 16 20 15.33 20 14C20 13.53 19.83 13.07 19.52 12.71C19.1999 12.3475 18.7649 12.1059 18.2879 12.0258C17.811 11.9457 17.321 12.0319 16.9 12.27C16.48 12.51 16.16 12.89 16 13.34"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m4 5 8 8" />
+    <path d="m12 5-8 8" />
+    <path d="M20 19h-4c0-1.5.44-2 1.5-2.5S20 15.33 20 14c0-.47-.17-.93-.48-1.29a2.11 2.11 0 0 0-2.62-.44c-.42.24-.74.62-.9 1.07" />
   </svg>
 );

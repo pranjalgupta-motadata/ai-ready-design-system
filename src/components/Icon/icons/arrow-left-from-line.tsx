@@ -8,12 +8,8 @@ export const ArrowLeftFromLineIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M9 6L3 12M3 12L9 18M3 12H17M21 19V5"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m9 6-6 6 6 6" />
+    <path d="M3 12h14" />
+    <path d="M21 19V5" />
   </svg>
 );

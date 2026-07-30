@@ -8,12 +8,6 @@ export const SliceIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M8 13.9991L2 19.9991H11V16.9991M8 13.9991L18.37 3.62913C18.7678 3.23131 19.3074 3.00781 19.87 3.00781C20.4326 3.00781 20.9722 3.23131 21.37 3.62913C21.7678 4.02696 21.9913 4.56652 21.9913 5.12913C21.9913 5.69174 21.7678 6.23131 21.37 6.62913L11 16.9991M8 13.9991L11 16.9991"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M11 16.586V19a1 1 0 0 1-1 1H2L18.37 3.63a1 1 0 1 1 3 3l-9.663 9.663a1 1 0 0 1-1.414 0L8 14" />
   </svg>
 );

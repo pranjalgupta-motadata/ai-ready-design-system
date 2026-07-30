@@ -8,12 +8,7 @@ export const AmpersandIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M17.5 12C17.5 16.4 13.9 20 9.5 20C8.30653 20 7.16193 19.5259 6.31802 18.682C5.47411 17.8381 5 16.6935 5 15.5C5 9.5 13 11.5 13 7C13 6.20435 12.6839 5.44129 12.1213 4.87868C11.5587 4.31607 10.7956 4 10 4C9.20435 4 8.44129 4.31607 7.87868 4.87868C7.31607 5.44129 7 6.20435 7 7C7 10 9.5 15.5 19 20M16 12H19"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M16 12h3" />
+    <path d="M17.5 12a8 8 0 0 1-8 8A4.5 4.5 0 0 1 5 15.5c0-6 8-4 8-8.5a3 3 0 1 0-6 0c0 3 2.5 8.5 12 13" />
   </svg>
 );

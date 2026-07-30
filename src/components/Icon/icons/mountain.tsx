@@ -8,12 +8,6 @@ export const MountainIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M8 3L12 11L17 6L22 21H2L8 3Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
   </svg>
 );

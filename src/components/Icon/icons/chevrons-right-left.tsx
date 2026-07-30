@@ -8,12 +8,7 @@ export const ChevronsRightLeftIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M20 17L15 12L20 7M4 17L9 12L4 7"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m20 17-5-5 5-5" />
+    <path d="m4 17 5-5-5-5" />
   </svg>
 );

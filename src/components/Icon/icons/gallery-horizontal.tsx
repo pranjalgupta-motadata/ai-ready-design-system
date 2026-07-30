@@ -8,12 +8,8 @@ export const GalleryHorizontalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 3V21M22 3V21M8 3H16C17.1046 3 18 3.89543 18 5V19C18 20.1046 17.1046 21 16 21H8C6.89543 21 6 20.1046 6 19V5C6 3.89543 6.89543 3 8 3Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M2 3v18" />
+    <rect width="12" height="18" x="6" y="3" rx="2" />
+    <path d="M22 3v18" />
   </svg>
 );

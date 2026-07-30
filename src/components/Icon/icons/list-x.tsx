@@ -8,12 +8,10 @@ export const ListXIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M11 12H3M16 6H3M16 18H3M19 10L15 14M15 10L19 14"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M16 5H3" />
+    <path d="M11 12H3" />
+    <path d="M16 19H3" />
+    <path d="m15.5 9.5 5 5" />
+    <path d="m20.5 9.5-5 5" />
   </svg>
 );

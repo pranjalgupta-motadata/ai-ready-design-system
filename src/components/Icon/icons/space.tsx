@@ -8,12 +8,6 @@ export const SpaceIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M22 17V18C22 18.5 21.5 19 21 19H3C2.5 19 2 18.5 2 18V17"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1" />
   </svg>
 );

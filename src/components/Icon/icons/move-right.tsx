@@ -8,12 +8,7 @@ export const MoveRightIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M18 8L22 12M22 12L18 16M22 12H2"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M18 8L22 12L18 16" />
+    <path d="M2 12H22" />
   </svg>
 );

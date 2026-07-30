@@ -8,12 +8,11 @@ export const CigaretteOffIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 2L22 22M12 12H2V16H16M22 12V16M18 12H17.5M7 12V16M18 8C18 5.5 16 5.5 16 3M22 8C22 5.5 20 5.5 20 3"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h13" />
+    <path d="M18 8c0-2.5-2-2.5-2-5" />
+    <path d="m2 2 20 20" />
+    <path d="M21 12a1 1 0 0 1 1 1v2a1 1 0 0 1-.5.866" />
+    <path d="M22 8c0-2.5-2-2.5-2-5" />
+    <path d="M7 12v4" />
   </svg>
 );

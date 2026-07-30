@@ -8,12 +8,8 @@ export const BarChartIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M12 20V10M18 20V4M6 20V16"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M5 21v-6" />
+    <path d="M12 21V9" />
+    <path d="M19 21V3" />
   </svg>
 );

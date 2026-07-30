@@ -8,12 +8,6 @@ export const TriangleRightIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M22 18.0004C22 18.5308 21.7893 19.0395 21.4142 19.4146C21.0391 19.7897 20.5304 20.0004 20 20.0004H2.99999C1.89999 20.0004 1.69999 19.4004 2.59999 18.7004L20.4 4.30039C21.3 3.60039 22 3.90039 22 5.00039V18.0004Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M22 18a2 2 0 0 1-2 2H3c-1.1 0-1.3-.6-.4-1.3L20.4 4.3c.9-.7 1.6-.4 1.6.7Z" />
   </svg>
 );

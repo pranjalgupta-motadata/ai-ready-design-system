@@ -8,12 +8,8 @@ export const MailsIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M22 7L14.9 10.78C14.33 11.08 13.67 11.08 13.1 10.78L6 7M2 8V19C2 20.1 2.9 21 4 21H18M8 4H20C21.1046 4 22 4.89543 22 6V15C22 16.1046 21.1046 17 20 17H8C6.89543 17 6 16.1046 6 15V6C6 4.89543 6.89543 4 8 4Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M17 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 1-1.732" />
+    <path d="m22 5.5-6.419 4.179a2 2 0 0 1-2.162 0L7 5.5" />
+    <rect x="7" y="3" width="15" height="12" rx="2" />
   </svg>
 );

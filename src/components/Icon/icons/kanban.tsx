@@ -8,12 +8,8 @@ export const KanbanIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M6 5V16M12 5V11M18 5V19"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M5 3v14" />
+    <path d="M12 3v8" />
+    <path d="M19 3v18" />
   </svg>
 );

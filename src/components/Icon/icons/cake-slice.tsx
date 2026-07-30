@@ -8,12 +8,9 @@ export const CakeSliceIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M7.2 7.9L3 11V20C3 20.6 3.4 21 4 21H20C20.6 21 21 20.6 21 20V11C21 9 18 5 14 3L10.4 5.6M16 13H3M16 17H3M11 7C11 8.10457 10.1046 9 9 9C7.89543 9 7 8.10457 7 7C7 5.89543 7.89543 5 9 5C10.1046 5 11 5.89543 11 7Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M16 13H3" />
+    <path d="M16 17H3" />
+    <path d="m7.2 7.9-3.388 2.5A2 2 0 0 0 3 12.01V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-8.654c0-2-2.44-6.026-6.44-8.026a1 1 0 0 0-1.082.057L10.4 5.6" />
+    <circle cx="9" cy="7" r="2" />
   </svg>
 );

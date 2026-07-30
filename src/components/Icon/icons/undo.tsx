@@ -8,12 +8,7 @@ export const UndoIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 7V13M3 13H9M3 13L6 10.3C7.64885 8.82116 9.78512 8.00226 12 8C14.3869 8 16.6761 8.94821 18.364 10.636C20.0518 12.3239 21 14.6131 21 17"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M3 7v6h6" />
+    <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" />
   </svg>
 );

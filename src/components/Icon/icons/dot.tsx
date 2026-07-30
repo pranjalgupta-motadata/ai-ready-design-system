@@ -8,12 +8,6 @@ export const DotIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M12.0996 13.0996C12.6519 13.0996 13.0996 12.6519 13.0996 12.0996C13.0996 11.5473 12.6519 11.0996 12.0996 11.0996C11.5473 11.0996 11.0996 11.5473 11.0996 12.0996C11.0996 12.6519 11.5473 13.0996 12.0996 13.0996Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <circle cx="12" cy="12" r="1" />
   </svg>
 );

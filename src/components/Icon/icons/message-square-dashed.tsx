@@ -8,12 +8,15 @@ export const MessageSquareDashedIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 6V5C3 3.9 3.9 3 5 3H7M11 3H14M18 3H19C20.1 3 21 3.9 21 5M21 9V11M21 15C21 16.1 20.1 17 19 17H18M14 17H11M7 17L3 21V16M3 12V10"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M14 3h2" />
+    <path d="M16 19h-2" />
+    <path d="M2 12v-2" />
+    <path d="M2 16v5.286a.71.71 0 0 0 1.212.502l1.149-1.149" />
+    <path d="M20 19a2 2 0 0 0 2-2v-1" />
+    <path d="M22 10v2" />
+    <path d="M22 6V5a2 2 0 0 0-2-2" />
+    <path d="M4 3a2 2 0 0 0-2 2v1" />
+    <path d="M8 19h2" />
+    <path d="M8 3h2" />
   </svg>
 );

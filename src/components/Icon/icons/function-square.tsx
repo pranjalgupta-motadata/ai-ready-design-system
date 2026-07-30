@@ -8,12 +8,8 @@ export const FunctionSquareIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M9 17C11 17 11.8 16 11.8 14.2V9.99999C11.8 7.99999 12.8 6.69999 15 6.99999M9 11.2H14.7M5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+    <path d="M9 17c2 0 2.8-1 2.8-2.8V10c0-2 1-3.3 3.2-3" />
+    <path d="M9 11.2h5.7" />
   </svg>
 );

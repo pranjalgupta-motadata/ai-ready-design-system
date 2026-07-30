@@ -8,12 +8,12 @@ export const UsbIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4.69995 19.3L19 5M9.26 7.68005L5 12.0001L7 17.0001M10 14L15 16L18.5 12.5M11 7C11 7.55228 10.5523 8 10 8C9.44772 8 9 7.55228 9 7C9 6.44772 9.44772 6 10 6C10.5523 6 11 6.44772 11 7ZM5 20C5 20.5523 4.55228 21 4 21C3.44772 21 3 20.5523 3 20C3 19.4477 3.44772 19 4 19C4.55228 19 5 19.4477 5 20ZM21 3L18 4L20 6L21 3ZM18 12L19 11L20 12L19 13L18 12Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <circle cx="10" cy="7" r="1" />
+    <circle cx="4" cy="20" r="1" />
+    <path d="M4.7 19.3 19 5" />
+    <path d="m21 3-3 1 2 2Z" />
+    <path d="M9.26 7.68 5 12l2 5" />
+    <path d="m10 14 5 2 3.5-3.5" />
+    <path d="m18 12 1-1 1 1-1 1Z" />
   </svg>
 );

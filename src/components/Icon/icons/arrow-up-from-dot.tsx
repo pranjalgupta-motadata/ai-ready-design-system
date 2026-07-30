@@ -8,12 +8,8 @@ export const ArrowUpFromDotIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M5 9L12 2M12 2L19 9M12 2V16M13 21C13 21.5523 12.5523 22 12 22C11.4477 22 11 21.5523 11 21C11 20.4477 11.4477 20 12 20C12.5523 20 13 20.4477 13 21Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m5 9 7-7 7 7" />
+    <path d="M12 16V2" />
+    <circle cx="12" cy="21" r="1" />
   </svg>
 );

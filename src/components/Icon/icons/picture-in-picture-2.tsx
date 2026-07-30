@@ -8,12 +8,7 @@ export const PictureInPicture2Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M21 9V6C21 5.46957 20.7893 4.96086 20.4142 4.58579C20.0391 4.21071 19.5304 4 19 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V16C2 17.1 2.9 18 4 18H8M14 13H20C21.1046 13 22 13.8954 22 15V18C22 19.1046 21.1046 20 20 20H14C12.8954 20 12 19.1046 12 18V15C12 13.8954 12.8954 13 14 13Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M21 9V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h4" />
+    <rect width="10" height="7" x="12" y="13" rx="2" />
   </svg>
 );

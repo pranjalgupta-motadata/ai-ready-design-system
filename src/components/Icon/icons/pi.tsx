@@ -8,12 +8,8 @@ export const PiIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M9 4V20M4 7C4 5.3 5.3 4 7 4H20M18 20C16.3 20 15 18.7 15 17V4"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <line x1="9" x2="9" y1="4" y2="20" />
+    <path d="M4 7c0-1.7 1.3-3 3-3h13" />
+    <path d="M18 20c-1.7 0-3-1.3-3-3V4" />
   </svg>
 );

@@ -8,12 +8,9 @@ export const SwordIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M14.5 17.5L3 6V3H6L17.5 14.5M13 19L19 13M16 16L20 20M19 21L21 19"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m11 19-6-6" />
+    <path d="m5 21-2-2" />
+    <path d="m8 16-4 4" />
+    <path d="M9.5 17.5 21 6V3h-3L6.5 14.5" />
   </svg>
 );

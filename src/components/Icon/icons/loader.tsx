@@ -8,12 +8,13 @@ export const LoaderIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M12 2V6M12 18V22M4.92993 4.92999L7.75993 7.75999M16.24 16.24L19.07 19.07M2 12H6M18 12H22M4.92993 19.07L7.75993 16.24M16.24 7.75999L19.07 4.92999"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 2v4" />
+    <path d="m16.2 7.8 2.9-2.9" />
+    <path d="M18 12h4" />
+    <path d="m16.2 16.2 2.9 2.9" />
+    <path d="M12 18v4" />
+    <path d="m4.9 19.1 2.9-2.9" />
+    <path d="M2 12h4" />
+    <path d="m4.9 4.9 2.9 2.9" />
   </svg>
 );

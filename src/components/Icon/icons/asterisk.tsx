@@ -8,12 +8,8 @@ export const AsteriskIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M11.9998 6V18M17.1957 9L6.80371 15M6.80371 9L17.1957 15"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 6v12" />
+    <path d="M17.196 9 6.804 15" />
+    <path d="m6.804 9 10.392 6" />
   </svg>
 );

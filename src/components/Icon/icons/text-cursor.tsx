@@ -8,12 +8,8 @@ export const TextCursorIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M17 22H16C14.9391 22 13.9217 21.5786 13.1716 20.8284C12.4214 20.0783 12 19.0609 12 18M12 18V6M12 18C12 19.0609 11.5786 20.0783 10.8284 20.8284C10.0783 21.5786 9.06087 22 8 22H7M12 18V17M12 6C12 4.93913 12.4214 3.92172 13.1716 3.17157C13.9217 2.42143 14.9391 2 16 2H17M12 6C12 4.93913 11.5786 3.92172 10.8284 3.17157C10.0783 2.42143 9.06087 2 8 2H7M12 6V7"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M17 22h-1a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h1" />
+    <path d="M7 22h1a4 4 0 0 0 4-4" />
+    <path d="M7 2h1a4 4 0 0 1 4 4" />
   </svg>
 );

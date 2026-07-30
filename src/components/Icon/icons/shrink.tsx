@@ -8,12 +8,9 @@ export const ShrinkIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M15 15L21 21M15 15V19.8M15 15H19.8M9 19.8V15M9 15H4.2M9 15L3 21M15 4.2V9M15 9H19.8M15 9L21 3M9 4.2V9M9 9H4.2M9 9L3 3"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m15 15 6 6m-6-6v4.8m0-4.8h4.8" />
+    <path d="M9 19.8V15m0 0H4.2M9 15l-6 6" />
+    <path d="M15 4.2V9m0 0h4.8M15 9l6-6" />
+    <path d="M9 4.2V9m0 0H4.2M9 9 3 3" />
   </svg>
 );

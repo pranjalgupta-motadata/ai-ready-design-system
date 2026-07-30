@@ -8,12 +8,10 @@ export const MicrowaveIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M18 8V15M6 19V21M18 19V21M4 4H20C21.1046 4 22 4.89543 22 6V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17V6C2 4.89543 2.89543 4 4 4ZM7 8H13C13.5523 8 14 8.44772 14 9V14C14 14.5523 13.5523 15 13 15H7C6.44772 15 6 14.5523 6 14V9C6 8.44772 6.44772 8 7 8Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="20" height="15" x="2" y="4" rx="2" />
+    <rect width="8" height="7" x="6" y="8" rx="1" />
+    <path d="M18 8v7" />
+    <path d="M6 19v2" />
+    <path d="M18 19v2" />
   </svg>
 );

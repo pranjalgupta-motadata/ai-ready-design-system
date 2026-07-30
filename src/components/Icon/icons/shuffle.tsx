@@ -8,12 +8,10 @@ export const ShuffleIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 18H3.4C4.7 18 5.9 17.4 6.7 16.3L12.8 7.7C13.5 6.6 14.8 6 16.1 6H22M22 6L18 2M22 6L18 10M2 6H3.9C5.4 6 6.8 6.9 7.5 8.2M22 18H16.1C14.8 18 13.5 17.3 12.8 16.2L12.3 15.4M22 18L18 14M22 18L18 22"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m18 14 4 4-4 4" />
+    <path d="m18 2 4 4-4 4" />
+    <path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22" />
+    <path d="M2 6h1.972a4 4 0 0 1 3.6 2.2" />
+    <path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45" />
   </svg>
 );

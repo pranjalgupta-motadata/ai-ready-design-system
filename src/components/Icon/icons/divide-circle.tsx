@@ -8,12 +8,9 @@ export const DivideCircleIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <circle cx="12" cy="12" r="10" />
+    <line x1="8" x2="16" y1="12" y2="12" />
+    <line x1="12" x2="12" y1="16" y2="16" />
+    <line x1="12" x2="12" y1="8" y2="8" />
   </svg>
 );

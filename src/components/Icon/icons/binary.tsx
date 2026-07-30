@@ -8,12 +8,11 @@ export const BinaryIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M6 20H10M14 10H18M6 14H8V20M14 4H16V10M16 14C17.1046 14 18 14.8954 18 16V18C18 19.1046 17.1046 20 16 20C14.8954 20 14 19.1046 14 18V16C14 14.8954 14.8954 14 16 14ZM8 4C9.10457 4 10 4.89543 10 6V8C10 9.10457 9.10457 10 8 10C6.89543 10 6 9.10457 6 8V6C6 4.89543 6.89543 4 8 4Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect x="14" y="14" width="4" height="6" rx="2" />
+    <rect x="6" y="4" width="4" height="6" rx="2" />
+    <path d="M6 20h4" />
+    <path d="M14 10h4" />
+    <path d="M6 14h2v6" />
+    <path d="M14 4h2v6" />
   </svg>
 );

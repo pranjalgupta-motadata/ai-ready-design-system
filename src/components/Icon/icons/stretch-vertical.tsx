@@ -8,19 +8,7 @@ export const StretchVerticalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M8 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H8C9.10457 22 10 21.1046 10 20V4C10 2.89543 9.10457 2 8 2Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M18 2H16C14.8954 2 14 2.89543 14 4V20C14 21.1046 14.8954 22 16 22H18C19.1046 22 20 21.1046 20 20V4C20 2.89543 19.1046 2 18 2Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="6" height="20" x="4" y="2" rx="2" />
+    <rect width="6" height="20" x="14" y="2" rx="2" />
   </svg>
 );

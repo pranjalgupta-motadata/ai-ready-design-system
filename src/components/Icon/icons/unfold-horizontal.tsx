@@ -8,12 +8,13 @@ export const UnfoldHorizontalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M16 12H22M22 12L19 15M22 12L19 9M8 12H2M2 12L5 9M2 12L5 15M12 2V4M12 8V10M12 14V16M12 20V22"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M16 12h6" />
+    <path d="M8 12H2" />
+    <path d="M12 2v2" />
+    <path d="M12 8v2" />
+    <path d="M12 14v2" />
+    <path d="M12 20v2" />
+    <path d="m19 15 3-3-3-3" />
+    <path d="m5 9-3 3 3 3" />
   </svg>
 );

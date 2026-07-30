@@ -8,12 +8,7 @@ export const CornerUpLeftIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M9 14L4 9M4 9L9 4M4 9H16C17.0609 9 18.0783 9.42143 18.8284 10.1716C19.5786 10.9217 20 11.9391 20 13V20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M20 20v-7a4 4 0 0 0-4-4H4" />
+    <path d="M9 14 4 9l5-5" />
   </svg>
 );

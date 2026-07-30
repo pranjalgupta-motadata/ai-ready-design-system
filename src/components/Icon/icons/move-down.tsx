@@ -8,12 +8,7 @@ export const MoveDownIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M8 18L12 22M12 22L16 18M12 22V2"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M8 18L12 22L16 18" />
+    <path d="M12 2V22" />
   </svg>
 );

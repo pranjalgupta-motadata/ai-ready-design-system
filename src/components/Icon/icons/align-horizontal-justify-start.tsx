@@ -8,12 +8,8 @@ export const AlignHorizontalJustifyStartIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 2V22M8 5H10C11.1046 5 12 5.89543 12 7V17C12 18.1046 11.1046 19 10 19H8C6.89543 19 6 18.1046 6 17V7C6 5.89543 6.89543 5 8 5ZM18 7H20C21.1046 7 22 7.89543 22 9V15C22 16.1046 21.1046 17 20 17H18C16.8954 17 16 16.1046 16 15V9C16 7.89543 16.8954 7 18 7Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="6" height="14" x="6" y="5" rx="2" />
+    <rect width="6" height="10" x="16" y="7" rx="2" />
+    <path d="M2 2v20" />
   </svg>
 );

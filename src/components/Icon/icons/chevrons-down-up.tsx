@@ -8,12 +8,7 @@ export const ChevronsDownUpIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M7 20L12 15L17 20M7 4L12 9L17 4"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m7 20 5-5 5 5" />
+    <path d="m7 4 5 5 5-5" />
   </svg>
 );

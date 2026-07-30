@@ -8,12 +8,7 @@ export const EqualIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M5 9H19M5 15H19"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <line x1="5" x2="19" y1="9" y2="9" />
+    <line x1="5" x2="19" y1="15" y2="15" />
   </svg>
 );

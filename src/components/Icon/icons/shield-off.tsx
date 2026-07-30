@@ -8,12 +8,8 @@ export const ShieldOffIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M19.6901 14C19.8912 13.3522 19.9956 12.6783 20.0001 12V5L12.0001 2L8.84009 3.18M4.73 4.72998L4 4.99998V12C4 18 12 22 12 22C14.117 20.8829 16.0197 19.4001 17.62 17.62M2 2L22 22"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m2 2 20 20" />
+    <path d="M5 5a1 1 0 0 0-1 1v7c0 5 3.5 7.5 7.67 8.94a1 1 0 0 0 .67.01c2.35-.82 4.48-1.97 5.9-3.71" />
+    <path d="M9.309 3.652A12.252 12.252 0 0 0 11.24 2.28a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1v7a9.784 9.784 0 0 1-.08 1.264" />
   </svg>
 );

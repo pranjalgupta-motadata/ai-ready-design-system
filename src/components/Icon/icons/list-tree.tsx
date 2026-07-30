@@ -8,12 +8,10 @@ export const ListTreeIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M21 12H13M21 6H8M21 18H13M3 6V10M3 10C3 11.1 3.9 12 5 12H8M3 10V16C3 17.1 3.9 18 5 18H8"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M8 5h13" />
+    <path d="M13 12h8" />
+    <path d="M13 19h8" />
+    <path d="M3 10a2 2 0 0 0 2 2h3" />
+    <path d="M3 5v12a2 2 0 0 0 2 2h3" />
   </svg>
 );

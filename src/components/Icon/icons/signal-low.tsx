@@ -8,12 +8,7 @@ export const SignalLowIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 20H2.01M7 20V16"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M2 20h.01" />
+    <path d="M7 20v-4" />
   </svg>
 );

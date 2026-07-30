@@ -8,12 +8,8 @@ export const DiffIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M12 3V17M5 10H19M5 21H19"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 3v14" />
+    <path d="M5 10h14" />
+    <path d="M5 21h14" />
   </svg>
 );

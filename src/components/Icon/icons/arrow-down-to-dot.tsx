@@ -8,12 +8,8 @@ export const ArrowDownToDotIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M12 2V16M12 16L19 9M12 16L5 9M13 21C13 21.5523 12.5523 22 12 22C11.4477 22 11 21.5523 11 21C11 20.4477 11.4477 20 12 20C12.5523 20 13 20.4477 13 21Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 2v14" />
+    <path d="m19 9-7 7-7-7" />
+    <circle cx="12" cy="21" r="1" />
   </svg>
 );

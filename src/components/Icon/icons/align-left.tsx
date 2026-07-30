@@ -8,12 +8,8 @@ export const AlignLeftIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M21 6H3M15 12H3M17 18H3"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M21 5H3" />
+    <path d="M15 12H3" />
+    <path d="M17 19H3" />
   </svg>
 );

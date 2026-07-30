@@ -8,12 +8,8 @@ export const FileStackIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M16 2V7H21M7 8V16.8C7 17.1 7.2 17.4 7.4 17.6C7.6 17.8 7.9 18 8.2 18H15M3 12V20.8C3 21.1 3.2 21.4 3.4 21.6C3.6 21.8 3.9 22 4.2 22H11M21 6V12.5C21 13.3 20.3 14 19.5 14H12.5C11.7 14 11 13.3 11 12.5V3.5C11 2.7 11.7 2 12.5 2H17L21 6Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M11 21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1" />
+    <path d="M16 16a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1" />
+    <path d="M21 6a2 2 0 0 0-.586-1.414l-2-2A2 2 0 0 0 17 2h-3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1z" />
   </svg>
 );

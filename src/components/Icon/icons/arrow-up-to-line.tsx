@@ -8,12 +8,8 @@ export const ArrowUpToLineIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M5 3H19M18 13L12 7M12 7L6 13M12 7V21"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M5 3h14" />
+    <path d="m18 13-6-6-6 6" />
+    <path d="M12 7v14" />
   </svg>
 );

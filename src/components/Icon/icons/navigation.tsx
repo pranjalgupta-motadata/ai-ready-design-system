@@ -8,12 +8,6 @@ export const NavigationIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 11L22 2L13 21L11 13L3 11Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <polygon points="3 11 22 2 13 21 11 13 3 11" />
   </svg>
 );

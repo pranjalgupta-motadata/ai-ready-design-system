@@ -8,12 +8,8 @@ export const PilcrowIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M13 4V20M17 4V20M19 4H9.5C8.30653 4 7.16193 4.47411 6.31802 5.31802C5.47411 6.16193 5 7.30653 5 8.5C5 9.69347 5.47411 10.8381 6.31802 11.682C7.16193 12.5259 8.30653 13 9.5 13H13"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M13 4v16" />
+    <path d="M17 4v16" />
+    <path d="M19 4H9.5a4.5 4.5 0 0 0 0 9H13" />
   </svg>
 );

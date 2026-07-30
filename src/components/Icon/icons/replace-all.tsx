@@ -8,12 +8,14 @@ export const ReplaceAllIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M14 4C14 2.9 14.9 2 16 2M20 2C21.1 2 22 2.9 22 4M22 8C22 9.1 21.1 10 20 10M16 10C14.9 10 14 9.1 14 8M3 7L6 10M6 10L9 7M6 10V5C6 3.3 7.3 2 9 2H10M14 14C15.1 14 16 14.9 16 16V20C16 21.1 15.1 22 14 22M20 14C21.1 14 22 14.9 22 16V20C22 21.1 21.1 22 20 22M4 14H8C9.10457 14 10 14.8954 10 16V20C10 21.1046 9.10457 22 8 22H4C2.89543 22 2 21.1046 2 20V16C2 14.8954 2.89543 14 4 14Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M14 14a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1" />
+    <path d="M14 4a1 1 0 0 1 1-1" />
+    <path d="M15 10a1 1 0 0 1-1-1" />
+    <path d="M19 14a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1" />
+    <path d="M21 4a1 1 0 0 0-1-1" />
+    <path d="M21 9a1 1 0 0 1-1 1" />
+    <path d="m3 7 3 3 3-3" />
+    <path d="M6 10V5a2 2 0 0 1 2-2h2" />
+    <rect x="3" y="14" width="7" height="7" rx="1" />
   </svg>
 );

@@ -8,12 +8,8 @@ export const BarChartHorizontalBigIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 3V21H21M8 5H18C18.5523 5 19 5.44772 19 6V8C19 8.55228 18.5523 9 18 9H8C7.44772 9 7 8.55228 7 8V6C7 5.44772 7.44772 5 8 5ZM8 13H13C13.5523 13 14 13.4477 14 14V16C14 16.5523 13.5523 17 13 17H8C7.44772 17 7 16.5523 7 16V14C7 13.4477 7.44772 13 8 13Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+    <rect x="7" y="13" width="9" height="4" rx="1" />
+    <rect x="7" y="5" width="12" height="4" rx="1" />
   </svg>
 );

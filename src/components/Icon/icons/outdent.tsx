@@ -8,12 +8,9 @@ export const OutdentIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M7 8L3 12L7 16M21 12H11M21 6H11M21 18H11"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M21 5H11" />
+    <path d="M21 12H11" />
+    <path d="M21 19H11" />
+    <path d="m7 8-4 4 4 4" />
   </svg>
 );

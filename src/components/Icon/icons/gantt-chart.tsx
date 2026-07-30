@@ -8,12 +8,8 @@ export const GanttChartIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M8 6H18M6 12H15M11 18H18"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M6 5h12" />
+    <path d="M4 12h10" />
+    <path d="M12 19h8" />
   </svg>
 );

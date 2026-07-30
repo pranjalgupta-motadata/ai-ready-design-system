@@ -8,12 +8,12 @@ export const UtilityPoleIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M12 2V22M2 5H22M3 3V5M7 3V5M17 3V5M21 3V5M19 5L12 12L5 5"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 2v20" />
+    <path d="M2 5h20" />
+    <path d="M3 3v2" />
+    <path d="M7 3v2" />
+    <path d="M17 3v2" />
+    <path d="M21 3v2" />
+    <path d="m19 5-7 7-7-7" />
   </svg>
 );

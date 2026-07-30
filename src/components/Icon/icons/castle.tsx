@@ -8,12 +8,13 @@ export const CastleIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M22 11V20C22 20.5304 21.7893 21.0391 21.4142 21.4142C21.0391 21.7893 20.5304 22 20 22H4C3.46957 22 2.96086 21.7893 2.58579 21.4142C2.21071 21.0391 2 20.5304 2 20V11M22 11H2M22 11V9M2 11V9M18 11V4M18 4H6M18 4V2M6 4V11M6 4V2M15 22V18C15 17.2044 14.6839 16.4413 14.1213 15.8787C13.5587 15.3161 12.7956 15 12 15C11.2044 15 10.4413 15.3161 9.87868 15.8787C9.31607 16.4413 9 17.2044 9 18V22M10 4V2M14 4V2"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M10 5V3" />
+    <path d="M14 5V3" />
+    <path d="M15 21v-3a3 3 0 0 0-6 0v3" />
+    <path d="M18 3v8" />
+    <path d="M18 5H6" />
+    <path d="M22 11H2" />
+    <path d="M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9" />
+    <path d="M6 3v8" />
   </svg>
 );

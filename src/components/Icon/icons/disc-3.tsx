@@ -8,12 +8,9 @@ export const Disc3Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M6 12C6 10.3 6.7 8.79999 7.8 7.79999M18 12C18 13.7 17.3 15.2 16.2 16.2M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <circle cx="12" cy="12" r="10" />
+    <path d="M6 12c0-1.7.7-3.2 1.8-4.2" />
+    <circle cx="12" cy="12" r="2" />
+    <path d="M18 12c0 1.7-.7 3.2-1.8 4.2" />
   </svg>
 );

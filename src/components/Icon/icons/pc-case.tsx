@@ -8,12 +8,9 @@ export const PcCaseIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M15 14H15.01M9 6H15M9 10H15M7 2H17C18.1046 2 19 2.89543 19 4V20C19 21.1046 18.1046 22 17 22H7C5.89543 22 5 21.1046 5 20V4C5 2.89543 5.89543 2 7 2Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="14" height="20" x="5" y="2" rx="2" />
+    <path d="M15 14h.01" />
+    <path d="M9 6h6" />
+    <path d="M9 10h6" />
   </svg>
 );

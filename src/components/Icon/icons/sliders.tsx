@@ -8,12 +8,14 @@ export const SlidersIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 21V14M4 10V3M12 21V12M12 8V3M20 21V16M20 12V3M2 14H6M10 8H14M18 16H22"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M10 8h4" />
+    <path d="M12 21v-9" />
+    <path d="M12 8V3" />
+    <path d="M17 16h4" />
+    <path d="M19 12V3" />
+    <path d="M19 21v-5" />
+    <path d="M3 14h4" />
+    <path d="M5 10V3" />
+    <path d="M5 21v-7" />
   </svg>
 );

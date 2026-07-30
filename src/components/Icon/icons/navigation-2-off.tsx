@@ -8,12 +8,8 @@ export const Navigation2OffIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M9.31 9.31L5 21L12 17L19 21L17.83 17.83M14.5301 8.88L12.0001 2L10.8301 5.17M2 2L22 22"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M9.31 9.31 5 21l7-4 7 4-1.17-3.17" />
+    <path d="M14.53 8.88 12 2l-1.17 3.17" />
+    <line x1="2" x2="22" y1="2" y2="22" />
   </svg>
 );

@@ -8,12 +8,6 @@ export const EggIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M11.9999 22C18.2299 21.95 19.8699 16.43 19.4999 12C19.1399 7.66 15.5499 2.04 11.9999 2C8.44991 2.04 4.85991 7.66 4.49991 12C4.12991 16.43 5.76991 21.95 11.9999 22Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 2C8 2 4 8 4 14a8 8 0 0 0 16 0c0-6-4-12-8-12" />
   </svg>
 );

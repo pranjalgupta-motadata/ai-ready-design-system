@@ -8,12 +8,8 @@ export const BookOpenCheckIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M12 21C12 19.3 10.7 18 9 18H2V3H8C10.2 3 12 4.8 12 7M12 21V7M12 21C12 19.3 13.3 18 15 18H22V15.7M12 7C12 4.8 13.8 3 16 3H22V6M16 12L18 14L22 10"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 5v16" />
+    <path d="m16 12 2 2 4-4" />
+    <path d="M22 6V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2h4.001A2 2 0 0022 17v-1.344" />
   </svg>
 );

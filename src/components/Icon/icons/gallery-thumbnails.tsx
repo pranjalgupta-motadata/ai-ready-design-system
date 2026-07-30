@@ -8,12 +8,10 @@ export const GalleryThumbnailsIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 21H5M9 21H10M14 21H15M19 21H20M5 3H19C20.1046 3 21 3.89543 21 5V15C21 16.1046 20.1046 17 19 17H5C3.89543 17 3 16.1046 3 15V5C3 3.89543 3.89543 3 5 3Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="18" height="14" x="3" y="3" rx="2" />
+    <path d="M4 21h1" />
+    <path d="M9 21h1" />
+    <path d="M14 21h1" />
+    <path d="M19 21h1" />
   </svg>
 );

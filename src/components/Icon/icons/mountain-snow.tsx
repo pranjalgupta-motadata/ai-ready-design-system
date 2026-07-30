@@ -8,12 +8,7 @@ export const MountainSnowIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4.14001 15.08C6.76001 13.51 9.38002 13.65 12 15.5C14.74 17.44 17.49 17.5 20.23 15.69M8 3L12 11L17 6L22 21H2L8 3Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+    <path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19" />
   </svg>
 );

@@ -8,12 +8,11 @@ export const TouchpadOffIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V18C2 18.5304 2.21071 19.0391 2.58579 19.4142C2.96086 19.7893 3.46957 20 4 20H20M2 14H14M22 14H20M12 20V14M2 2L22 22M22 16V6C22 5.46957 21.7893 4.96086 21.4142 4.58579C21.0391 4.21071 20.5304 4 20 4H10"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 20v-6" />
+    <path d="M19.656 14H22" />
+    <path d="M2 14h12" />
+    <path d="m2 2 20 20" />
+    <path d="M20 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2" />
+    <path d="M9.656 4H20a2 2 0 0 1 2 2v10.344" />
   </svg>
 );

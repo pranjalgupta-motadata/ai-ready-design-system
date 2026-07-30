@@ -8,12 +8,11 @@ export const FlipVertical2Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 12H2M10 12H8M16 12H14M22 12H20M17 3L12 8L7 3H17ZM17 21L12 16L7 21H17Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m17 3-5 5-5-5h10" />
+    <path d="m17 21-5-5-5 5h10" />
+    <path d="M4 12H2" />
+    <path d="M10 12H8" />
+    <path d="M16 12h-2" />
+    <path d="M22 12h-2" />
   </svg>
 );

@@ -8,12 +8,10 @@ export const LigatureIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M8 20V8C8 5.8 9.8 4 12 4C13.5 4 14.8 4.8 15.5 6M6 12H10M14 12H16V20M6 20H10M14 20H18"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M14 12h2v8" />
+    <path d="M14 20h4" />
+    <path d="M6 12h4" />
+    <path d="M6 20h4" />
+    <path d="M8 20V8a4 4 0 0 1 7.464-2" />
   </svg>
 );

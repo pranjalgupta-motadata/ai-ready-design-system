@@ -8,12 +8,9 @@ export const Paintbrush2Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M6 12V2H18V12M14 2V6M10 2V4M14 19.9V16H17C17.5304 16 18.0391 15.7893 18.4142 15.4142C18.7893 15.0391 19 14.5304 19 14V12H5V14C5 15.1 5.9 16 7 16H10V19.9C10 20.4304 10.2107 20.9391 10.5858 21.3142C10.9609 21.6893 11.4696 21.9 12 21.9C12.5304 21.9 13.0391 21.6893 13.4142 21.3142C13.7893 20.9391 14 20.4304 14 19.9Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M10 2v2" />
+    <path d="M14 2v4" />
+    <path d="M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1-1z" />
+    <path d="M6 12a1 1 0 0 0-1 1v1a2 2 0 0 0 2 2h2a1 1 0 0 1 1 1v2.9a2 2 0 1 0 4 0V17a1 1 0 0 1 1-1h2a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1" />
   </svg>
 );

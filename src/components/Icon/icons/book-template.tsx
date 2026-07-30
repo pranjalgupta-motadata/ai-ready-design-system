@@ -8,12 +8,16 @@ export const BookTemplateIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M20 22H18M20 15V17H18M4 19.5V15M4 19.5C4 20.163 4.26339 20.7989 4.73223 21.2678C5.20107 21.7366 5.83696 22 6.5 22H8M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H8M20 8V11M18 2H20V4M4 11V9M12 2H14M12 22H14M12 17H14M4 5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2H8"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M12 17h1.5" />
+    <path d="M12 22h1.5" />
+    <path d="M12 2h1.5" />
+    <path d="M17.5 22H19a1 1 0 0 0 1-1" />
+    <path d="M17.5 2H19a1 1 0 0 1 1 1v1.5" />
+    <path d="M20 14v3h-2.5" />
+    <path d="M20 8.5V10" />
+    <path d="M4 10V8.5" />
+    <path d="M4 19.5V14" />
+    <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H8" />
+    <path d="M8 22H6.5a1 1 0 0 1 0-5H8" />
   </svg>
 );

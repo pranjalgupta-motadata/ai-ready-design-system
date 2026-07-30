@@ -8,12 +8,7 @@ export const MoveDownLeftIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M11 19H5M5 19V13M5 19L19 5"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M11 19H5V13" />
+    <path d="M19 5L5 19" />
   </svg>
 );

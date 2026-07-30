@@ -8,12 +8,7 @@ export const IterationCwIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M4 10C4 5.6 7.6 2 12 2C16.4 2 20 5.6 20 10C20 14.4 16.4 18 12 18H4M4 18L8 22M4 18L8 14"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M4 10a8 8 0 1 1 8 8H4" />
+    <path d="m8 22-4-4 4-4" />
   </svg>
 );

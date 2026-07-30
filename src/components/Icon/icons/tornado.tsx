@@ -8,12 +8,10 @@ export const TornadoIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M21 4H3M18 8H6M19 12H9M16 16H10M11 20H9"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M21 4H3" />
+    <path d="M18 8H6" />
+    <path d="M19 12H9" />
+    <path d="M16 16h-6" />
+    <path d="M11 20H9" />
   </svg>
 );

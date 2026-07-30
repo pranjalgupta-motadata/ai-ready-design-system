@@ -8,12 +8,15 @@ export const SprayCanIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 3H3.01M7 5H7.01M11 7H11.01M3 7H3.01M7 9H7.01M3 11H3.01M19 9V5H15V9M19 9H15M19 9L21 11V21C21 21.6 20.6 22 20 22H14C13.4 22 13 21.6 13 21V11L15 9M13 14L21 12M13 19L21 17"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M3 3h.01" />
+    <path d="M7 5h.01" />
+    <path d="M11 7h.01" />
+    <path d="M3 7h.01" />
+    <path d="M7 9h.01" />
+    <path d="M3 11h.01" />
+    <rect width="4" height="4" x="15" y="5" />
+    <path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2" />
+    <path d="m13 14 8-2" />
+    <path d="m13 19 8-2" />
   </svg>
 );

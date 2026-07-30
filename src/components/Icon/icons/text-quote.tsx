@@ -8,12 +8,9 @@ export const TextQuoteIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M17 6H3M21 12H8M21 18H8M3 12V18"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M17 5H3" />
+    <path d="M21 12H8" />
+    <path d="M21 19H8" />
+    <path d="M3 12v7" />
   </svg>
 );

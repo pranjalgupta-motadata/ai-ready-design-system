@@ -8,12 +8,8 @@ export const MergeIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M8 6L12 2M12 2L16 6M12 2V12.3C12.0057 12.8326 11.905 13.361 11.7037 13.8542C11.5025 14.3474 11.2047 14.7954 10.828 15.172L4 22M20 22L15 17"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m8 6 4-4 4 4" />
+    <path d="M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22" />
+    <path d="m20 22-5-5" />
   </svg>
 );

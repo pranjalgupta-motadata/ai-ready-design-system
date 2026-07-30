@@ -8,12 +8,11 @@ export const AntennaIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 12L7 2M7 12L12 2M12 12L17 2M17 12L22 2M4.5 7H19.5M12 16V22"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M2 12 7 2" />
+    <path d="m7 12 5-10" />
+    <path d="m12 12 5-10" />
+    <path d="m17 12 5-10" />
+    <path d="M4.5 7h15" />
+    <path d="M12 16v6" />
   </svg>
 );

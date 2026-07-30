@@ -8,12 +8,13 @@ export const FoldHorizontalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 12H8M8 12L5 15M8 12L5 9M22 12H16M16 12L19 9M16 12L19 15M12 2V4M12 8V10M12 14V16M12 20V22"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M2 12h6" />
+    <path d="M22 12h-6" />
+    <path d="M12 2v2" />
+    <path d="M12 8v2" />
+    <path d="M12 14v2" />
+    <path d="M12 20v2" />
+    <path d="m19 9-3 3 3 3" />
+    <path d="m5 15 3-3-3-3" />
   </svg>
 );

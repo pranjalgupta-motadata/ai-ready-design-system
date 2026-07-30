@@ -8,12 +8,8 @@ export const UndoDotIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 7V13M3 13H9M3 13L6 10.3C7.64885 8.82116 9.78512 8.00226 12 8C14.3869 8 16.6761 8.94821 18.364 10.636C20.0518 12.3239 21 14.6131 21 17M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M21 17a9 9 0 0 0-15-6.7L3 13" />
+    <path d="M3 7v6h6" />
+    <circle cx="12" cy="17" r="1" />
   </svg>
 );

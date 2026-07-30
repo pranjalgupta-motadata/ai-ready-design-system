@@ -8,12 +8,8 @@ export const TestTubeIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M14.5 2V19.5C14.5 20.9 13.4 22 12 22C10.6 22 9.5 20.9 9.5 19.5V2M8.5 2H15.5M14.5 16H9.5"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5c-1.4 0-2.5-1.1-2.5-2.5V2" />
+    <path d="M8.5 2h7" />
+    <path d="M14.5 16h-5" />
   </svg>
 );

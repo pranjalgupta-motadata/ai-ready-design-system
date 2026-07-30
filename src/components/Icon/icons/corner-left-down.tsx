@@ -8,12 +8,7 @@ export const CornerLeftDownIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M14 15L9 20M9 20L4 15M9 20V8C9 6.93913 9.42143 5.92172 10.1716 5.17157C10.9217 4.42143 11.9391 4 13 4H20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m14 15-5 5-5-5" />
+    <path d="M20 4h-7a4 4 0 0 0-4 4v12" />
   </svg>
 );

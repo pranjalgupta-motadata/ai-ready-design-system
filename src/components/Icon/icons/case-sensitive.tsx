@@ -8,12 +8,9 @@ export const CaseSensitiveIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 15L7 7L11 15M4 13H10M21 9V15M21 12C21 13.6569 19.6569 15 18 15C16.3431 15 15 13.6569 15 12C15 10.3431 16.3431 9 18 9C19.6569 9 21 10.3431 21 12Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16" />
+    <path d="M22 9v7" />
+    <path d="M3.304 13h6.392" />
+    <circle cx="18.5" cy="12.5" r="3.5" />
   </svg>
 );

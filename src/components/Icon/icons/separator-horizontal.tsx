@@ -8,12 +8,8 @@ export const SeparatorHorizontalIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M3 12H21M8 8L12 4L16 8M16 16L12 20L8 16"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m16 16-4 4-4-4" />
+    <path d="M3 12h18" />
+    <path d="m8 8 4-4 4 4" />
   </svg>
 );

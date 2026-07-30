@@ -8,12 +8,9 @@ export const AlignVerticalSpaceBetweenIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path
-      d="M2 21H22M2 3H22M7 15H17C18.1046 15 19 15.8954 19 17V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V17C5 15.8954 5.89543 15 7 15ZM9 3H15C16.1046 3 17 3.89543 17 5V7C17 8.10457 16.1046 9 15 9H9C7.89543 9 7 8.10457 7 7V5C7 3.89543 7.89543 3 9 3Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <rect width="14" height="6" x="5" y="15" rx="2" />
+    <rect width="10" height="6" x="7" y="3" rx="2" />
+    <path d="M2 21h20" />
+    <path d="M2 3h20" />
   </svg>
 );
