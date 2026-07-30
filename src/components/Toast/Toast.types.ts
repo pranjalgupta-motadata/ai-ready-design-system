@@ -23,6 +23,96 @@ export type ToastTheme = 'light' | 'dark' | 'system';
 export type ToastType = 'default' | 'success' | 'error' | 'warning' | 'info' | 'loading';
 
 /**
+ * The six tones Org Mgmt's banner defines.
+ *
+ * `ai` and `neutral` are the two the old toast had no answer for: an assistant
+ * suggesting something, and a plain statement of fact that is neither good news
+ * nor bad.
+ */
+export type ToastTone = 'info' | 'warning' | 'danger' | 'success' | 'ai' | 'neutral';
+
+/**
+ * `sm` is Om's banner measured exactly. `md` runs one step larger.
+ */
+export type ToastSize = 'sm' | 'md';
+
+/**
+ * Props for the promotional toast.
+ *
+ * An announcement rather than a report, so it has room for a picture, a
+ * paragraph and a way to act on it - and no tone, because "we built something"
+ * is neither good news nor bad.
+ */
+export interface ToastPromoProps {
+  /** The line beside the megaphone. */
+  title: ReactNode;
+
+  /** The paragraph under the picture. */
+  description?: ReactNode | undefined;
+
+  /**
+   * Anything to show above the text - an `img`, a `video`, a gradient. It is
+   * sized and clipped for you; pass the element, not a URL.
+   */
+  media?: ReactNode | undefined;
+
+  /** One call to action, below the text. Optional - leave it out for news. */
+  action?: { label: string; onClick: () => void } | undefined;
+
+  /** Shows the dismiss cross. @default true */
+  closable?: boolean | undefined;
+
+  /** Called by the dismiss cross. */
+  onClose?: (() => void) | undefined;
+
+  className?: string | undefined;
+}
+
+/**
+ * Props for the toast surface itself.
+ */
+export interface ToastBodyProps {
+  /** @default 'neutral' */
+  tone?: ToastTone | undefined;
+
+  /** @default 'sm' */
+  size?: ToastSize | undefined;
+
+  /** The bold first line. */
+  title?: ReactNode | undefined;
+
+  /** The lighter line beneath it. */
+  description?: ReactNode | undefined;
+
+  /** Replaces the tone's own glyph. */
+  icon?: ReactNode | undefined;
+
+  /** Swaps the glyph for a spinner. @default false */
+  loading?: boolean | undefined;
+
+  /**
+   * Shows the close control.
+   *
+   * On by default, on every tone. Turn it off for a toast that has to be
+   * acknowledged some other way - a required action, say.
+   *
+   * Not the same as Sonner's `dismissible`, which governs whether a toast can
+   * be swiped away. This one is about the visible cross.
+   *
+   * @default true
+   */
+  closable?: boolean | undefined;
+
+  /** An inline text action beneath the message. */
+  action?: { label: string; onClick: () => void } | undefined;
+
+  /** Called by the close control. */
+  onClose?: (() => void) | undefined;
+
+  className?: string | undefined;
+}
+
+/**
  * Toast options extending Sonner's ExternalToast
  */
 export interface ToastProps extends ExternalToast {
@@ -64,7 +154,28 @@ export interface ToastProps extends ExternalToast {
   icon?: ReactNode;
 
   /**
-   * Whether the toast can be dismissed by clicking
+   * Shows the close control inside the toast.
+   *
+   * On by default, on every tone. Turn it off for a toast that has to be
+   * acknowledged some other way.
+   *
+   * @default true
+   */
+  closable?: boolean | undefined;
+
+  /**
+   * Size of the toast. `sm` is Om's banner measured exactly.
+   * @default 'sm'
+   */
+  size?: ToastSize | undefined;
+
+  /**
+   * Text action shown inside the toast, beneath the message.
+   */
+  actionLabel?: string;
+
+  /**
+   * Whether the toast can be dismissed by swiping
    * @default true
    */
   dismissible?: boolean;
@@ -183,9 +294,38 @@ export interface ToastFunction {
   success: (message: string | ReactNode, options?: ToastProps) => string | number;
 
   /**
-   * Show an error toast
+   * Show a danger toast
+   */
+  danger: (message: string | ReactNode, options?: ToastProps) => string | number;
+
+  /**
+   * Show a danger toast. Kept as the name the rest of the codebase already
+   * uses; `danger` is the name the tone actually has.
    */
   error: (message: string | ReactNode, options?: ToastProps) => string | number;
+
+  /**
+   * Show an AI toast - the assistant suggesting something.
+   */
+  ai: (message: string | ReactNode, options?: ToastProps) => string | number;
+
+  /**
+   * Show a promotional toast - an announcement, with room for a picture and a
+   * call to action. A different shape from the six tones, not a seventh tone.
+   *
+   * It lives on its own layer, anchored below the ordinary stack, and there is
+   * only ever one: showing a second replaces the first. Nothing is returned
+   * because there is no id to hold - use `dismissPromotional` to close it.
+   */
+  promotional: (options: Omit<ToastPromoProps, 'onClose'> & { duration?: number }) => void;
+
+  /** Closes the promotional toast, if one is open. */
+  dismissPromotional: () => void;
+
+  /**
+   * Show a neutral toast - a plain statement that is neither good nor bad.
+   */
+  neutral: (message: string | ReactNode, options?: ToastProps) => string | number;
 
   /**
    * Show a warning toast
