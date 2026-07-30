@@ -35,7 +35,14 @@ describe('toneForName', () => {
   });
 
   it('spreads different names across the palette', () => {
-    const names = ['Sarah Johnson', 'Ravi Patel', 'Mei Chen', 'Tom Green', 'Ana Silva', 'Ken Watts'];
+    const names = [
+      'Sarah Johnson',
+      'Ravi Patel',
+      'Mei Chen',
+      'Tom Green',
+      'Ana Silva',
+      'Ken Watts',
+    ];
     const tones = new Set(names.map(toneForName));
     expect(tones.size).toBeGreaterThan(1);
   });
@@ -63,6 +70,23 @@ describe('Avatar', () => {
     it('trims overridden initials to two characters', () => {
       render(<Avatar name={NAME} initials="ABCDEF" />);
       expect(getAvatar()).toHaveTextContent('AB');
+    });
+
+    it.each([
+      ['xs', 'S'],
+      ['sm', 'S'],
+      ['md', 'SJ'],
+      ['lg', 'SJ'],
+      ['xl', 'SJ'],
+    ] as const)('shows the right number of letters at %s', (size, expected) => {
+      render(<Avatar name={NAME} size={size} />);
+      expect(getAvatar()).toHaveTextContent(new RegExp(`^${expected}$`));
+    });
+
+    it.each(['xs', 'sm'] as const)('cuts overridden initials to one letter at %s', (size) => {
+      // The size decides how many letters fit, not where the letters came from.
+      render(<Avatar name={NAME} initials="XY" size={size} />);
+      expect(getAvatar()).toHaveTextContent(/^X$/);
     });
 
     it('carries the name as its accessible label', () => {

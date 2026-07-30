@@ -9,6 +9,22 @@ const TONES: AvatarTone[] = ['slate', 'blue', 'green', 'amber', 'rose', 'purple'
 const MAX_INITIALS = 2;
 
 /**
+ * How many letters each size shows.
+ *
+ * At 20px and 24px there is no room for two letters to read as two letters -
+ * they crowd into a smudge. One letter at those sizes stays legible, and the
+ * count follows the size on its own, so a stack that shrinks does the right
+ * thing without anyone remembering to change the text.
+ */
+const INITIALS_FOR_SIZE: Record<AvatarSize, number> = {
+  xs: 1,
+  sm: 1,
+  md: MAX_INITIALS,
+  lg: MAX_INITIALS,
+  xl: MAX_INITIALS,
+};
+
+/**
  * Avatar styles.
  *
  * Initials on a pale tint of the tone, which is what Org Mgmt and Agent Fleet
@@ -22,17 +38,17 @@ const MAX_INITIALS = 2;
  */
 export const avatarVariants = cva(
   [
-    'mdt-inline-flex mdt-items-center mdt-justify-center mdt-shrink-0',
-    'mdt-font-semibold mdt-uppercase mdt-select-none mdt-overflow-hidden',
+    'mdt-inline-flex mdt-shrink-0 mdt-items-center mdt-justify-center',
+    'mdt-select-none mdt-overflow-hidden mdt-font-semibold mdt-uppercase',
   ],
   {
     variants: {
       tone: {
-        slate: 'mdt-bg-neutral-30 mdt-text-neutral-110 dark:mdt-bg-neutral-120 dark:mdt-text-neutral-30',
+        slate:
+          'mdt-bg-neutral-30 mdt-text-neutral-110 dark:mdt-bg-neutral-120 dark:mdt-text-neutral-30',
         blue: 'mdt-bg-blue-10 mdt-text-blue-80 dark:mdt-bg-blue-90 dark:mdt-text-blue-30',
         green: 'mdt-bg-green-10 mdt-text-green-80 dark:mdt-bg-green-90 dark:mdt-text-green-30',
-        amber:
-          'mdt-bg-orange-20 mdt-text-orange-80 dark:mdt-bg-orange-90 dark:mdt-text-orange-30',
+        amber: 'mdt-bg-orange-20 mdt-text-orange-80 dark:mdt-bg-orange-90 dark:mdt-text-orange-30',
         rose: 'mdt-bg-red-10 mdt-text-red-80 dark:mdt-bg-red-90 dark:mdt-text-red-30',
         purple:
           'mdt-bg-purple-10 mdt-text-purple-90 dark:mdt-bg-purple-100 dark:mdt-text-purple-30',
@@ -119,7 +135,9 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
     const [failed, setFailed] = useState(false);
 
     const resolvedTone = tone ?? (name ? toneForName(name) : 'slate');
-    const text = (initials ?? initialsForName(name)).slice(0, MAX_INITIALS);
+    // The cap applies to a caller-supplied `initials` too. The size is what
+    // decides how many letters fit, not where the letters came from.
+    const text = (initials ?? initialsForName(name)).slice(0, INITIALS_FOR_SIZE[size]);
     const showImage = src !== undefined && src !== '' && !failed;
 
     return (

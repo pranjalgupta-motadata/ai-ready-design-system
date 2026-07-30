@@ -30,7 +30,12 @@ export interface AvatarOwnProps {
    */
   name?: string;
 
-  /** Overrides the initials derived from `name`. Trimmed to two characters. */
+  /**
+   * Overrides the initials derived from `name`.
+   *
+   * Trimmed to fit the size: two characters at `md` and above, one at `sm` and
+   * `xs`, where two letters crowd into a smudge.
+   */
   initials?: string;
 
   /** Photo. Falls back to initials if it fails to load. */
