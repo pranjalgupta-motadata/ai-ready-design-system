@@ -41,8 +41,24 @@ const meta: Meta<typeof Button> = {
     },
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'outline', 'ghost', 'destructive', 'link'],
-      description: 'Visual style variant of the button',
+      options: [
+        'primary',
+        'secondary',
+        'outline',
+        'ghost',
+        'link',
+        'destructive',
+        'destructiveSoft',
+        'destructiveOutline',
+        'destructiveGhost',
+        'success',
+        'successSoft',
+        'successOutline',
+        'successGhost',
+        'ai',
+      ],
+      description:
+        'Visual style variant. Destructive and success each run solid → soft → outline → ghost, loudest to quietest.',
       table: {
         defaultValue: { summary: 'primary' },
       },
@@ -390,6 +406,35 @@ export const Destructive: Story = {
 };
 
 /**
+ * Success variant - used for confirming, approving, and completing.
+ *
+ * The positive counterpart to `destructive`, and the same weight: a solid fill
+ * carrying white text. It is a different thing from the `success` *prop*, which
+ * is the momentary "that worked" state any variant can enter.
+ */
+export const Success: Story = {
+  args: {
+    variant: 'success',
+    children: 'Approve request',
+  },
+};
+
+/**
+ * AI variant - for actions handed to the assistant rather than performed directly.
+ *
+ * Deliberately not a recoloured primary. Three of the four product systems built
+ * an AI button independently and all three landed on the same treatment: a pale
+ * purple ground, deep purple text, a faint purple edge and a sparkle on the left.
+ * The sparkle comes with the variant - pass `leftIcon` and yours wins.
+ */
+export const AskAI: Story = {
+  args: {
+    variant: 'ai',
+    children: 'Ask AI',
+  },
+};
+
+/**
  * Link variant - appears as a text link.
  */
 export const Link: Story = {
@@ -482,40 +527,309 @@ export const FullWidth: Story = {
   ],
 };
 
+/** Small caption above each row in the grouped stories below. */
+const Row = ({ label, children }: Readonly<{ label: string; children: React.ReactNode }>) => (
+  <div className="mdt-flex mdt-flex-col mdt-gap-2">
+    <span className="mdt-text-xs mdt-font-medium mdt-uppercase mdt-tracking-wider mdt-text-muted-foreground">
+      {label}
+    </span>
+    <div className="mdt-flex mdt-flex-wrap mdt-items-center mdt-gap-3">{children}</div>
+  </div>
+);
+
 /**
  * All variants displayed together.
  */
 export const AllVariants: Story = {
   render: () => (
-    <div className="mdt-flex mdt-flex-col mdt-gap-4">
-      <div className="mdt-flex mdt-flex-wrap mdt-gap-4">
+    <div className="mdt-flex mdt-flex-col mdt-gap-6">
+      <Row label="Neutral">
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="outline">Outline</Button>
         <Button variant="ghost">Ghost</Button>
-        <Button variant="destructive">Destructive</Button>
         <Button variant="link">Link</Button>
-      </div>
-      <div className="mdt-flex mdt-flex-wrap mdt-gap-4">
+      </Row>
+      <Row label="Destructive — solid to quiet">
+        <Button variant="destructive">Destructive</Button>
+        <Button variant="destructiveSoft">Soft</Button>
+        <Button variant="destructiveOutline">Outline</Button>
+        <Button variant="destructiveGhost">Ghost</Button>
+      </Row>
+      <Row label="Success — solid to quiet">
+        <Button variant="success">Success</Button>
+        <Button variant="successSoft">Soft</Button>
+        <Button variant="successOutline">Outline</Button>
+        <Button variant="successGhost">Ghost</Button>
+      </Row>
+      <Row label="AI">
+        <Button variant="ai">Ask AI</Button>
+      </Row>
+      <Row label="Disabled">
         <Button variant="primary" disabled>
           Primary
-        </Button>
-        <Button variant="secondary" disabled>
-          Secondary
-        </Button>
-        <Button variant="outline" disabled>
-          Outline
-        </Button>
-        <Button variant="ghost" disabled>
-          Ghost
         </Button>
         <Button variant="destructive" disabled>
           Destructive
         </Button>
-        <Button variant="link" disabled>
-          Link
+        <Button variant="destructiveSoft" disabled>
+          Soft
         </Button>
-      </div>
+        <Button variant="success" disabled>
+          Success
+        </Button>
+        <Button variant="successOutline" disabled>
+          Outline
+        </Button>
+        <Button variant="ai" disabled>
+          Ask AI
+        </Button>
+      </Row>
+    </div>
+  ),
+};
+
+/**
+ * The success family at every volume, size and state.
+ *
+ * Success mirrors destructive step for step, so a positive action can be pitched
+ * as loudly or as quietly as a dangerous one.
+ */
+export const SuccessFamily: Story = {
+  render: () => (
+    <div className="mdt-flex mdt-flex-col mdt-gap-6">
+      <Row label="Volume">
+        <Button variant="success">Approve</Button>
+        <Button variant="successSoft">Approve</Button>
+        <Button variant="successOutline">Approve</Button>
+        <Button variant="successGhost">Approve</Button>
+      </Row>
+      <Row label="Sizes">
+        <Button variant="success" size="xs">
+          xs
+        </Button>
+        <Button variant="success" size="sm">
+          sm
+        </Button>
+        <Button variant="success" size="md">
+          md
+        </Button>
+        <Button variant="success" size="lg">
+          lg
+        </Button>
+        <Button variant="success" size="xl">
+          xl
+        </Button>
+        {/* iconOnly hides children - the glyph has to arrive as leftIcon */}
+        <Button
+          variant="success"
+          iconOnly
+          ariaLabel="Approve"
+          leftIcon={<Icon name="check" size="sm" />}
+        >
+          Approve
+        </Button>
+      </Row>
+      <Row label="States">
+        <Button variant="success">Approve</Button>
+        <Button variant="success" disabled>
+          Approve
+        </Button>
+        <Button variant="success" loading loadingText="Approving…">
+          Approve
+        </Button>
+        <Button variant="success" success successText="Approved">
+          Approve
+        </Button>
+      </Row>
+      <Row label="Icons and shapes">
+        <Button variant="success" leftIcon={<Icon name="check" size="sm" />}>
+          Approve
+        </Button>
+        <Button variant="success" rightIcon={<Icon name="arrow-right" size="sm" />}>
+          Approve
+        </Button>
+        <Button variant="success" shape="pill">
+          Approve
+        </Button>
+        <Button variant="success" shape="square">
+          Approve
+        </Button>
+      </Row>
+    </div>
+  ),
+};
+
+/**
+ * The destructive family, now matching success step for step.
+ *
+ * The quieter three are new — destructive used to be solid-only, which meant a
+ * "Remove domain" link in a table had no correct treatment.
+ */
+export const DestructiveFamily: Story = {
+  render: () => (
+    <div className="mdt-flex mdt-flex-col mdt-gap-6">
+      <Row label="Volume">
+        <Button variant="destructive">Delete</Button>
+        <Button variant="destructiveSoft">Delete</Button>
+        <Button variant="destructiveOutline">Delete</Button>
+        <Button variant="destructiveGhost">Delete</Button>
+      </Row>
+      <Row label="Sizes">
+        <Button variant="destructive" size="xs">
+          xs
+        </Button>
+        <Button variant="destructive" size="sm">
+          sm
+        </Button>
+        <Button variant="destructive" size="md">
+          md
+        </Button>
+        <Button variant="destructive" size="lg">
+          lg
+        </Button>
+        <Button variant="destructive" size="xl">
+          xl
+        </Button>
+        {/* iconOnly hides children - the glyph has to arrive as leftIcon */}
+        <Button
+          variant="destructive"
+          iconOnly
+          ariaLabel="Delete"
+          leftIcon={<Icon name="trash" size="sm" />}
+        >
+          Delete
+        </Button>
+      </Row>
+      <Row label="States">
+        <Button variant="destructive">Delete</Button>
+        <Button variant="destructive" disabled>
+          Delete
+        </Button>
+        <Button variant="destructive" loading loadingText="Deleting…">
+          Delete
+        </Button>
+      </Row>
+    </div>
+  ),
+};
+
+/**
+ * The AI button.
+ *
+ * The sparkle arrives with the variant. Its loading state matters more than most
+ * — an AI action is the one users expect to take a moment.
+ */
+export const AiFamily: Story = {
+  render: () => (
+    <div className="mdt-flex mdt-flex-col mdt-gap-6">
+      <Row label="Sizes">
+        <Button variant="ai" size="xs">
+          Ask AI
+        </Button>
+        <Button variant="ai" size="sm">
+          Ask AI
+        </Button>
+        <Button variant="ai" size="md">
+          Ask AI
+        </Button>
+        <Button variant="ai" size="lg">
+          Ask AI
+        </Button>
+        <Button variant="ai" size="xl">
+          Ask AI
+        </Button>
+      </Row>
+      <Row label="States">
+        <Button variant="ai">Ask AI</Button>
+        <Button variant="ai" disabled>
+          Ask AI
+        </Button>
+        <Button variant="ai" loading loadingText="Thinking…">
+          Ask AI
+        </Button>
+        <Button variant="ai" success successText="Done">
+          Ask AI
+        </Button>
+      </Row>
+      <Row label="Shapes and your own icon">
+        <Button variant="ai" shape="pill">
+          Ask AI
+        </Button>
+        {/* An ai button supplies its own sparkle, so iconOnly needs nothing extra */}
+        <Button variant="ai" iconOnly ariaLabel="Ask AI">
+          Ask AI
+        </Button>
+        <Button variant="ai" leftIcon={<Icon name="wand" size="sm" />}>
+          Summarise
+        </Button>
+      </Row>
+    </div>
+  ),
+};
+
+/**
+ * Loading on every variant.
+ *
+ * The spinner takes its colour from the button's own text, so it works on a
+ * solid fill and a pale one without any per-variant handling.
+ */
+export const LoadingEveryVariant: Story = {
+  render: () => (
+    <div className="mdt-flex mdt-flex-col mdt-gap-6">
+      <Row label="Neutral">
+        <Button variant="primary" loading loadingText="Saving…">
+          Save
+        </Button>
+        <Button variant="secondary" loading loadingText="Saving…">
+          Save
+        </Button>
+        <Button variant="outline" loading loadingText="Saving…">
+          Save
+        </Button>
+        <Button variant="ghost" loading loadingText="Saving…">
+          Save
+        </Button>
+      </Row>
+      <Row label="Destructive">
+        <Button variant="destructive" loading loadingText="Deleting…">
+          Delete
+        </Button>
+        <Button variant="destructiveSoft" loading loadingText="Deleting…">
+          Delete
+        </Button>
+        <Button variant="destructiveOutline" loading loadingText="Deleting…">
+          Delete
+        </Button>
+        <Button variant="destructiveGhost" loading loadingText="Deleting…">
+          Delete
+        </Button>
+      </Row>
+      <Row label="Success">
+        <Button variant="success" loading loadingText="Approving…">
+          Approve
+        </Button>
+        <Button variant="successSoft" loading loadingText="Approving…">
+          Approve
+        </Button>
+        <Button variant="successOutline" loading loadingText="Approving…">
+          Approve
+        </Button>
+        <Button variant="successGhost" loading loadingText="Approving…">
+          Approve
+        </Button>
+      </Row>
+      <Row label="AI">
+        <Button variant="ai" loading loadingText="Thinking…">
+          Ask AI
+        </Button>
+        <Button variant="ai" loading size="sm" loadingText="Thinking…">
+          Ask AI
+        </Button>
+        <Button variant="ai" loading iconOnly ariaLabel="Thinking">
+          Ask AI
+        </Button>
+      </Row>
     </div>
   ),
 };

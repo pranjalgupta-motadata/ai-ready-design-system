@@ -156,7 +156,14 @@ interface CommonButtonProps {
   loadingPosition?: LoadingPosition;
 
   /**
-   * Success state with checkmark icon
+   * Momentary "that worked" state - swaps the label for a checkmark and turns
+   * the button green, whatever variant it started as.
+   *
+   * Not the same thing as `variant="success"`, which is what kind of button
+   * this is. `variant` describes the action; `success` describes the moment
+   * just after it finished. They compose:
+   * `<Button variant="ai" success>` is an AI button reporting that it is done.
+   *
    * @default false
    */
   success?: boolean;

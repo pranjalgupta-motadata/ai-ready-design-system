@@ -57,6 +57,73 @@ describe('Button', () => {
       const button = screen.getByRole('button');
       expect(button).toHaveClass('mdt-bg-destructive');
     });
+
+    it('applies success variant', () => {
+      render(<Button variant="success">Approve</Button>);
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass('mdt-bg-success', 'mdt-text-success-foreground');
+    });
+
+    it.each([
+      ['successSoft', 'mdt-bg-green-10'],
+      ['successOutline', 'mdt-border-success'],
+      ['successGhost', 'mdt-text-success'],
+      ['destructiveSoft', 'mdt-bg-red-10'],
+      ['destructiveOutline', 'mdt-border-destructive'],
+      ['destructiveGhost', 'mdt-text-destructive'],
+    ] as const)('applies the %s variant', (variant, expected) => {
+      render(<Button variant={variant}>Action</Button>);
+      expect(screen.getByRole('button')).toHaveClass(expected);
+    });
+
+    // Success and destructive have to stay in step. If someone adds a step to
+    // one family and forgets the other, this is what catches it.
+    it.each(['', 'Soft', 'Outline', 'Ghost'])('has a matching %s step in both families', (step) => {
+      render(
+        <>
+          <Button variant={`success${step}` as 'success'}>Approve</Button>
+          <Button variant={`destructive${step}` as 'destructive'}>Delete</Button>
+        </>
+      );
+      expect(screen.getByRole('button', { name: 'Approve' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Delete' })).toBeInTheDocument();
+    });
+
+    it('applies the ai variant', () => {
+      render(<Button variant="ai">Ask AI</Button>);
+      expect(screen.getByRole('button')).toHaveClass('mdt-bg-purple-10', 'mdt-text-purple-80');
+    });
+  });
+
+  describe('AI sparkle', () => {
+    it('adds a sparkle to an ai button that has no icon of its own', () => {
+      const { container } = render(<Button variant="ai">Ask AI</Button>);
+      expect(container.querySelector('svg')).toBeInTheDocument();
+    });
+
+    it('keeps the caller’s left icon instead of the sparkle', () => {
+      render(
+        <Button variant="ai" leftIcon={<span data-testid="own-icon">*</span>}>
+          Summarise
+        </Button>
+      );
+      expect(screen.getByTestId('own-icon')).toBeInTheDocument();
+    });
+
+    it('keeps the caller’s right icon and adds no sparkle on the left', () => {
+      const { container } = render(
+        <Button variant="ai" rightIcon={<span data-testid="own-icon">*</span>}>
+          Summarise
+        </Button>
+      );
+      expect(screen.getByTestId('own-icon')).toBeInTheDocument();
+      expect(container.querySelector('svg')).not.toBeInTheDocument();
+    });
+
+    it('does not add a sparkle to any other variant', () => {
+      const { container } = render(<Button variant="primary">Save</Button>);
+      expect(container.querySelector('svg')).not.toBeInTheDocument();
+    });
   });
 
   describe('Sizes', () => {
@@ -351,6 +418,49 @@ describe('Button', () => {
       );
       expect(screen.queryByTestId('left')).not.toBeInTheDocument();
       expect(screen.queryByTestId('right')).not.toBeInTheDocument();
+    });
+  });
+
+  describe('Loading works on every variant', () => {
+    it.each([
+      'primary',
+      'secondary',
+      'outline',
+      'ghost',
+      'link',
+      'destructive',
+      'destructiveSoft',
+      'destructiveOutline',
+      'destructiveGhost',
+      'success',
+      'successSoft',
+      'successOutline',
+      'successGhost',
+      'ai',
+    ] as const)('spins and disables on the %s variant', (variant) => {
+      const { container } = render(
+        <Button variant={variant} loading loadingText="Working…">
+          Action
+        </Button>
+      );
+      const button = screen.getByRole('button');
+
+      expect(button).toBeDisabled();
+      expect(button).toHaveAttribute('aria-busy', 'true');
+      expect(container.querySelector('.mdt-animate-spin')).toBeInTheDocument();
+      expect(button).toHaveTextContent('Working…');
+    });
+
+    it('shows the spinner alone on an ai button rather than the sparkle', () => {
+      const { container } = render(
+        <Button variant="ai" loading>
+          Ask AI
+        </Button>
+      );
+      // One svg, and it is the spinner - the sparkle steps aside while loading.
+      const svgs = container.querySelectorAll('svg');
+      expect(svgs).toHaveLength(1);
+      expect(container.querySelector('.mdt-animate-spin')).toBeInTheDocument();
     });
   });
 

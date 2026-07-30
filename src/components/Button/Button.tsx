@@ -42,9 +42,57 @@ export const ButtonVariants = cva(
           'mdt-border mdt-border-input mdt-bg-background mdt-text-foreground hover:mdt-bg-muted hover:mdt-text-foreground active:mdt-bg-muted/80',
         ghost:
           'mdt-text-foreground hover:mdt-bg-muted hover:mdt-text-foreground active:mdt-bg-muted/80',
-        destructive:
-          'mdt-bg-destructive mdt-text-destructive-foreground hover:mdt-bg-destructive/90 active:mdt-bg-destructive/80',
         link: 'mdt-text-foreground mdt-underline-offset-4 hover:mdt-text-muted-foreground hover:mdt-underline active:mdt-text-muted-foreground/80',
+
+        // ── Destructive and success run the same four steps ────────────────
+        //
+        // solid → soft → outline → ghost, loudest to quietest. A destructive
+        // action and its positive counterpart should be equally easy to pitch
+        // at the right volume, so neither family gets steps the other lacks.
+        //
+        // Solid uses the semantic tokens. The quieter three need a pale
+        // background and a deep text colour per tone, and there are no tokens
+        // for that pair - so they are built from the primitive ramps and flip
+        // in dark mode, exactly as Badge does. That missing pair is logged in
+        // MISSING-TOKENS.md; it is one gap, not nine.
+        //
+        // Hover and press move along the ramp rather than through opacity. The
+        // `/90` shortcut blends the fill toward whatever is behind it, so on a
+        // white page a mid-tone fill gets *lighter* on hover and its white text
+        // falls under 4.5:1 - measured at 3.8 hovering and 3.2 pressed before
+        // this changed. Named steps keep contrast climbing instead of dropping.
+        //
+        // On the pale variants the text deepens alongside the background for the
+        // same reason. In dark mode hover lifts a step and press sinks to the
+        // darkest, which reads as pressed without ever thinning the text.
+        destructive:
+          'mdt-bg-destructive mdt-text-destructive-foreground hover:mdt-bg-red-70 active:mdt-bg-red-80',
+        destructiveSoft:
+          'mdt-bg-red-10 mdt-text-red-80 hover:mdt-bg-red-20 hover:mdt-text-red-90 active:mdt-bg-red-30 active:mdt-text-red-100 dark:mdt-bg-red-90 dark:mdt-text-red-30 dark:hover:mdt-bg-red-80 dark:hover:mdt-text-red-20 dark:active:mdt-bg-red-100 dark:active:mdt-text-red-20',
+        destructiveOutline:
+          'mdt-border mdt-border-destructive mdt-bg-transparent mdt-text-destructive hover:mdt-bg-red-5 hover:mdt-text-red-80 active:mdt-bg-red-10 active:mdt-text-red-80 dark:mdt-border-red-40 dark:mdt-text-red-40 dark:hover:mdt-bg-red-90 dark:active:mdt-bg-red-100',
+        destructiveGhost:
+          'mdt-bg-transparent mdt-text-destructive hover:mdt-bg-red-5 hover:mdt-text-red-80 active:mdt-bg-red-10 active:mdt-text-red-80 dark:mdt-text-red-40 dark:hover:mdt-bg-red-90 dark:active:mdt-bg-red-100',
+
+        success:
+          'mdt-bg-success mdt-text-success-foreground hover:mdt-bg-green-80 active:mdt-bg-green-90',
+        successSoft:
+          'mdt-bg-green-10 mdt-text-green-80 hover:mdt-bg-green-20 hover:mdt-text-green-90 active:mdt-bg-green-30 active:mdt-text-green-100 dark:mdt-bg-green-90 dark:mdt-text-green-30 dark:hover:mdt-bg-green-80 dark:hover:mdt-text-green-20 dark:active:mdt-bg-green-100 dark:active:mdt-text-green-20',
+        successOutline:
+          'mdt-border mdt-border-success mdt-bg-transparent mdt-text-success hover:mdt-bg-green-5 hover:mdt-text-green-80 active:mdt-bg-green-10 active:mdt-text-green-80 dark:mdt-border-green-40 dark:mdt-text-green-40 dark:hover:mdt-bg-green-90 dark:active:mdt-bg-green-100',
+        successGhost:
+          'mdt-bg-transparent mdt-text-success hover:mdt-bg-green-5 hover:mdt-text-green-80 active:mdt-bg-green-10 active:mdt-text-green-80 dark:mdt-text-green-40 dark:hover:mdt-bg-green-90 dark:active:mdt-bg-green-100',
+
+        // ── AI ─────────────────────────────────────────────────────────────
+        //
+        // Org Mgmt, Agent Fleet and Credential each built one independently and
+        // arrived at the same values: pale purple ground, deep purple text, a
+        // faint purple edge, sparkle on the left. Not a recoloured primary -
+        // the point is that it reads as a different kind of action.
+        //
+        // The text deepens along with the background on hover and press, so
+        // contrast climbs rather than drops as the tint gets stronger.
+        ai: 'mdt-border mdt-border-purple-20 mdt-bg-purple-10 mdt-text-purple-80 hover:mdt-bg-purple-20 hover:mdt-text-purple-90 active:mdt-bg-purple-30 active:mdt-text-purple-90 dark:mdt-border-purple-70 dark:mdt-bg-purple-90 dark:mdt-text-purple-20 dark:hover:mdt-bg-purple-80 dark:hover:mdt-text-purple-10 dark:active:mdt-bg-purple-100 dark:active:mdt-text-purple-10',
       },
       /**
        * Size variant of the button
@@ -213,6 +261,27 @@ function getSpinnerSizeFromButtonSize(size: ButtonProps['size']): ButtonSize {
   if (size === 'xs' || size === 'sm') return 'sm';
   if (size === 'lg' || size === 'xl') return 'lg';
   return 'md';
+}
+
+/**
+ * The sparkle an `ai` button carries.
+ *
+ * All three product systems that built an AI button put a sparkle on the left,
+ * so the variant supplies it rather than leaving every caller to remember. An
+ * explicit `leftIcon` or `rightIcon` always wins.
+ */
+function resolveAiSparkle(props: {
+  variant: ButtonProps['variant'];
+  leftIcon: React.ReactNode;
+  rightIcon: React.ReactNode;
+  size: ButtonProps['size'];
+}): React.ReactNode {
+  const { variant, leftIcon, rightIcon, size } = props;
+  if (variant !== 'ai' || leftIcon || rightIcon) return leftIcon;
+
+  return (
+    <Icon name="sparkles" size={spinnerSizeMap[getSpinnerSizeFromButtonSize(size)]} aria-hidden />
+  );
 }
 
 /**
@@ -600,8 +669,11 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>((p
     className,
   });
 
+  // An `ai` button brings its own sparkle unless the caller supplied an icon
+  const resolvedLeftIcon = resolveAiSparkle({ variant, leftIcon, rightIcon, size });
+
   // Wrap icons with size and rotation
-  const wrappedLeftIcon = wrapIcon(leftIcon, iconSizeClass, iconClassName, rotateIcon);
+  const wrappedLeftIcon = wrapIcon(resolvedLeftIcon, iconSizeClass, iconClassName, rotateIcon);
   const wrappedRightIcon = wrapIcon(rightIcon, iconSizeClass, iconClassName, rotateIcon);
 
   // Handle click event
@@ -632,7 +704,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>((p
     loading,
     loadingPosition,
     spinnerSize,
-    leftIcon,
+    leftIcon: resolvedLeftIcon,
     rightIcon,
     success,
     successIcon,
