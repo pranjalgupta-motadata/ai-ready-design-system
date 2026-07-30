@@ -38,9 +38,7 @@ export const Surfaces: Story = {
   parameters: { controls: { disable: true } },
   render: () => (
     <Stack>
-      <CodeWell label="Light — a value in a panel">
-        https://motadata.example.com/scim/v2
-      </CodeWell>
+      <CodeWell label="Light — a value in a panel">https://motadata.example.com/scim/v2</CodeWell>
       <CodeWell surface="dark" label="Dark — terminal output">
         {`$ motadata agent install --token=***
 Downloading agent 4.2.1...
@@ -79,14 +77,56 @@ export const Maskable: Story = {
   ),
 };
 
-/** A long line scrolls rather than wrapping, so the shape stays predictable. */
+const LONG_VALUE =
+  'jdbc:postgresql://prod-db-01.internal.example.com:5432/motadata?ssl=true&sslmode=verify-full&ApplicationName=motadata-agent';
+
+/**
+ * `truncate` holds the well to one line and cuts the value with an ellipsis.
+ *
+ * **Hover it, or tab to it** — the whole value arrives in a tooltip. Copy still
+ * takes all of it, so nothing is lost by cutting it on screen.
+ *
+ * The tooltip is not blanket behaviour: a value that already fits gets none,
+ * because a tooltip repeating what you can already read is just noise. The
+ * third well below proves it.
+ */
 export const LongContent: Story = {
   name: 'Long content',
   parameters: { controls: { disable: true } },
   render: () => (
     <Stack>
-      <CodeWell copyable label="Connection string">
-        jdbc:postgresql://prod-db-01.internal.example.com:5432/motadata?ssl=true&amp;sslmode=verify-full&amp;ApplicationName=motadata-agent
+      <CodeWell truncate copyable label="Connection string">
+        {LONG_VALUE}
+      </CodeWell>
+      <CodeWell truncate copyable surface="dark" label="Signed download URL">
+        https://artifacts.motadata.com/agent/5.7.2/motadata-agent-linux-amd64.tar.gz?X-Amz-Expires=3600&X-Amz-Signature=8f3a9c1e77b04d2a
+      </CodeWell>
+      <CodeWell truncate copyable label="Short enough to fit — no tooltip">
+        systemctl restart motadata-agent
+      </CodeWell>
+    </Stack>
+  ),
+};
+
+/**
+ * Masking and truncating together. The tooltip stays shut while the value is
+ * hidden — revealing a secret on hover would defeat the point of masking it.
+ *
+ * The well is the same height masked and revealed, so nothing jumps.
+ */
+export const TruncatedSecret: Story = {
+  name: 'Truncate + mask',
+  parameters: { controls: { disable: true } },
+  render: () => (
+    <Stack>
+      <CodeWell
+        truncate
+        maskable
+        copyable
+        label="Agent bootstrap token"
+        value="mdt_live_9f2c41ab7de84c05b6139a72e0cf88d143aa50e7c19b6f2d8e4a7031bc95df6a"
+      >
+        mdt_live_9f2c41ab7de84c05b6139a72e0cf88d143aa50e7c19b6f2d8e4a7031bc95df6a
       </CodeWell>
     </Stack>
   ),

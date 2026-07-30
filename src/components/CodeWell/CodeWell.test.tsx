@@ -143,5 +143,116 @@ describe('CodeWell', () => {
       await userEvent.click(screen.getByRole('button', { name: 'Copy' }));
       expect(writeText).toHaveBeenCalledWith(CMD);
     });
+
+    it('is the same height masked and revealed', async () => {
+      // The dots used to render a text size larger than the well, which made
+      // the well 4px taller while masked and shrink the moment it was revealed.
+      render(<CodeWell maskable>{CMD}</CodeWell>);
+      const dots = screen.getByTestId('secret-dots-bullets').parentElement;
+      expect(dots).toHaveClass('mdt-text-xs');
+      expect(screen.getByTestId(BODY)).toHaveClass('mdt-text-xs');
+    });
+  });
+
+  describe('truncate', () => {
+    const LONG = 'a'.repeat(200);
+
+    /** jsdom reports every width as 0, so overflow has to be faked to test it. */
+    const withWidths = (scroll: number, client: number) => {
+      const scrollSpy = vi
+        .spyOn(HTMLElement.prototype, 'scrollWidth', 'get')
+        .mockReturnValue(scroll);
+      const clientSpy = vi
+        .spyOn(HTMLElement.prototype, 'clientWidth', 'get')
+        .mockReturnValue(client);
+      return () => {
+        scrollSpy.mockRestore();
+        clientSpy.mockRestore();
+      };
+    };
+
+    it('cuts the value to one line', () => {
+      render(<CodeWell truncate>{LONG}</CodeWell>);
+      expect(screen.getByTestId(BODY)).toHaveClass(
+        'mdt-overflow-hidden',
+        'mdt-text-ellipsis',
+        'mdt-whitespace-nowrap'
+      );
+    });
+
+    it('scrolls sideways instead when truncate is off', () => {
+      render(<CodeWell>{LONG}</CodeWell>);
+      expect(screen.getByTestId(BODY)).toHaveClass('mdt-overflow-x-auto');
+      expect(screen.getByTestId(BODY)).not.toHaveClass('mdt-overflow-hidden');
+    });
+
+    it('becomes focusable when the value is actually cut', () => {
+      const restore = withWidths(900, 300);
+      render(<CodeWell truncate>{LONG}</CodeWell>);
+      expect(screen.getByTestId(BODY)).toHaveAttribute('tabindex', '0');
+      restore();
+    });
+
+    it('stays unfocusable when the value already fits', () => {
+      const restore = withWidths(120, 300);
+      render(<CodeWell truncate>short</CodeWell>);
+      expect(screen.getByTestId(BODY)).not.toHaveAttribute('tabindex');
+      restore();
+    });
+
+    it('shows the whole value on hover when it is cut', async () => {
+      const restore = withWidths(900, 300);
+      render(<CodeWell truncate>{LONG}</CodeWell>);
+      await userEvent.hover(screen.getByTestId(BODY));
+      expect(await screen.findAllByText(LONG)).not.toHaveLength(0);
+      restore();
+    });
+
+    it('offers no tooltip while the value is masked', async () => {
+      const restore = withWidths(900, 300);
+      render(
+        <CodeWell truncate maskable value={LONG}>
+          {LONG}
+        </CodeWell>
+      );
+      await userEvent.hover(screen.getByTestId(BODY));
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+      restore();
+    });
+
+    it('still copies the whole value when it is cut', async () => {
+      const restore = withWidths(900, 300);
+      render(
+        <CodeWell truncate copyable>
+          {LONG}
+        </CodeWell>
+      );
+      await userEvent.click(screen.getByRole('button', { name: 'Copy' }));
+      expect(writeText).toHaveBeenCalledWith(LONG);
+      restore();
+    });
+  });
+
+  describe('controls', () => {
+    it('reserves room so the content never runs under one control', () => {
+      render(<CodeWell copyable>{CMD}</CodeWell>);
+      expect(screen.getByTestId(BODY)).toHaveClass('mdt-pr-16');
+    });
+
+    it('reserves more room for two controls', () => {
+      render(
+        <CodeWell copyable maskable>
+          {CMD}
+        </CodeWell>
+      );
+      expect(screen.getByTestId(BODY)).toHaveClass('mdt-pr-32');
+    });
+
+    it('reserves nothing when there are no controls', () => {
+      render(<CodeWell>{CMD}</CodeWell>);
+      const body = screen.getByTestId(BODY);
+      expect(body).not.toHaveClass('mdt-pr-16');
+      expect(body).not.toHaveClass('mdt-pr-32');
+    });
   });
 });
