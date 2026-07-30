@@ -18,7 +18,9 @@ export const formDescriptionVariants = cva(['mdt-text-sm'], {
       primary: 'mdt-text-primary',
       secondary: 'mdt-text-secondary',
       destructive: 'mdt-text-destructive',
-      success: 'mdt-text-success',
+      // Green 40 in dark mode: the success fill is too deep to read against
+      // the dark page. See Icon.tsx for the measurements.
+      success: 'mdt-text-success dark:mdt-text-green-40',
       warning: 'mdt-text-warning',
       info: 'mdt-text-info',
     },

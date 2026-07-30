@@ -20,7 +20,10 @@ export const iconVariants = cva(['mdt-inline-flex mdt-shrink-0'], {
       current: 'mdt-text-current',
       primary: 'mdt-text-primary',
       secondary: 'mdt-text-secondary-foreground',
-      success: 'mdt-text-success',
+      // The success fill is deep enough for white text to sit on it, which
+      // leaves it too deep to read against the dark page - 3.7:1. Green 40
+      // flips it back to 7.7:1. Same missing token pair Badge logs.
+      success: 'mdt-text-success dark:mdt-text-green-40',
       destructive: 'mdt-text-destructive',
       warning: 'mdt-text-warning',
       info: 'mdt-text-info',

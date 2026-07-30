@@ -10,30 +10,76 @@ decision we made on purpose.
 > documented, and can't be handed to an AI tool as a rule. Every gap below is somewhere the
 > system quietly stops being a system.
 
-**Audited:** 28 July 2026, across all 39 components.
+**Audited:** 28 July 2026, across all 39 components. Colour re-audited 29 July 2026.
 
 ---
 
 ## Summary
 
-| Category | Status | Where it leaks |
-| --- | --- | --- |
-| Colour | ✅ Complete | — |
-| Border radius | ⚠️ Partial | One base value only, no scale |
-| Typography — family | ✅ Complete | — |
-| **Elevation / shadow** | ❌ Missing | ~18 components |
-| **Layering / z-index** | ❌ Missing | ~11 components |
-| **Spacing** | ❌ Missing | Every component |
-| **Type scale (size)** | ❌ Missing | Every component |
-| **Font weight** | ❌ Missing | Most components |
-| **Letter spacing** | ❌ Missing | Command |
-| **Opacity** | ❌ Missing | ~25 components |
-| **Border width** | ❌ Missing | ~10 components |
-| **Motion — duration & easing** | ❌ Missing | ~8 components + all 14 animations |
-| **Breakpoints** | ❌ Missing | Container only |
-| **Hardcoded sizes** | ❌ Violations | 10 shipped components |
+| Category                            | Status        | Where it leaks                    |
+| ----------------------------------- | ------------- | --------------------------------- |
+| **Colour — the quiet-variant pair** | ❌ Missing    | Badge, Button (7 variants)        |
+| Border radius                       | ⚠️ Partial    | One base value only, no scale     |
+| Typography — family                 | ✅ Complete   | —                                 |
+| **Elevation / shadow**              | ❌ Missing    | ~18 components                    |
+| **Layering / z-index**              | ❌ Missing    | ~11 components                    |
+| **Spacing**                         | ❌ Missing    | Every component                   |
+| **Type scale (size)**               | ❌ Missing    | Every component                   |
+| **Font weight**                     | ❌ Missing    | Most components                   |
+| **Letter spacing**                  | ❌ Missing    | Command                           |
+| **Opacity**                         | ❌ Missing    | ~25 components                    |
+| **Border width**                    | ❌ Missing    | ~10 components                    |
+| **Motion — duration & easing**      | ❌ Missing    | ~8 components + all 14 animations |
+| **Breakpoints**                     | ❌ Missing    | Container only                    |
+| **Hardcoded sizes**                 | ❌ Violations | 10 shipped components             |
 
-**11 categories missing, 1 partial, 1 set of live violations.**
+**12 categories missing, 1 partial, 1 set of live violations.**
+
+---
+
+## Colour — the quiet-variant pair
+
+Colour used to be the one complete category. It is not, and the gap is worth reading before the
+rest, because it is the only one that has already forced components to work around it.
+
+**The gap:** each tone has a token for the loud version and nothing for the quiet one.
+
+| What exists                                               | What is missing                            |
+| --------------------------------------------------------- | ------------------------------------------ |
+| `--mdt-success` — the solid green fill                    | a **pale** green to tint a background with |
+| `--mdt-success-foreground` — white, for text on that fill | a **deep** green to write on that tint     |
+| same for `destructive`, `warning`, `info`                 | same for all four                          |
+
+Two things follow from that, and both are already in the code:
+
+**1 · A tinted button or badge has to reach for the primitive ramps.**
+`Badge` builds all six of its tones from `green-10` / `green-80` style pairs with `dark:` flips,
+and `Button` now does the same for its seven quiet variants. Neither is hardcoding — the ramps are
+tokens — but neither is using a semantic token either, so the pairing is a decision repeated in two
+places instead of stated once.
+
+**2 · A tone cannot be both a fill and a text colour.**
+`--mdt-success` has to be deep enough for white text to sit on it. That same green, used as _text_
+on the dark page, only reaches 3.7:1 — under the 4.5:1 minimum. So `Icon`, `FormLabel`,
+`FormMessage` and `FormDescription` all carry a `dark:mdt-text-green-40` override. `destructive`
+has the identical problem and does not yet have the override — its dark-mode error text measures
+**3.6:1 and fails today**.
+
+**The proposal — three tokens per tone instead of two:**
+
+| Token                      | Job                          | Success would be                  |
+| -------------------------- | ---------------------------- | --------------------------------- |
+| `--mdt-success`            | solid fill                   | `green-70` light, `green-70` dark |
+| `--mdt-success-foreground` | text on that fill            | `white`, `white`                  |
+| `--mdt-success-subtle`     | tinted background            | `green-10` light, `green-90` dark |
+| `--mdt-success-on-subtle`  | text on the tint             | `green-80` light, `green-30` dark |
+| `--mdt-success-text`       | the tone as text on the page | `green-70` light, `green-40` dark |
+
+Repeat for `destructive`, `warning` and `info`. That is 12 new tokens, and it would let `Badge` and
+`Button` delete every primitive-ramp class they currently carry — plus fix the destructive dark-mode
+text failure in one place rather than eleven.
+
+**Not built.** This is a design decision, so it is written down rather than assumed.
 
 ---
 
@@ -50,14 +96,14 @@ OTPInput, ToggleGroup, Command, HoverCard, Combobox, Sheet, Item, Grid, Spinner
 
 **Proposed tokens**
 
-| Token | Purpose |
-| --- | --- |
-| `--mdt-shadow-none` | Flat, on-surface |
-| `--mdt-shadow-xs` | Subtle lift — inputs, toggles |
-| `--mdt-shadow-sm` | Raised — buttons, cards |
-| `--mdt-shadow-md` | Floating — dropdowns, popovers, tooltips |
-| `--mdt-shadow-lg` | Overlay — dialogs, sheets |
-| `--mdt-shadow-xl` | Peak — toasts, command palette |
+| Token               | Purpose                                  |
+| ------------------- | ---------------------------------------- |
+| `--mdt-shadow-none` | Flat, on-surface                         |
+| `--mdt-shadow-xs`   | Subtle lift — inputs, toggles            |
+| `--mdt-shadow-sm`   | Raised — buttons, cards                  |
+| `--mdt-shadow-md`   | Floating — dropdowns, popovers, tooltips |
+| `--mdt-shadow-lg`   | Overlay — dialogs, sheets                |
+| `--mdt-shadow-xl`   | Peak — toasts, command palette           |
 
 **Open question for design:** shadows currently do not adapt to dark mode. On dark surfaces a
 black shadow is invisible. This needs a decision — dark-mode shadows usually need higher opacity
@@ -77,16 +123,16 @@ Resizable, InputGroup, HoverCard
 
 **Proposed tokens**
 
-| Token | Layer |
-| --- | --- |
-| `--mdt-z-base` | Page content |
-| `--mdt-z-sticky` | Sticky headers, table headers |
+| Token              | Layer                          |
+| ------------------ | ------------------------------ |
+| `--mdt-z-base`     | Page content                   |
+| `--mdt-z-sticky`   | Sticky headers, table headers  |
 | `--mdt-z-dropdown` | Select, Combobox, DropdownMenu |
-| `--mdt-z-overlay` | Dialog / Sheet backdrop |
-| `--mdt-z-modal` | Dialog, Sheet |
-| `--mdt-z-popover` | Popover, HoverCard |
-| `--mdt-z-tooltip` | Tooltip |
-| `--mdt-z-toast` | Toast — always on top |
+| `--mdt-z-overlay`  | Dialog / Sheet backdrop        |
+| `--mdt-z-modal`    | Dialog, Sheet                  |
+| `--mdt-z-popover`  | Popover, HoverCard             |
+| `--mdt-z-tooltip`  | Tooltip                        |
+| `--mdt-z-toast`    | Toast — always on top          |
 
 **Open question for design:** should a tooltip appear above a modal? Today it's undefined.
 
@@ -104,18 +150,18 @@ inherited default rather than a design decision.
 
 **Proposed tokens** — a named scale on a 4px base
 
-| Token | Value | Typical use |
-| --- | --- | --- |
-| `--mdt-space-0` | 0 | Reset |
-| `--mdt-space-1` | 2px | Hairline gaps |
-| `--mdt-space-2` | 4px | Icon-to-label |
-| `--mdt-space-3` | 8px | Inside small controls |
-| `--mdt-space-4` | 12px | Inside inputs and buttons |
-| `--mdt-space-5` | 16px | Between related items |
-| `--mdt-space-6` | 24px | Between groups |
-| `--mdt-space-7` | 32px | Section padding |
-| `--mdt-space-8` | 48px | Page sections |
-| `--mdt-space-9` | 64px | Page margins |
+| Token           | Value | Typical use               |
+| --------------- | ----- | ------------------------- |
+| `--mdt-space-0` | 0     | Reset                     |
+| `--mdt-space-1` | 2px   | Hairline gaps             |
+| `--mdt-space-2` | 4px   | Icon-to-label             |
+| `--mdt-space-3` | 8px   | Inside small controls     |
+| `--mdt-space-4` | 12px  | Inside inputs and buttons |
+| `--mdt-space-5` | 16px  | Between related items     |
+| `--mdt-space-6` | 24px  | Between groups            |
+| `--mdt-space-7` | 32px  | Section padding           |
+| `--mdt-space-8` | 48px  | Page sections             |
+| `--mdt-space-9` | 64px  | Page margins              |
 
 **Open question for design:** confirm the base unit is 4px. The existing component heights
 (32px, 36px) suggest 4px, but it has never been written down.
@@ -124,7 +170,7 @@ inherited default rather than a design decision.
 
 ## 4 · Type scale — MISSING
 
-**Priority: HIGH.** Font *families* are tokenised. Everything else about type is not.
+**Priority: HIGH.** Font _families_ are tokenised. Everything else about type is not.
 
 ### 4a · Size
 
@@ -171,15 +217,15 @@ Two separate problems:
 
 **Proposed tokens**
 
-| Token | Value | Use |
-| --- | --- | --- |
-| `--mdt-duration-instant` | 100ms | Hover, focus |
-| `--mdt-duration-fast` | 150ms | Toggles, small state changes |
-| `--mdt-duration-normal` | 200ms | Dropdowns, tooltips |
-| `--mdt-duration-slow` | 300ms | Dialogs, sheets |
-| `--mdt-ease-out` | — | Entering |
-| `--mdt-ease-in` | — | Leaving |
-| `--mdt-ease-in-out` | — | Moving |
+| Token                    | Value | Use                          |
+| ------------------------ | ----- | ---------------------------- |
+| `--mdt-duration-instant` | 100ms | Hover, focus                 |
+| `--mdt-duration-fast`    | 150ms | Toggles, small state changes |
+| `--mdt-duration-normal`  | 200ms | Dropdowns, tooltips          |
+| `--mdt-duration-slow`    | 300ms | Dialogs, sheets              |
+| `--mdt-ease-out`         | —     | Entering                     |
+| `--mdt-ease-in`          | —     | Leaving                      |
+| `--mdt-ease-in-out`      | —     | Moving                       |
 
 **Accessibility note:** there is currently no `prefers-reduced-motion` handling anywhere in the
 system. Users who ask their operating system to reduce animation still get all of it. This is a
@@ -198,12 +244,12 @@ appear to mean "disabled" in different components.
 
 **Proposed tokens**
 
-| Token | Meaning |
-| --- | --- |
-| `--mdt-opacity-disabled` | Disabled controls |
-| `--mdt-opacity-muted` | De-emphasised text and icons |
-| `--mdt-opacity-overlay` | Backdrops behind modals |
-| `--mdt-opacity-hidden` | Fully transparent |
+| Token                    | Meaning                      |
+| ------------------------ | ---------------------------- |
+| `--mdt-opacity-disabled` | Disabled controls            |
+| `--mdt-opacity-muted`    | De-emphasised text and icons |
+| `--mdt-opacity-overlay`  | Backdrops behind modals      |
+| `--mdt-opacity-hidden`   | Fully transparent            |
 
 **Open question for design:** confirm one value for "disabled" and apply it everywhere. Today it
 is inconsistent between components — a visible inconsistency users can notice.
@@ -248,21 +294,21 @@ product built on this library will invent its own.
 **Priority: HIGH.** These are not gaps in the token system — they are the token rule already
 being broken, in shipped code.
 
-| Component | Hardcoded value | Should be |
-| --- | --- | --- |
-| `Textarea.tsx` | `[80px]`, `[100px]`, `[120px]` | Size tokens |
-| `ScrollArea.tsx` | `[200px]`, `[350px]`, `[1px]` | Size + border-width tokens |
-| `Select.tsx` | `[8rem]` | Min-width token |
-| `DropdownMenu.tsx` | `[8rem]` | Min-width token |
-| `Command.tsx` | `[300px]` | Min-width token |
-| `Combobox.tsx` | `[300px]` | Min-width token |
-| `Table.tsx` | `[100px]` | Size token |
-| `InputGroup.tsx` | `[60px]` | Size token |
-| `Sidebar.tsx` | `[10px]` | Type-size token |
-| `TagPill.tsx` | `[10px]` | Type-size token |
+| Component          | Hardcoded value                | Should be                  |
+| ------------------ | ------------------------------ | -------------------------- |
+| `Textarea.tsx`     | `[80px]`, `[100px]`, `[120px]` | Size tokens                |
+| `ScrollArea.tsx`   | `[200px]`, `[350px]`, `[1px]`  | Size + border-width tokens |
+| `Select.tsx`       | `[8rem]`                       | Min-width token            |
+| `DropdownMenu.tsx` | `[8rem]`                       | Min-width token            |
+| `Command.tsx`      | `[300px]`                      | Min-width token            |
+| `Combobox.tsx`     | `[300px]`                      | Min-width token            |
+| `Table.tsx`        | `[100px]`                      | Size token                 |
+| `InputGroup.tsx`   | `[60px]`                       | Size token                 |
+| `Sidebar.tsx`      | `[10px]`                       | Type-size token            |
+| `TagPill.tsx`      | `[10px]`                       | Type-size token            |
 
-*(Hardcoded values inside `.stories.tsx` files are excluded — those are demo layout, not
-shipped product.)*
+_(Hardcoded values inside `.stories.tsx` files are excluded — those are demo layout, not
+shipped product.)_
 
 **Note:** `[10px]` in Sidebar and TagPill is a font size smaller than anything in the type
 scale. That is either a deliberate micro-label size that needs a token, or an accessibility
@@ -275,16 +321,16 @@ problem. It needs a design decision either way.
 Each category above is a **design decision**, not an implementation task. The order below is by
 impact, not effort.
 
-| Order | Category | Why first |
-| --- | --- | --- |
-| 1 | Spacing | Touches every component; biggest consistency win |
-| 2 | Type scale | Second biggest; currently entirely inherited |
-| 3 | Elevation | Most visible; needs a dark-mode answer |
-| 4 | Layering | Prevents real stacking bugs |
-| 5 | Hardcoded sizes | Fix the live violations |
-| 6 | Motion | Includes the reduced-motion accessibility gap |
-| 7 | Opacity | Resolve the disabled-state inconsistency |
-| 8 | Radius, border width, breakpoints | Tidy-up |
+| Order | Category                          | Why first                                        |
+| ----- | --------------------------------- | ------------------------------------------------ |
+| 1     | Spacing                           | Touches every component; biggest consistency win |
+| 2     | Type scale                        | Second biggest; currently entirely inherited     |
+| 3     | Elevation                         | Most visible; needs a dark-mode answer           |
+| 4     | Layering                          | Prevents real stacking bugs                      |
+| 5     | Hardcoded sizes                   | Fix the live violations                          |
+| 6     | Motion                            | Includes the reduced-motion accessibility gap    |
+| 7     | Opacity                           | Resolve the disabled-state inconsistency         |
+| 8     | Radius, border width, breakpoints | Tidy-up                                          |
 
 **Rule for adding any of these:** a token is added to
 [`src/styles/globals.css`](./src/styles/globals.css) and

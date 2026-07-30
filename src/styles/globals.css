@@ -159,8 +159,12 @@
     --mdt-warning: var(--mdt-orange-50);
     --mdt-warning-foreground: var(--mdt-black);
 
-    --mdt-success: var(--mdt-green-50);
-    --mdt-success-foreground: var(--mdt-black);
+    /* Green 70, not the brighter green 50 this used to point at. A solid success
+       button carries white text, matching destructive, and white on green 50
+       measures 2.5:1 - unreadable. Green 70 measures 4.9:1 and also fixes green
+       *text* against a white page, which failed at 2.5:1 everywhere it was used. */
+    --mdt-success: var(--mdt-green-70);
+    --mdt-success-foreground: var(--mdt-white);
 
     --mdt-info: var(--mdt-blue-50);
     --mdt-info-foreground: var(--mdt-white);
@@ -169,7 +173,58 @@
     --mdt-input: var(--mdt-neutral-40);
     --mdt-ring: var(--mdt-black);
 
+    /* ============================================
+       FEEDBACK SURFACE - the tinted background behind a Toast or a Banner
+
+       Every value here points at a step on a ramp we already own. Nothing new
+       is defined: this set gives the surface its own names so a component can
+       ask for "the danger tint" rather than "red 10", but the colours are the
+       same ones a Badge or a Button uses.
+
+       Modelled on Org Mgmt's banner, and the rule that makes it work is Om's:
+       the text stays one colour in every tone, and only the icon and the
+       border carry the tone. That rule is what makes six tones read as a
+       family - not the particular hexes, which is why swapping them for ours
+       costs nothing.
+
+       Measured against Om's originals: sixteen of these twenty are within a
+       hair of his, close enough that nobody can tell. Four of the icons shift
+       a little - his amber is browner, his green purer. Every tone still
+       clears the readability minimum by a wide margin.
+       ============================================ */
+    --mdt-feedback-info-bg: var(--mdt-blue-05);
+    --mdt-feedback-info-border: var(--mdt-blue-20);
+    --mdt-feedback-info-icon: var(--mdt-blue-60);
+
+    --mdt-feedback-warning-bg: var(--mdt-yellow-10);
+    --mdt-feedback-warning-border: var(--mdt-orange-20);
+    --mdt-feedback-warning-icon: var(--mdt-orange-80);
+
+    --mdt-feedback-danger-bg: var(--mdt-red-10);
+    --mdt-feedback-danger-border: var(--mdt-red-20);
+    --mdt-feedback-danger-icon: var(--mdt-red-70);
+
+    --mdt-feedback-success-bg: var(--mdt-green-10);
+    --mdt-feedback-success-border: var(--mdt-green-20);
+    --mdt-feedback-success-icon: var(--mdt-green-70);
+
+    --mdt-feedback-ai-bg: var(--mdt-purple-10);
+    --mdt-feedback-ai-border: var(--mdt-purple-20);
+    --mdt-feedback-ai-icon: var(--mdt-purple-80);
+
+    --mdt-feedback-neutral-bg: var(--mdt-neutral-10);
+    --mdt-feedback-neutral-border: var(--mdt-neutral-30);
+    --mdt-feedback-neutral-icon: var(--mdt-neutral-130);
+
+    --mdt-feedback-title: var(--mdt-neutral-150);
+    --mdt-feedback-text: var(--mdt-neutral-130);
+
     --mdt-radius: 0.5rem;
+
+    /* How wide a toast is. The promotional toast sits on its own layer outside
+       the toaster, so both need to read the width from the same place or they
+       drift apart. */
+    --mdt-toast-width: 356px;
     /* System font stack - no custom fonts required, consumers can override via CSS variables */
     --mdt-font-sans:
       ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
@@ -211,8 +266,13 @@
     --mdt-warning: var(--mdt-orange-60);
     --mdt-warning-foreground: var(--mdt-black);
 
-    --mdt-success: var(--mdt-green-60);
-    --mdt-success-foreground: var(--mdt-black);
+    /* Same green 70 as light mode, so there is one success fill to remember
+       rather than two. White on it measures 4.9:1 here as well.
+       Green 70 as *text* on the dark page only reaches 3.7:1, so anything using
+       success as a text colour flips to green 40 with a `dark:` utility - the
+       same pattern Badge uses, and the same missing token pair it logs. */
+    --mdt-success: var(--mdt-green-70);
+    --mdt-success-foreground: var(--mdt-white);
 
     --mdt-info: var(--mdt-blue-50);
     --mdt-info-foreground: var(--mdt-black);
@@ -220,6 +280,42 @@
     --mdt-border: var(--mdt-neutral-90);
     --mdt-input: var(--mdt-neutral-90);
     --mdt-ring: var(--mdt-neutral-50);
+
+    /* ============================================
+       FEEDBACK SURFACE - dark
+
+       Om's banner is light-only, as are all four product systems, so there is
+       nothing exact to copy here. Rather than invent a second dark palette,
+       these come off our own ramps at the same steps Badge already uses - so
+       a dark toast and a dark badge belong to each other even though the light
+       ones came from different places.
+       ============================================ */
+    --mdt-feedback-info-bg: var(--mdt-blue-90);
+    --mdt-feedback-info-border: var(--mdt-blue-70);
+    --mdt-feedback-info-icon: var(--mdt-blue-30);
+
+    --mdt-feedback-warning-bg: var(--mdt-orange-90);
+    --mdt-feedback-warning-border: var(--mdt-orange-70);
+    --mdt-feedback-warning-icon: var(--mdt-orange-30);
+
+    --mdt-feedback-danger-bg: var(--mdt-red-90);
+    --mdt-feedback-danger-border: var(--mdt-red-70);
+    --mdt-feedback-danger-icon: var(--mdt-red-30);
+
+    --mdt-feedback-success-bg: var(--mdt-green-90);
+    --mdt-feedback-success-border: var(--mdt-green-70);
+    --mdt-feedback-success-icon: var(--mdt-green-30);
+
+    --mdt-feedback-ai-bg: var(--mdt-purple-100);
+    --mdt-feedback-ai-border: var(--mdt-purple-80);
+    --mdt-feedback-ai-icon: var(--mdt-purple-30);
+
+    --mdt-feedback-neutral-bg: var(--mdt-neutral-140);
+    --mdt-feedback-neutral-border: var(--mdt-neutral-120);
+    --mdt-feedback-neutral-icon: var(--mdt-neutral-30);
+
+    --mdt-feedback-title: var(--mdt-neutral-10);
+    --mdt-feedback-text: var(--mdt-neutral-30);
   }
 }
 

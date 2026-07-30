@@ -73,6 +73,43 @@ const config: Config = {
           DEFAULT: 'hsl(var(--mdt-info))',
           foreground: 'hsl(var(--mdt-info-foreground))',
         },
+        // The feedback surface - Org Mgmt's banner palette, taken exactly.
+        // Scoped to Toast and Banner on purpose; see globals.css.
+        feedback: {
+          info: {
+            bg: 'hsl(var(--mdt-feedback-info-bg))',
+            border: 'hsl(var(--mdt-feedback-info-border))',
+            icon: 'hsl(var(--mdt-feedback-info-icon))',
+          },
+          warning: {
+            bg: 'hsl(var(--mdt-feedback-warning-bg))',
+            border: 'hsl(var(--mdt-feedback-warning-border))',
+            icon: 'hsl(var(--mdt-feedback-warning-icon))',
+          },
+          danger: {
+            bg: 'hsl(var(--mdt-feedback-danger-bg))',
+            border: 'hsl(var(--mdt-feedback-danger-border))',
+            icon: 'hsl(var(--mdt-feedback-danger-icon))',
+          },
+          success: {
+            bg: 'hsl(var(--mdt-feedback-success-bg))',
+            border: 'hsl(var(--mdt-feedback-success-border))',
+            icon: 'hsl(var(--mdt-feedback-success-icon))',
+          },
+          ai: {
+            bg: 'hsl(var(--mdt-feedback-ai-bg))',
+            border: 'hsl(var(--mdt-feedback-ai-border))',
+            icon: 'hsl(var(--mdt-feedback-ai-icon))',
+          },
+          neutral: {
+            bg: 'hsl(var(--mdt-feedback-neutral-bg))',
+            border: 'hsl(var(--mdt-feedback-neutral-border))',
+            icon: 'hsl(var(--mdt-feedback-neutral-icon))',
+          },
+          title: 'hsl(var(--mdt-feedback-title))',
+          text: 'hsl(var(--mdt-feedback-text))',
+        },
+
         // Core colors
         white: 'hsl(var(--mdt-white))',
         black: 'hsl(var(--mdt-black))',
@@ -184,6 +221,9 @@ const config: Config = {
           90: 'hsl(var(--mdt-purple-90))',
           100: 'hsl(var(--mdt-purple-100))',
         },
+      },
+      width: {
+        toast: 'var(--mdt-toast-width)',
       },
       borderRadius: {
         lg: 'var(--mdt-radius)',
